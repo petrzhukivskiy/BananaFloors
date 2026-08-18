@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "name": "Banana Floors",
-    "telephone": "503-421-1730",
+    "telephone": "+1-503-421-1730",
     "description": "Flooring installation and replacement services in Portland, Oregon and the surrounding metro area.",
     "address": {
       "@type": "PostalAddress",
@@ -59,7 +60,8 @@
     .brand-mark{width:22px;height:22px;display:inline-grid;place-items:center;border-radius:7px;background:var(--banana);color:#111;font-size:14px;line-height:1;transform:rotate(-7deg)}
     .nav-links{display:flex;align-items:center;gap:26px;color:#4b4b4f;font-size:14px}
     .nav-links a:hover{color:#000}
-    .nav-cta{padding:9px 15px;border-radius:999px;background:#111;color:#fff;font-weight:600}
+    .nav-cta{padding:9px 15px;border-radius:999px;background:#111;color:#fff;font-weight:600;transition:.2s ease}
+    .nav-links a.nav-cta:hover{background:var(--banana);color:#111}
     .accent{display:inline-block;background:linear-gradient(transparent 68%,var(--banana) 68% 94%,transparent 94%)}
 
     .hero{max-width:var(--max);margin:auto;padding:100px 24px 46px;text-align:center}
@@ -71,6 +73,8 @@
     .btn:hover{transform:translateY(-1px);box-shadow:0 10px 25px rgba(0,0,0,.07)}
     .btn.primary{background:#111;color:#fff;border-color:#111}
     .btn.yellow{background:var(--banana);color:#111;border-color:var(--banana)}
+    /* Keep every phone CTA on-brand when hovered */
+    a[href^="tel:"]:hover{background:var(--banana)!important;color:#111!important;border-color:var(--banana)!important;box-shadow:0 10px 25px rgba(0,0,0,.07)}
 
     .visual-wrap{max-width:var(--max);padding:0 24px 96px;margin:auto}
     .visual{position:relative;overflow:hidden;border-radius:40px;min-height:540px;background:linear-gradient(145deg,#fff7d0 0%,#e7d7b8 38%,#b48e67 100%);box-shadow:var(--shadow)}
@@ -170,7 +174,7 @@
         <a href="#process">Process</a>
         <a href="#areas">Areas</a>
         <a href="#faq">FAQ</a>
-        <a class="nav-cta" href="tel:5034211730">Call (503) 421-1730</a>
+        <a class="nav-cta" href="tel:+15034211730">Call (503) 421-1730</a>
       </nav>
     </div>
   </header>
@@ -181,7 +185,7 @@
       <h1>Floors worth going bananas over.</h1>
       <p>Banana Floors delivers clean, detail-focused flooring installation and replacement across the Portland metro—without the runaround, confusing estimates, or monkey business.</p>
       <div class="actions">
-        <a class="btn yellow" href="tel:5034211730">Request an Estimate</a>
+        <a class="btn yellow" href="tel:+15034211730">Request an Estimate</a>
         <a class="btn" href="#services">Explore Services</a>
       </div>
     </section>
@@ -276,7 +280,7 @@
           </div>
           <div>
             <p>Tell us what you're replacing, the approximate square footage and what material you're considering. We'll help you figure out the next step.</p>
-            <div class="actions" style="justify-content:flex-start;margin-top:24px"><a class="btn primary" href="tel:5034211730">Call (503) 421-1730</a><a class="btn" href="sms:5034211730">Text Us</a></div>
+            <div class="actions" style="justify-content:flex-start;margin-top:24px"><a class="btn primary" href="tel:+15034211730">Call (503) 421-1730</a><a class="btn" href="sms:+15034211730">Text Us</a></div>
           </div>
         </div>
       </div>
@@ -298,7 +302,7 @@
       <div class="final">
         <h2>Ready to go bananas?</h2>
         <p>Start with a quick call or text. We’ll talk through your space, material options, and the next step—no pressure, no monkey business.</p>
-        <div class="actions"><a class="btn" href="tel:5034211730">Call (503) 421-1730</a><a class="btn secondary" href="sms:5034211730">Text for an Estimate</a></div>
+        <div class="actions"><a class="btn" href="tel:+15034211730">Call (503) 421-1730</a><a class="btn secondary" href="sms:+15034211730">Text for an Estimate</a></div>
       </div>
     </section>
   </main>
