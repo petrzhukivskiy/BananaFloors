@@ -1,11 +1,10 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Banana Floors | Flooring Installation in Portland, Oregon</title>
-  <meta name="description" content="Banana Floors provides hardwood, engineered wood, luxury vinyl plank and laminate flooring installation throughout Portland, Oregon and the surrounding metro area.">
+  <meta name="description" content="Banana Floors provides flooring installation and replacement in Portland, Oregon, with options including hardwood, engineered wood, luxury vinyl plank, laminate, tile and carpet.">
   <meta name="theme-color" content="#ffd84d">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:title" content="Banana Floors | Portland, Oregon">
@@ -31,7 +30,7 @@
     ],
     "serviceType": [
       "Hardwood Flooring", "Engineered Hardwood", "Luxury Vinyl Plank",
-      "Laminate Flooring", "Flooring Replacement", "Floor Preparation"
+      "Laminate Flooring", "Tile Flooring", "Carpet Flooring", "Flooring Replacement", "Floor Preparation"
     ]
   }
   </script>
@@ -77,10 +76,10 @@
     a[href^="tel:"]:hover{background:var(--banana)!important;color:#111!important;border-color:var(--banana)!important;box-shadow:0 10px 25px rgba(0,0,0,.07)}
 
     .visual-wrap{max-width:var(--max);padding:0 24px 96px;margin:auto}
-    .visual{position:relative;overflow:hidden;border-radius:40px;min-height:540px;background:linear-gradient(145deg,#fff7d0 0%,#e7d7b8 38%,#b48e67 100%);box-shadow:var(--shadow)}
-    .floor{position:absolute;inset:-90px -160px -190px;transform:perspective(750px) rotateX(57deg) rotateZ(-7deg);transform-origin:center bottom;background:repeating-linear-gradient(90deg,rgba(65,42,22,.10) 0 2px,transparent 2px 150px),repeating-linear-gradient(0deg,rgba(255,255,255,.2) 0 2px,transparent 2px 72px),linear-gradient(90deg,#c6a37f,#e0c2a1 38%,#c4966a 70%,#dfb68d);filter:saturate(.82)}
-    .floor:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 17px,rgba(70,40,20,.035) 17px 19px,transparent 19px 37px)}
-    .visual-card{position:absolute;left:42px;bottom:42px;max-width:500px;padding:28px 30px;background:rgba(255,255,255,.84);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.64);border-radius:26px;box-shadow:0 18px 50px rgba(0,0,0,.10)}
+        .visual{position:relative;overflow:hidden;border-radius:40px;min-height:540px;background:url("images/hardwood-living-room.webp") center 58%/cover no-repeat;box-shadow:var(--shadow)}
+    .visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.18) 100%);pointer-events:none}
+    .floor{display:none}
+    .visual-card{position:absolute;z-index:1;left:42px;bottom:42px;max-width:500px;padding:28px 30px;background:rgba(255,255,255,.84);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.64);border-radius:26px;box-shadow:0 18px 50px rgba(0,0,0,.10)}
     .visual-card strong{display:block;font-size:27px;letter-spacing:-.035em;margin-bottom:7px}
     .visual-card span{color:#666;font-size:16px}
 
@@ -102,6 +101,15 @@
     .service p{margin:0;color:var(--muted);font-size:17px;max-width:520px}
     .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
     .pill{font-size:13px;font-weight:650;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:var(--soft)}
+
+    .floor-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .floor-option{overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:#fff;transition:.25s ease}
+    .floor-option:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(0,0,0,.08)}
+    .floor-option img{width:100%;height:245px;display:block;object-fit:cover;background:var(--surface)}
+    .floor-option-copy{padding:23px 24px 26px}
+    .floor-option h3{font-size:24px;letter-spacing:-.035em;margin:0 0 8px}
+    .floor-option p{color:var(--muted);margin:0;font-size:15px}
+    .gallery-note{margin-top:18px;color:#8a8a90;font-size:13px}
 
     .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
     .step{padding:26px;border-top:1px solid #cfcfd4}
@@ -143,6 +151,7 @@
       .visual{min-height:430px;border-radius:30px}
       .visual-card{left:22px;right:22px;bottom:22px}
       .cards,.services{grid-template-columns:1fr}
+      .floor-gallery{grid-template-columns:1fr 1fr}
       .process-grid{grid-template-columns:1fr 1fr}
       .split{grid-template-columns:1fr}
       .area-card,.quote-card{min-height:350px}
@@ -158,6 +167,8 @@
       .visual{min-height:390px}
       .visual-card{padding:22px;border-radius:22px}
       section{padding-top:68px;padding-bottom:68px}
+      .floor-gallery{grid-template-columns:1fr}
+      .floor-option img{height:220px}
       .process-grid{grid-template-columns:1fr}
       .step{padding-left:0;padding-right:0}
       .final{margin:0 18px 50px;padding:56px 22px;border-radius:30px}
@@ -171,6 +182,7 @@
       <a class="brand" href="#top" aria-label="Banana Floors home"><span class="brand-mark" aria-hidden="true">◒</span><span>BANANA FLOORS</span></a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
+        <a href="#floors">Flooring</a>
         <a href="#process">Process</a>
         <a href="#areas">Areas</a>
         <a href="#faq">FAQ</a>
@@ -229,6 +241,43 @@
             <div class="pill-row"><span class="pill">Demo</span><span class="pill">Floor prep</span><span class="pill">Subfloor review</span></div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="floors">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="eyebrow">Find your floor</div>
+          <h2>Options for every kind of space.</h2>
+          <p>Different rooms, budgets and lifestyles call for different floors. Explore a few popular directions and we’ll help narrow down what fits your project.</p>
+        </div>
+        <div class="floor-gallery">
+          <article class="floor-option">
+            <img src="images/hardwood-living-room.webp" alt="Warm natural hardwood flooring in a comfortable family living room" loading="lazy">
+            <div class="floor-option-copy"><h3>Hardwood</h3><p>Natural character, timeless warmth and a finish that can elevate almost any room.</p></div>
+          </article>
+          <article class="floor-option">
+            <img src="images/lvp-kitchen.webp" alt="Luxury vinyl plank flooring in an everyday kitchen and dining area" loading="lazy">
+            <div class="floor-option-copy"><h3>Luxury Vinyl Plank</h3><p>Durable, practical and available in a huge range of realistic wood looks.</p></div>
+          </article>
+          <article class="floor-option">
+            <img src="images/laminate-office.webp" alt="Laminate flooring in a modest home office and guest room" loading="lazy">
+            <div class="floor-option-copy"><h3>Laminate</h3><p>A budget-friendly way to get a clean wood look with everyday durability.</p></div>
+          </article>
+          <article class="floor-option">
+            <img src="images/tile-laundry.webp" alt="Large format tile flooring in a practical laundry and mudroom" loading="lazy">
+            <div class="floor-option-copy"><h3>Tile</h3><p>A hardworking choice for wet areas, entries, bathrooms and utility spaces.</p></div>
+          </article>
+          <article class="floor-option">
+            <img src="images/carpet-living-room.webp" alt="Soft neutral carpet flooring in a comfortable family living room" loading="lazy">
+            <div class="floor-option-copy"><h3>Carpet</h3><p>Soft, quiet and comfortable for bedrooms, family rooms and everyday living.</p></div>
+          </article>
+          <article class="floor-option">
+            <img src="images/engineered-wood-dining.webp" alt="Engineered wood flooring in a simple dining room and hallway" loading="lazy">
+            <div class="floor-option-copy"><h3>Engineered Wood</h3><p>Real wood character with a layered construction suited to many modern homes.</p></div>
+          </article>
+        </div>
+        <p class="gallery-note">Rendered inspiration images are shown for flooring style and material reference. Actual colors, grain and finishes vary by product.</p>
       </div>
     </section>
 
