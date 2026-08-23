@@ -3,10 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Flooring Price Guide Portland OR | Material Costs & Specs | Banana Floors</title>
+  <meta name="description" content="Compare flooring material costs, Good/Better/Best tiers, product specs and construction layers for LVP, laminate, engineered wood, hardwood, carpet and tile in Portland, Oregon.">
+  <link rel="canonical" href="https://bananafloors.com/flooring-prices.html">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <title>Flooring Material Price Guide Portland OR | Banana Floors</title>
-<link rel="canonical" href="https://bananafloors.com/flooring-prices.html">
-  <meta name="description" content="Compare flooring material price ranges, specs and construction for LVP, laminate, engineered wood, hardwood, carpet and tile. Portland-area planning calculator by Banana Floors.">
+  <meta property="og:title" content="Flooring Price Guide | Banana Floors">
+  <meta property="og:description" content="Compare material price ranges, specs and flooring construction before requesting an installation quote.">
+  <meta property="og:url" content="https://bananafloors.com/flooring-prices.html">
+  <meta property="og:type" content="website">
   <link rel="icon" href="favicon.svg">
   <style>
     :root{--ink:#111;--muted:#6b6b70;--bg:#fff;--soft:#f6f6f6;--soft2:#fbfbfb;--accent:#f5a623;--line:#e7e7e7;--shadow:0 18px 44px rgba(0,0,0,.06)}
@@ -126,9 +130,6 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
       .spec-top h2{font-size:34px}
     }
   </style>
-
-<meta property="og:url" content="https://bananafloors.com/flooring-prices.html">
-<meta property="og:type" content="website">
 </head>
 <body>
   <header class="nav">
@@ -162,7 +163,7 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
 
       <section style="margin:0 0 56px;padding:26px 28px;border-radius:28px;background:var(--soft2);border:1px solid var(--line)"><div class="eyebrow">Specs & construction</div><h2 style="font-size:34px;letter-spacing:-.04em;margin:8px 0 10px">Tap any flooring category for the full breakdown.</h2><p style="margin:0;color:var(--muted);font-size:17px;line-height:1.5;max-width:760px">Specs, Good / Better / Best tiers, sample material visuals, and construction layers now open in a focused full-screen view.</p></section>
 
-      <section class="calc">
+      <section class="calc" id="calculator">
         <div>
           <div class="eyebrow">Instant calculator</div>
           <h2 style="font-size:40px;letter-spacing:-.04em;margin:10px 0 24px">Estimate your material budget.</h2>
@@ -363,6 +364,10 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
     modal.addEventListener('click',e=>{if(e.target===modal) closeMaterial();});
     document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open')) closeMaterial();});
     document.querySelectorAll('#typeCards button').forEach(btn=>btn.addEventListener('click',()=>openMaterial(btn.dataset.type)));
+
+    // Deep-link from homepage pricing buttons.
+    const requestedType = new URLSearchParams(window.location.search).get('type');
+    if (requestedType && pricing[requestedType]) { type.value = requestedType; fillTiers(); }
 
   </script>
 </body>

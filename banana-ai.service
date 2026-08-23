@@ -1,0 +1,15 @@
+[Unit]
+Description=Banana Floors Ask Banana API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/html/server
+EnvironmentFile=/etc/banana-floors-ai.env
+ExecStart=/usr/bin/npm start
+Restart=on-failure
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target
