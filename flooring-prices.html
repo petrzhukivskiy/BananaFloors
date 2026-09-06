@@ -11,7 +11,7 @@
   <meta property="og:description" content="Compare material price ranges, specs and flooring construction before requesting an installation quote.">
   <meta property="og:url" content="https://bananafloors.com/flooring-prices.html">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://bananafloors.com/images/lvp-kitchen.webp">
+  <meta property="og:image" content="https://bananafloors.com/images/lvp-kitchen-v4.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bananafloors.com/"},{"@type":"ListItem","position":2,"name":"Flooring Price Guide","item":"https://bananafloors.com/flooring-prices.html"}]}</script>
@@ -151,6 +151,16 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
 @media(max-width:700px){.modal{max-height:100dvh;height:100dvh}.modal-head h2{font-size:20px}.modal-head{gap:10px}.modal-body{padding:14px}.spec-cover h3{font-size:28px}.spec-facts dl{grid-template-columns:minmax(0,1fr)}.calc{padding:18px;grid-template-columns:minmax(0,1fr)}.formgrid{grid-template-columns:minmax(0,1fr)}.result{padding:18px}.result .big{font-size:clamp(26px,8vw,40px);overflow-wrap:anywhere}.hero h1{font-size:clamp(34px,10vw,50px)}.spec-tier strong small{display:block}.row{grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));font-size:12px;gap:6px}.row>div{overflow-wrap:anywhere}.navin{gap:12px;flex-wrap:wrap}}
 </style>
 <style>a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a16b00;outline-offset:4px}button,a{touch-action:manipulation}img{max-width:100%}footer{line-height:1.8}</style>
+<style>
+/* Keep the document bounded at its edges without intercepting touch gestures. */
+html,body{overscroll-behavior-y:none;}
+html{overflow-x:clip;}
+body{overflow-x:clip;}
+.photo-viewer:not([open]){display:none;}
+.ask-panel:not(.open),.modal-backdrop:not(.open){display:none;}
+.ask-messages,.ask-chips,.photo-viewer,.modal{overscroll-behavior:contain;}
+@media(max-width:560px){.footer-inner{padding-bottom:calc(100px + env(safe-area-inset-bottom));}.js .reveal{transform:none;}}
+</style>
 </head>
 <body>
   <header class="nav">
@@ -174,12 +184,12 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
 
     <div class="wrap">
       <div class="grid" id="typeCards">
-        <div class="card"><button type="button" data-type="LVP / Vinyl"><img class="category-photo" src="images/lvp-kitchen.webp" alt="LVP / Vinyl room visualization" loading="lazy" width="1536" height="1024"><h3>LVP / Vinyl</h3><p>Waterproof click-lock and glue-down options.</p><div class="range">$2.00–$7.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
+        <div class="card"><button type="button" data-type="LVP / Vinyl"><img class="category-photo" src="images/lvp-kitchen-v4.webp" alt="LVP / Vinyl room visualization" loading="lazy" width="1536" height="1024"><h3>LVP / Vinyl</h3><p>Waterproof click-lock and glue-down options.</p><div class="range">$2.00–$7.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
         <div class="card"><button type="button" data-type="Laminate"><img class="category-photo" src="images/laminate-office.webp" alt="Laminate room visualization" loading="lazy" width="1536" height="1024"><h3>Laminate</h3><p>Budget-friendly wood-look flooring.</p><div class="range">$1.50–$6.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
         <div class="card"><button type="button" data-type="Engineered Wood"><img class="category-photo" src="images/engineered-wood-dining.webp" alt="Engineered Wood room visualization" loading="lazy" width="1536" height="1024"><h3>Engineered Wood</h3><p>Real wood surface with layered construction.</p><div class="range">$4.00–$14.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
         <div class="card"><button type="button" data-type="Solid Hardwood"><img class="category-photo" src="images/hardwood-living-room.webp" alt="Solid Hardwood room visualization" loading="lazy" width="1536" height="1024"><h3>Solid Hardwood</h3><p>Traditional solid wood flooring.</p><div class="range">$6.00–$15.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
         <div class="card"><button type="button" data-type="Carpet"><img class="category-photo" src="images/carpet-living-room.webp" alt="Carpet room visualization" loading="lazy" width="1536" height="1024"><h3>Carpet</h3><p>Common residential carpet material ranges.</p><div class="range">$1.50–$7.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
-        <div class="card"><button type="button" data-type="Tile"><img class="category-photo" src="images/tile-laundry.webp" alt="Tile room visualization" loading="lazy" width="1536" height="1024"><h3>Tile</h3><p>Ceramic, porcelain and premium options.</p><div class="range">$1.00–$15.00+ / sq ft</div><div class="jump">View specs & layers →</div></button></div>
+        <div class="card"><button type="button" data-type="Tile"><img class="category-photo" src="images/tile-laundry-v4.webp" alt="Tile room visualization" loading="lazy" width="1536" height="1024"><h3>Tile</h3><p>Ceramic, porcelain and premium options.</p><div class="range">$1.00–$15.00+ / sq ft</div><div class="jump">View specs & layers →</div></button></div>
       </div>
 
       <section style="margin:0 0 56px;padding:26px 28px;border-radius:28px;background:var(--soft2);border:1px solid var(--line)"><div class="eyebrow">Specs & construction</div><h2 style="font-size:34px;letter-spacing:-.04em;margin:8px 0 10px">Tap any flooring category for the full breakdown.</h2><p style="margin:0;color:var(--muted);font-size:17px;line-height:1.5;max-width:760px">Explore room styles, select construction layers, and compare material budgets in one guide.</p></section>
@@ -355,7 +365,7 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
     const modalTitle=document.getElementById('modalTitle');
     const modalClose=document.getElementById('modalClose');
 
-    const roomImages={'LVP / Vinyl':'lvp-kitchen','Laminate':'laminate-office','Engineered Wood':'engineered-wood-dining','Solid Hardwood':'hardwood-living-room','Carpet':'carpet-living-room','Tile':'tile-laundry'};
+    const roomImages={'LVP / Vinyl':'lvp-kitchen-v4','Laminate':'laminate-office','Engineered Wood':'engineered-wood-dining','Solid Hardwood':'hardwood-living-room','Carpet':'carpet-living-room','Tile':'tile-laundry-v4'};
     const summaries={
       'LVP / Vinyl':['Wood-look. Everyday practical.','Compare the wear layer, core type, and installation method. Rigid-core and glue-down products have different constructions.'],
       'Laminate':['The look of wood. A tough surface.','Compare abrasion rating, locking system, and the specific product’s water warranty.'],

@@ -94,3 +94,8 @@ MOBILE REPAIR UPDATE
 - Fixed city-label row spacing and improved wrapping of headings, buttons, specs, navigation, and pricing at phone widths.
 - Added safe-area spacing for mobile contact controls.
 Validation: interaction logic tested with DOM mocks; all 16 page references, structured data, and JavaScript syntax passed. Browser visual testing was unavailable in this session. After deployment, reload on your phone and check the homepage, menu, photo viewer, and Price Guide.
+
+KITCHEN / LAUNDRY + MOBILE SCROLL UPDATE
+- New simplified kitchen and laundry room renders replace earlier images, including full-resolution originals. Versioned WebP filenames prevent stale browser image caches.
+- Disabled vertical overscroll bounce where supported, reduced excess mobile footer spacing, kept closed overlays explicitly hidden, and contained nested overlay scrolling.
+- Local code and interaction regression checks passed. Phone browser behavior is not visually verified; upload and reload to confirm the reported bottom-scroll symptom on your device.
