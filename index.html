@@ -272,11 +272,35 @@
     @media(max-width:900px){.trust-strip-inner{grid-template-columns:1fr 1fr}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}.inspiration-rail{grid-template-columns:1fr 1fr}.inspiration-shot:first-child{grid-column:1/-1;grid-row:auto;min-height:300px}}
     @media(max-width:560px){.trust-strip{padding:0 18px 8px;margin-top:-16px}.trust-item{padding:13px 12px;font-size:11px}.trust-icon{width:24px;height:24px}.compact-gallery{grid-template-columns:1fr}.compact-gallery .floor-option-copy p{display:block}.floor-actions{margin-top:11px}.inspiration-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}.inspiration-shot,.inspiration-shot:first-child{min-width:82vw;min-height:230px;grid-column:auto;scroll-snap-align:start}.ask-launch{right:12px;bottom:76px;padding:12px 15px}.ask-panel{right:7px;bottom:74px;width:calc(100vw - 14px);height:min(610px,calc(100vh - 86px));border-radius:24px}.mobile-bar{z-index:90}}
 
-  </style>
+  
+/* Public-facing refresh: same Banana palette, clearer typography and contact flow. */
+.nav-links{gap:18px}.nav-links a:not(.nav-cta){padding:8px 6px;border-radius:8px;transition:background .2s}
+.nav-links a:not(.nav-cta):hover{background:var(--banana-soft)}
+.nav-links .nav-cta{background:var(--banana);color:#111}
+.hero h1{max-width:680px;letter-spacing:-.055em;line-height:1.02}
+.hero p{max-width:500px}.hero-stage{min-height:660px}
+.compact-gallery .image-wrap img{height:100%;aspect-ratio:16/10;object-fit:cover}
+.floor-option-copy{padding-right:22px!important}.floor-price{flex-wrap:wrap}
+.floor-mini{font-size:14px;min-height:42px;display:inline-flex;align-items:center}
+.estimate-cities span{color:#222}.field label,.form-note,.form-status,.proof-note,.inspiration-label{font-size:14px}
+.proof-note{color:#606066}.ask-foot{font-size:12px;color:#666}
+#requestDraft{margin-top:22px;padding:18px;background:#f7f7f7;border-radius:16px}
+#requestDraft[hidden]{display:none}#requestDraft label{font-weight:700}
+#requestText{display:block;width:100%;margin-top:10px;padding:12px;font:inherit;border:1px solid #ccc;border-radius:10px;resize:vertical}
+#requestDraft p{font-size:14px;color:#555}.form-actions button{cursor:pointer;font:inherit;font-weight:700}
+.mobile-menu{display:none}.skip-link{position:fixed;left:16px;top:-100px;z-index:200;background:#ffd84d;padding:12px}.skip-link:focus{top:12px}
+section[id]{scroll-margin-top:85px}
+@media(max-width:1050px){.nav-links{gap:8px;font-size:13px}}
+@media(max-width:900px){.mobile-menu{display:block;border:0;padding:0}.mobile-menu summary{font-size:14px;padding:10px;border:1px solid #ddd;border-radius:10px}.mobile-menu>div{position:absolute;right:16px;top:70px;width:220px;background:white;box-shadow:0 14px 40px #0002;padding:12px;border-radius:16px}.mobile-menu a{display:block;padding:12px;border-radius:8px}.mobile-menu a:hover{background:#fff3be}.nav-inner{gap:10px}.nav-links{margin-left:auto}.hero-stage{min-height:620px}}
+@media(max-width:560px){.nav-links{display:none}.mobile-menu{margin-left:auto}.hero h1{font-size:clamp(42px,12vw,60px)}.hero-stage{min-height:590px}.hero-content{padding:32px 22px}.hero-proof span,.trust-item{font-size:12px}.compact-gallery .floor-option-copy h3{font-size:22px}.compact-gallery .floor-option-copy p{font-size:16px}.estimate-form{padding:22px}.inspiration-shot,.inspiration-shot:first-child{min-width:78vw}.floor-price span{font-size:14px}}
+
+</style>
 
 <meta property="og:url" content="https://bananafloors.com/">
-<meta property="og:type" content="website">
-  <meta property="og:image" content="https://bananafloors.com/images/banana-floors-logo.png">
+
+  
+<style>a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a16b00;outline-offset:4px}button,a{touch-action:manipulation}img{max-width:100%}footer{line-height:1.8}</style>
+<link rel="preload" as="image" href="images/hardwood-living-room.webp">
 </head>
 <body>
   <header class="nav">
@@ -291,21 +315,23 @@
         <a href="#faq">FAQ</a>
         <a class="nav-cta" href="tel:+15034211730">Call (503) 421-1730</a>
       </nav>
+      <details class="mobile-menu"><summary>Menu</summary><div><a href="#services">Flooring</a><a href="flooring-prices.html">Price Guide</a><a href="#process">Our Process</a><a href="#inspiration">Gallery</a><a href="#estimate">Free Estimate</a><a href="#faq">FAQ</a></div></details>
     </div>
   </header>
 
+  <a class="skip-link" href="#top">Skip to content</a>
   <main id="top">
     <section class="hero reveal">
       <div class="hero-stage">
         <div class="hero-content">
           <div class="eyebrow">Portland Metro · Flooring Installation & Replacement</div>
-          <h1>Portland flooring installation. <span class="accent">Less hassle.</span></h1>
-          <p>Choose your floor, check realistic material ranges, and send us the basics for a fast preliminary installation quote.</p>
+          <h1>Beautiful floors.<br><span class="accent">Made simple.</span></h1>
+          <p>Flooring installation for Portland-area homes and businesses. Find your style, explore material prices, and let’s plan your project.</p>
           <div class="actions">
             <a class="btn yellow" href="#estimate">Get a Free Estimate</a>
             <a class="btn ghost" href="tel:+15034211730">Call (503) 421-1730</a>
           </div>
-          <div class="hero-proof" aria-label="Banana Floors advantages"><span>Material Price Guide</span><span>Preliminary Quotes</span><span>Portland Metro</span></div>
+          <div class="hero-proof" aria-label="Banana Floors advantages"><span>Material Price Guide</span><span>Oregon CCB #209244</span><span>Portland Metro</span></div>
         </div>
       </div>
     </section>
@@ -315,7 +341,7 @@
         <div class="trust-item"><span class="trust-icon">$</span><span>Free preliminary estimates</span></div>
         <div class="trust-item"><span class="trust-icon">↕</span><span>Material price guide</span></div>
         <div class="trust-item"><span class="trust-icon">⌂</span><span>Residential & commercial</span></div>
-        <div class="trust-item"><span class="trust-icon">◎</span><span>Portland metro service</span></div>
+        <div class="trust-item"><span class="trust-icon">◎</span><span>Oregon CCB #209244</span></div>
       </div>
     </div>
 
@@ -327,18 +353,18 @@
           <p>Compare popular flooring types for Portland-area homes and businesses, then open the Price Guide for material-only planning ranges.</p>
         </div>
         <div class="floor-gallery compact-gallery">
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/hardwood-flooring-portland.html" aria-label="Learn about Hardwood flooring"><img src="images/hardwood-living-room.webp" alt="Hardwood flooring installation in a Portland-area living room" loading="lazy"></a></div><div class="floor-option-copy"><h3>Hardwood</h3><p>Natural, timeless and refinable.</p><div class="floor-price"><strong>$6–$15</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/hardwood-flooring-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=Solid%20Hardwood#calculator">Price it</a></div></div></article>
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/lvp-flooring-portland.html" aria-label="Learn about LVP flooring"><img src="images/lvp-kitchen.webp" alt="Luxury vinyl plank LVP flooring installation in a kitchen" loading="lazy"></a></div><div class="floor-option-copy"><h3>LVP</h3><p>Durable, practical and versatile.</p><div class="floor-price"><strong>$2–$7</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/lvp-flooring-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=LVP%20/%20Vinyl#calculator">Price it</a></div></div></article>
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/laminate-flooring-portland.html" aria-label="Learn about Laminate flooring"><img src="images/laminate-office.webp" alt="Laminate flooring installation in a home office" loading="lazy"></a></div><div class="floor-option-copy"><h3>Laminate</h3><p>Clean wood look at a value price.</p><div class="floor-price"><strong>$1.50–$6</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/laminate-flooring-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=Laminate#calculator">Price it</a></div></div></article>
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/tile-flooring-portland.html" aria-label="Learn about Tile flooring"><img src="images/tile-laundry.webp" alt="Tile flooring installation in a laundry and utility room" loading="lazy"></a></div><div class="floor-option-copy"><h3>Tile</h3><p>Hardworking for wet and utility areas.</p><div class="floor-price"><strong>$1–$15+</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/tile-flooring-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=Tile#calculator">Price it</a></div></div></article>
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/carpet-installation-portland.html" aria-label="Learn about Carpet flooring"><img src="images/carpet-living-room.webp" alt="Residential carpet installation in a living room" loading="lazy"></a></div><div class="floor-option-copy"><h3>Carpet</h3><p>Soft, quiet and comfortable.</p><div class="floor-price"><strong>$1.50–$7</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/carpet-installation-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=Carpet#calculator">Price it</a></div></div></article>
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/engineered-wood-flooring-portland.html" aria-label="Learn about Engineered Wood flooring"><img src="images/engineered-wood-dining.webp" alt="Engineered wood flooring installation in a dining area" loading="lazy"></a></div><div class="floor-option-copy"><h3>Engineered Wood</h3><p>Real-wood feel with layered construction.</p><div class="floor-price"><strong>$4–$14</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/engineered-wood-flooring-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=Engineered%20Wood#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/hardwood-flooring-portland.html" aria-label="Learn about Hardwood flooring"><img src="images/hardwood-living-room.webp" alt="Hardwood flooring in living room" loading="lazy" width="1536" height="1024" decoding="async"></a></div><div class="floor-option-copy"><h3>Hardwood</h3><p>Natural, timeless and refinable.</p><div class="floor-price"><strong>$6–$15</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/hardwood-flooring-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=Solid%20Hardwood#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/lvp-flooring-portland.html" aria-label="Learn about LVP flooring"><img src="images/lvp-kitchen.webp" alt="Luxury vinyl plank LVP flooring in kitchen" loading="lazy" width="1536" height="1024" decoding="async"></a></div><div class="floor-option-copy"><h3>LVP</h3><p>Durable, practical and versatile.</p><div class="floor-price"><strong>$2–$7</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/lvp-flooring-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=LVP%20/%20Vinyl#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/laminate-flooring-portland.html" aria-label="Learn about Laminate flooring"><img src="images/laminate-office.webp" alt="Laminate flooring in home office" loading="lazy" width="1448" height="1086" decoding="async"></a></div><div class="floor-option-copy"><h3>Laminate</h3><p>Clean wood look at a value price.</p><div class="floor-price"><strong>$1.50–$6</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/laminate-flooring-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=Laminate#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/tile-flooring-portland.html" aria-label="Learn about Tile flooring"><img src="images/tile-laundry.webp" alt="Tile flooring in laundry and utility room" loading="lazy" width="1448" height="1086" decoding="async"></a></div><div class="floor-option-copy"><h3>Tile</h3><p>Hardworking for wet and utility areas.</p><div class="floor-price"><strong>$1–$15+</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/tile-flooring-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=Tile#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/carpet-installation-portland.html" aria-label="Learn about Carpet flooring"><img src="images/carpet-living-room.webp" alt="Residential carpet installation in a living room" loading="lazy" width="1448" height="1086" decoding="async"></a></div><div class="floor-option-copy"><h3>Carpet</h3><p>Soft, quiet and comfortable.</p><div class="floor-price"><strong>$1.50–$7</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/carpet-installation-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=Carpet#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/engineered-wood-flooring-portland.html" aria-label="Learn about Engineered Wood flooring"><img src="images/engineered-wood-dining.webp" alt="Engineered wood flooring in dining area" loading="lazy" width="1448" height="1086" decoding="async"></a></div><div class="floor-option-copy"><h3>Engineered Wood</h3><p>Real-wood feel with layered construction.</p><div class="floor-price"><strong>$4–$14</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/engineered-wood-flooring-portland.html">See options</a><a class="floor-mini price" href="flooring-prices.html?type=Engineered%20Wood#calculator">Price it</a></div></div></article>
         </div>
         <div class="compact-price-cta">
           <div><strong>Want to know material cost?</strong><span> Enter your square footage and compare low–high ranges.</span></div>
           <a class="btn yellow" href="flooring-prices.html">Open Price Guide</a>
         </div>
-        <p class="gallery-note">Rendered inspiration images are shown for flooring style reference. Actual colors and finishes vary by product.</p>
+        
       </div>
     </section>
 
@@ -370,16 +396,16 @@
         <div class="section-head compact-head">
           <div class="eyebrow">Flooring inspiration</div>
           <h2>See how the floor <span class="accent">changes the room.</span></h2>
-          <p>A quick visual look at different flooring styles. These rendered images are inspiration—not photos of completed Banana Floors projects.</p>
+          <p>Explore textures, tones, and possibilities for your space.</p>
         </div>
         <div class="inspiration-rail">
-          <div class="inspiration-shot"><img src="images/hardwood-living-room.webp" alt="Warm hardwood flooring inspiration in a living room" loading="lazy"><span class="inspiration-label">Hardwood look</span></div>
-          <div class="inspiration-shot"><img src="images/lvp-kitchen.webp" alt="LVP flooring inspiration in a kitchen" loading="lazy"><span class="inspiration-label">LVP look</span></div>
-          <div class="inspiration-shot"><img src="images/tile-laundry.webp" alt="Tile flooring inspiration in a utility room" loading="lazy"><span class="inspiration-label">Tile look</span></div>
-          <div class="inspiration-shot"><img src="images/carpet-living-room.webp" alt="Carpet flooring inspiration in a living room" loading="lazy"><span class="inspiration-label">Carpet look</span></div>
-          <div class="inspiration-shot"><img src="images/engineered-wood-dining.webp" alt="Engineered wood flooring inspiration in a dining room" loading="lazy"><span class="inspiration-label">Engineered wood</span></div>
+          <div class="inspiration-shot"><img src="images/hardwood-living-room.webp" alt="Warm hardwood flooring inspiration in a living room" loading="lazy" width="1536" height="1024" decoding="async"><span class="inspiration-label">Hardwood look</span></div>
+          <div class="inspiration-shot"><img src="images/lvp-kitchen.webp" alt="LVP flooring inspiration in a kitchen" loading="lazy" width="1536" height="1024" decoding="async"><span class="inspiration-label">LVP look</span></div>
+          <div class="inspiration-shot"><img src="images/tile-laundry.webp" alt="Tile flooring inspiration in a utility room" loading="lazy" width="1448" height="1086" decoding="async"><span class="inspiration-label">Tile look</span></div>
+          <div class="inspiration-shot"><img src="images/carpet-living-room.webp" alt="Carpet flooring inspiration in a living room" loading="lazy" width="1448" height="1086" decoding="async"><span class="inspiration-label">Carpet look</span></div>
+          <div class="inspiration-shot"><img src="images/engineered-wood-dining.webp" alt="Engineered wood flooring inspiration in a dining room" loading="lazy" width="1448" height="1086" decoding="async"><span class="inspiration-label">Engineered wood</span></div>
         </div>
-        <p class="proof-note">As you add real Banana Floors project photos, these inspiration images can be replaced one-for-one without changing the layout.</p>
+        <p class="proof-note">Room visualizations. Product colors and finishes vary.</p>
         <div class="reviews-ready" aria-hidden="true"><!-- Verified Google reviews will be inserted here once supplied. Never populate with invented reviews. --></div>
       </div>
     </section>
@@ -390,7 +416,7 @@
           <div>
             <div class="eyebrow">Free estimate</div>
             <h2>Get a preliminary quote.</h2>
-            <p>Send the basics now. We’ll review the scope, then verify measurements and site conditions before scheduling.</p><div class="estimate-cities"><span>Portland</span><span>Gresham</span><span>Happy Valley</span><span>Clackamas</span><span>Oregon City</span><span>Beaverton</span><span>Tigard</span><span>Lake Oswego</span><span>Vancouver</span></div>
+            <p>Send the basics now. We’ll review the scope, then verify measurements and site conditions before scheduling.</p><div class="estimate-cities"><span>Portland</span><a href="locations/flooring-installation-gresham-or.html"><span>Gresham</span></a><a href="locations/flooring-installation-happy-valley-or.html"><span>Happy Valley</span></a><a href="locations/flooring-installation-clackamas-or.html"><span>Clackamas</span></a><a href="locations/flooring-installation-oregon-city-or.html"><span>Oregon City</span></a><a href="locations/flooring-installation-beaverton-or.html"><span>Beaverton</span></a><a href="locations/flooring-installation-tigard-or.html"><span>Tigard</span></a><a href="locations/flooring-installation-lake-oswego-or.html"><span>Lake Oswego</span></a><a href="locations/flooring-installation-vancouver-wa.html"><span>Vancouver</span></a></div>
           </div>
           <div class="estimate-points">
             <div class="estimate-point"><span class="estimate-dot"></span><span>Fast preliminary pricing</span></div>
@@ -407,9 +433,10 @@
             <div class="field full"><label for="notes">Project notes</label><textarea id="notes" name="notes" placeholder="Rooms, existing flooring, stairs, removal needed, material already purchased, etc."></textarea></div>
           </div>
           <div class="material-preview" id="materialPreview" aria-live="polite"><small>Material planning range</small><strong id="materialPreviewTotal"></strong><span id="materialPreviewNote">Includes 10% waste. Material only; installation and prep are separate.</span></div>
-          <div class="form-actions"><button class="btn yellow" type="submit">Send Estimate Request</button><a class="btn" href="tel:+15034211730">Or Call Us</a></div>
+          <div class="form-actions"><button class="btn yellow" type="submit">Prepare My Request</button><a class="btn" href="tel:+15034211730">Or Call Us</a></div>
+          <div id="requestDraft" hidden><label for="requestText">Your project request</label><textarea id="requestText" readonly rows="9"></textarea><div class="form-actions"><a class="btn yellow" id="textRequest" href="sms:+15034211730">Open Text Message</a><button class="btn" id="copyRequest" type="button">Copy Request</button></div><p>On a computer? Copy these details into your messaging app, or call (503) 421-1730.</p></div>
           <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-          <div class="form-note">Submitting opens your device’s text-message app with the project details pre-filled. You can review the message before sending it.</div>
+          <div class="form-note">Prepare your request, then send it by text to (503) 421-1730. Your request is sent only when you send the text.</div>
         </form>
       </div>
     </section>
@@ -444,12 +471,14 @@
   <div style="height:8px;background:#ffd84d" aria-hidden="true"></div>
   <footer>
     <div class="footer-inner">
-      <div><b>BANANA FLOORS</b><br>Portland, Oregon</div>
+      <div><b>BANANA FLOORS</b><br>Portland, Oregon<br>Oregon CCB #209244<br><a href="tel:+15034211730">(503) 421-1730</a></div>
       <div>© <span id="year"></span> Banana Floors. All rights reserved.</div>
     </div>
   </footer>
 
   <script>
+    document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => a.closest('details').open = false));
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') { document.querySelector('.mobile-menu').open = false; if(document.getElementById('askPanel').classList.contains('open')) { toggleAsk(false); document.getElementById('askLaunch').focus(); } } });
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Add subtle reveal motion as sections enter the viewport.
@@ -494,15 +523,20 @@
         'Material planning range: ' + (updateMaterialPreview() || 'Not calculated')
       ].join('\n');
 
-      try {
-        if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(message);
-      } catch (e) {}
-
-      formStatus.textContent = 'Opening your text-message app with the estimate request pre-filled…';
       const separator = /iPad|iPhone|iPod/.test(navigator.userAgent) ? '&' : '?';
-      window.location.href = 'sms:+15034211730' + separator + 'body=' + encodeURIComponent(message);
+      document.getElementById('requestText').value = message;
+      document.getElementById('textRequest').href = 'sms:+15034211730' + separator + 'body=' + encodeURIComponent(message);
+      document.getElementById('requestDraft').hidden = false;
+      formStatus.textContent = 'Ready to review. Choose Open Text Message, then send your request from your messaging app.';
+      document.getElementById('requestText').focus();
     });
 
+
+    document.getElementById('copyRequest').addEventListener('click', async () => {
+      const field = document.getElementById('requestText');
+      try { await navigator.clipboard.writeText(field.value); formStatus.textContent = 'Copied. Paste the request into your messaging app and send it to (503) 421-1730.'; }
+      catch(e) { field.focus(); field.select(); formStatus.textContent = 'Select and copy the request, then text it to (503) 421-1730.'; }
+    });
 
     // Material planning preview in the homepage estimate form.
     const materialRanges = {
@@ -527,8 +561,15 @@
     floorTypeField.addEventListener('change', updateMaterialPreview);
     sqftField.addEventListener('input', updateMaterialPreview);
 
+    const incoming = new URLSearchParams(window.location.search);
+    const aliases = {'Solid Hardwood':'Hardwood','Engineered Wood':'Engineered wood','LVP / Vinyl':'Luxury vinyl plank (LVP)'};
+    const incomingFloor = aliases[incoming.get('floor')] || incoming.get('floor');
+    if (materialRanges[incomingFloor]) floorTypeField.value = incomingFloor;
+    if (Number(incoming.get('sqft')) > 0) sqftField.value = incoming.get('sqft');
+    updateMaterialPreview();
+
     // Append the material planning range to the SMS lead when available.
-    estimateForm.removeEventListener('submit', ()=>{});
+
     // Capture phase updates the display before the existing submit handler builds its message.
     estimateForm.addEventListener('submit', () => updateMaterialPreview(), true);
 

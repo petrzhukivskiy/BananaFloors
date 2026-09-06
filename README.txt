@@ -8,7 +8,7 @@ WHAT'S INCLUDED
 - Trust strip
 - Price-aware flooring cards
 - Live material planning range in estimate form
-- Honest flooring-inspiration gallery
+- Flooring style gallery
 - Flooring Price Guide with Good / Better / Best, specs, layers, and full-screen detail modal
 - SEO service pages + sitemap.xml + robots.txt
 - Ask Banana flooring assistant
@@ -16,7 +16,7 @@ WHAT'S INCLUDED
 - Optional secure OpenAI backend in /server (API key is never placed in browser code)
 
 IMPORTANT ABOUT REVIEWS / PROJECT PHOTOS
-No customer reviews have been invented. The site contains a hidden review-ready placeholder that should only be enabled after verified review text is supplied. Current room images are labeled as rendered flooring inspiration, not completed Banana Floors projects. Replace them with real project photos over time.
+No customer reviews have been invented. The site contains a hidden review-ready placeholder that should only be enabled after verified review text is supplied. Room scenes are visualizations, not completed Banana Floors projects. Replace them with real project photos over time.
 
 BASIC DEPLOYMENT (YOUR CURRENT GITHUB + DIGITALOCEAN SETUP)
 1. Extract this ZIP into the BananaFloors Git repository.
@@ -67,3 +67,16 @@ SECURITY
 
 GOOGLE SEARCH CONSOLE
 Submit: https://bananafloors.com/sitemap.xml
+
+SEPTEMBER 2026 REFRESH
+- Two new generated architectural room visualizations, optimized as WebP.
+- Oregon CCB #209244 supplied by owner, displayed on every page.
+- Updated headline, mobile menu, clearer contact flow and keyboard focus.
+- Estimate requests are reviewed and sent by the customer through their messaging app. No submission server is connected. Desktop visitors can copy the request or call.
+- Price-guide quote button transfers flooring type and square footage into the homepage form.
+- Existing material planning prices retained, not reverified against supplier quotes.
+- Local links, anchors, JSON-LD and JavaScript syntax checked. Live domain and actual SMS delivery were not tested.
+
+DEPLOYMENT CONTENTS
+Publish index.html, flooring-prices.html, flooring/, locations/, images/, favicon.svg, sitemap.xml and robots.txt. Keep README.txt, _design-reference/, server/ and deploy/ outside the public document root unless configuring the optional backend separately.
+After uploading, check the site on your phone and send yourself an estimate text to confirm delivery.

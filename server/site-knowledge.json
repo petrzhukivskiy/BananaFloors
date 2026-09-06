@@ -1,0 +1,42 @@
+{
+  "business": {
+    "name": "Banana Floors",
+    "phone": "503-421-1730",
+    "domain": "https://bananafloors.com",
+    "service_area": [
+      "Portland",
+      "Gresham",
+      "Happy Valley",
+      "Clackamas",
+      "Oregon City",
+      "Beaverton",
+      "Tigard",
+      "Lake Oswego",
+      "Vancouver"
+    ]
+  },
+  "process": [
+    "Choose and price flooring",
+    "Send square footage, photos and project location",
+    "Receive preliminary installation quote",
+    "Verify measurements and site conditions",
+    "Schedule and install"
+  ],
+  "material_ranges_per_sqft": {
+    "LVP / Vinyl": "$2.00\u2013$7.00",
+    "Laminate": "$1.50\u2013$6.00",
+    "Engineered Wood": "$4.00\u2013$14.00",
+    "Solid Hardwood": "$6.00\u2013$15.00",
+    "Carpet": "$1.50\u2013$7.00",
+    "Tile": "$1.00\u2013$15.00+"
+  },
+  "pricing_note": "Ranges are material-only planning ranges. They do not include tax, delivery, trim, transitions, underlayment, adhesives, demolition, subfloor preparation, stairs or installation. Final product specs and project scope must be verified.",
+  "specs": {
+    "LVP": "Typical 4\u20138mm thickness, 8\u201320 mil wear layer, click-lock or glue-down, commonly SPC/WPC core.",
+    "Laminate": "Typical 7\u201312mm thickness, commonly AC3\u2013AC5 surface rating, floating click-lock, HDF core.",
+    "Engineered Wood": "Typical 3/8\u20133/4 inch total thickness, 1\u20134mm+ real wood veneer, plywood/composite core.",
+    "Solid Hardwood": "Commonly 3/4 inch solid wood plank, nail/staple installation, often refinishable multiple times.",
+    "Carpet": "Common fibers include polyester, nylon and triexta; carpet cushion/pad is a separate material decision.",
+    "Tile": "Ceramic, porcelain and stone options; finished assembly includes tile, thinset, support/membrane and subfloor."
+  }
+}
