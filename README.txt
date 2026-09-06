@@ -70,7 +70,7 @@ Submit: https://bananafloors.com/sitemap.xml
 
 SEPTEMBER 2026 REFRESH
 - Two new generated architectural room visualizations, optimized as WebP.
-- Oregon CCB #209244 supplied by owner, displayed on every page.
+- Oregon CCB 209244 supplied by owner, displayed on every page.
 - Updated headline, mobile menu, clearer contact flow and keyboard focus.
 - Estimate requests are reviewed and sent by the customer through their messaging app. No submission server is connected. Desktop visitors can copy the request or call.
 - Price-guide quote button transfers flooring type and square footage into the homepage form.
@@ -80,3 +80,10 @@ SEPTEMBER 2026 REFRESH
 DEPLOYMENT CONTENTS
 Publish index.html, flooring-prices.html, flooring/, locations/, images/, favicon.svg, sitemap.xml and robots.txt. Keep README.txt, _design-reference/, server/ and deploy/ outside the public document root unless configuring the optional backend separately.
 After uploading, check the site on your phone and send yourself an estimate text to confirm delivery.
+
+LATEST VISUAL UPDATE
+All six flooring room images replaced with new coordinated AI-generated room visualizations. Optimized WebP files are in images/. Full-resolution PNGs are included in _image-originals/ for your use; do not upload that folder to your public document root. These illustrate flooring styles, not particular stocked products or completed jobs.
+Spec panels now include numbered interactive construction diagrams, category facts, and simplified budget comparisons. Construction is illustrative and not to scale; check the chosen manufacturer product specifications.
+Oregon CCB 209244 is the exact displayed text on all pages.
+Checks: all six panel generators, layer control counts, local file references, page JavaScript syntax and JSON-LD passed. Live browser and domain have not been tested.
+Image briefs: PNW oak living room; light oak-look LVP kitchen; smoked oak engineered dining room; wood-look laminate office; pale porcelain laundry room; warm gray carpet family room. Generated using built-in image generation with natural daylight, prominent floors, charcoal/white interiors and restrained yellow accents.

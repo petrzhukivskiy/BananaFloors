@@ -135,7 +135,16 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
       .card{padding:20px}
       .spec-top h2{font-size:34px}
     }
-  </style>
+  
+:root{--accent:#ffd84d}
+.category-photo{display:block;width:100%;height:190px;object-fit:cover;border-radius:16px;margin-bottom:20px}.card{overflow:hidden}.card button{width:100%}
+.spec-cover{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-radius:22px;overflow:hidden;background:#141414;color:#fff;margin:0 0 28px}.spec-cover img{width:100%;height:340px;object-fit:cover}.spec-cover>div{padding:32px;align-self:center}.spec-eyebrow{font-size:12px;font-weight:750;text-transform:uppercase;letter-spacing:.13em;color:#766011}.spec-cover .spec-eyebrow{color:#ffd84d}.spec-cover h3{font-size:38px;line-height:1.06;letter-spacing:-.04em;margin:14px 0}.spec-cover p{color:#d3d3d3;font-size:16px;line-height:1.6}
+.construction{background:#f5f5f5;padding:28px;border-radius:22px}.construction-heading{display:flex;justify-content:space-between;gap:18px;align-items:end}.construction h3,.spec-facts h3,.spec-pricing h3{font-size:30px;letter-spacing:-.035em;margin:10px 0 16px}.construction-heading>p{font-size:14px;color:#666}.assembly-layout{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;align-items:center}.assembly-figure{background:#191b1d;border-radius:18px;overflow:hidden}.assembly-figure svg{display:block;width:100%;max-height:530px}.assembly-figure>p{color:#bdbdbd;font-size:12px;text-align:center;margin:0;padding:0 10px 20px}.diagram-layer{transition:opacity .22s}.muted-layer{opacity:.2}.layer-controls{display:grid;gap:8px}.layer-select{width:100%;border:1px solid #ddd;border-radius:12px;display:grid;grid-template-columns:32px 1fr;gap:12px;text-align:left;padding:14px;background:#fff;color:#171717;cursor:pointer;font:inherit}.layer-select>span{font-size:13px;font-weight:750;color:#777;padding-top:2px}.layer-select b{font-size:16px}.layer-select p{font-size:14px;line-height:1.5;color:#666;margin:5px 0 0}.layer-select.selected{border-color:#a98b22;box-shadow:inset 4px 0 #ffd84d;background:#fffbed}.layer-select:hover{border-color:#a98b22}
+.spec-facts,.spec-pricing{margin-top:32px}.spec-facts dl{display:grid;grid-template-columns:repeat(3,1fr);margin:0;border-top:1px solid #ddd;border-left:1px solid #ddd}.spec-fact{padding:20px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.spec-fact dt{font-size:13px;color:#666;margin-bottom:10px}.spec-fact dd{font-size:18px;font-weight:650;margin:0;line-height:1.4}.spec-caption{font-size:14px;color:#666;line-height:1.5}.spec-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.spec-tier{border:1px solid #ddd;border-radius:18px;padding:22px}.spec-tier:nth-child(2){background:#fffbed;border-color:#d2b542}.spec-tier>span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#666}.spec-tier h4{font-size:25px;margin:10px 0}.spec-tier strong{font-size:22px}.spec-tier small{font-size:12px;font-weight:400}.spec-tier p,.spec-tier li{font-size:14px;line-height:1.5;color:#555}.spec-tier ul{padding-left:18px}.modal-body section{scroll-margin-top:80px}
+@media(max-width:800px){.spec-cover{grid-template-columns:1fr}.spec-cover img{height:240px}.spec-cover>div{padding:24px}.spec-cover h3{font-size:32px}.assembly-layout{grid-template-columns:1fr}.assembly-figure svg{max-height:390px}.construction{padding:18px}.construction-heading{display:block}.spec-facts dl{grid-template-columns:1fr 1fr}.spec-tiers{grid-template-columns:1fr}.row{grid-template-columns:1.2fr 1fr 1fr 1fr;gap:8px;font-size:12px}.row div:nth-child(4){display:block}.layer-select{padding:12px}.spec-fact{padding:14px}.spec-fact dd{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.diagram-layer{transition:none}}
+
+</style>
 <style>a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a16b00;outline-offset:4px}button,a{touch-action:manipulation}img{max-width:100%}footer{line-height:1.8}</style>
 </head>
 <body>
@@ -149,7 +158,7 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
   <main>
     <section class="hero">
       <div class="eyebrow">Material-only planning tool</div>
-      <h1>Flooring prices, specs and construction—without the store trip.</h1>
+      <h1>Find your floor.<br>Know what’s underneath.</h1>
       <p>Compare common flooring categories, see what each material is made of, and get a realistic low-to-high material budget. Installation, demolition and floor prep stay separate so you can plan each part of your project.</p>
       <div class="mini-note">
         <span>Material ranges only</span>
@@ -160,15 +169,15 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
 
     <div class="wrap">
       <div class="grid" id="typeCards">
-        <div class="card"><button type="button" data-type="LVP / Vinyl"><h3>LVP / Vinyl</h3><p>Waterproof click-lock and glue-down options.</p><div class="range">$2.00–$7.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
-        <div class="card"><button type="button" data-type="Laminate"><h3>Laminate</h3><p>Budget-friendly wood-look flooring.</p><div class="range">$1.50–$6.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
-        <div class="card"><button type="button" data-type="Engineered Wood"><h3>Engineered Wood</h3><p>Real wood surface with layered construction.</p><div class="range">$4.00–$14.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
-        <div class="card"><button type="button" data-type="Solid Hardwood"><h3>Solid Hardwood</h3><p>Traditional solid wood flooring.</p><div class="range">$6.00–$15.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
-        <div class="card"><button type="button" data-type="Carpet"><h3>Carpet</h3><p>Common residential carpet material ranges.</p><div class="range">$1.50–$7.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
-        <div class="card"><button type="button" data-type="Tile"><h3>Tile</h3><p>Ceramic, porcelain and premium options.</p><div class="range">$1.00–$15.00+ / sq ft</div><div class="jump">View specs & layers →</div></button></div>
+        <div class="card"><button type="button" data-type="LVP / Vinyl"><img class="category-photo" src="images/lvp-kitchen.webp" alt="LVP / Vinyl room visualization" loading="lazy" width="1536" height="1024"><h3>LVP / Vinyl</h3><p>Waterproof click-lock and glue-down options.</p><div class="range">$2.00–$7.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
+        <div class="card"><button type="button" data-type="Laminate"><img class="category-photo" src="images/laminate-office.webp" alt="Laminate room visualization" loading="lazy" width="1536" height="1024"><h3>Laminate</h3><p>Budget-friendly wood-look flooring.</p><div class="range">$1.50–$6.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
+        <div class="card"><button type="button" data-type="Engineered Wood"><img class="category-photo" src="images/engineered-wood-dining.webp" alt="Engineered Wood room visualization" loading="lazy" width="1536" height="1024"><h3>Engineered Wood</h3><p>Real wood surface with layered construction.</p><div class="range">$4.00–$14.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
+        <div class="card"><button type="button" data-type="Solid Hardwood"><img class="category-photo" src="images/hardwood-living-room.webp" alt="Solid Hardwood room visualization" loading="lazy" width="1536" height="1024"><h3>Solid Hardwood</h3><p>Traditional solid wood flooring.</p><div class="range">$6.00–$15.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
+        <div class="card"><button type="button" data-type="Carpet"><img class="category-photo" src="images/carpet-living-room.webp" alt="Carpet room visualization" loading="lazy" width="1536" height="1024"><h3>Carpet</h3><p>Common residential carpet material ranges.</p><div class="range">$1.50–$7.00 / sq ft</div><div class="jump">View specs & layers →</div></button></div>
+        <div class="card"><button type="button" data-type="Tile"><img class="category-photo" src="images/tile-laundry.webp" alt="Tile room visualization" loading="lazy" width="1536" height="1024"><h3>Tile</h3><p>Ceramic, porcelain and premium options.</p><div class="range">$1.00–$15.00+ / sq ft</div><div class="jump">View specs & layers →</div></button></div>
       </div>
 
-      <section style="margin:0 0 56px;padding:26px 28px;border-radius:28px;background:var(--soft2);border:1px solid var(--line)"><div class="eyebrow">Specs & construction</div><h2 style="font-size:34px;letter-spacing:-.04em;margin:8px 0 10px">Tap any flooring category for the full breakdown.</h2><p style="margin:0;color:var(--muted);font-size:17px;line-height:1.5;max-width:760px">Specs, Good / Better / Best tiers, sample material visuals, and construction layers now open in a focused full-screen view.</p></section>
+      <section style="margin:0 0 56px;padding:26px 28px;border-radius:28px;background:var(--soft2);border:1px solid var(--line)"><div class="eyebrow">Specs & construction</div><h2 style="font-size:34px;letter-spacing:-.04em;margin:8px 0 10px">Tap any flooring category for the full breakdown.</h2><p style="margin:0;color:var(--muted);font-size:17px;line-height:1.5;max-width:760px">Explore room styles, select construction layers, and compare material budgets in one guide.</p></section>
 
       <section class="calc" id="calculator">
         <div>
@@ -212,7 +221,7 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
   </div>
 </div>
 
-<footer>© 2026 Banana Floors · Portland, Oregon · Oregon CCB #209244 · <a href="tel:+15034211730">(503) 421-1730</a></footer>
+<footer>© 2026 Banana Floors · Portland, Oregon · Oregon CCB 209244 · <a href="tel:+15034211730">(503) 421-1730</a></footer>
 
   <script>
     const pricing={
@@ -227,7 +236,7 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
     const materials={
       'LVP / Vinyl':{
         intro:'Luxury vinyl plank is one of the easiest materials to explain to clients because it combines a waterproof core with a decorative wood-look layer and a protective wear layer.',
-        specs:{'Typical thickness':'4mm–8mm','Wear layer':'8–20 mil','Water resistance':'Waterproof','Install type':'Click-lock or glue-down','Common core':'SPC or WPC','Best value use':'Rentals, kitchens, full-home updates'},
+        specs:{'Typical thickness':'4mm–8mm','Wear layer':'Product-specific; compare mil rating','Water resistance':'Check product warranty','Install type':'Click-lock or glue-down','Common core':'SPC or WPC','Best value use':'Rentals, kitchens, full-home updates'},
         best:['Waterproof','Easy maintenance','Good for rentals','Good value'],
         note:'Higher thickness and a heavier wear layer usually mean a sturdier feel and better long-term durability.',
         visual:['#d5b07b','#c89b61','#e2c28f'], sampleClass:'',
@@ -243,7 +252,7 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
       },
       'Laminate':{
         intro:'Laminate gives a wood-look appearance at a lower material cost and is commonly sold by board thickness and surface rating.',
-        specs:{'Typical thickness':'7mm–12mm','AC rating':'AC3–AC5','Water resistance':'Standard to waterproof','Install type':'Floating click-lock','Core':'High-density fiberboard','Best value use':'Bedrooms, living areas, budget remodels'},
+        specs:{'Typical thickness':'7mm–12mm','AC rating':'AC3–AC5','Water resistance':'Varies by product','Install type':'Floating click-lock','Core':'High-density fiberboard','Best value use':'Bedrooms, living areas, budget remodels'},
         best:['Budget friendly','Wood-look','Good wear resistance','Fast install'],
         note:'Thicker laminate and better locking systems generally improve stability and feel underfoot.',
         visual:['#c7a06d','#b98955','#d8b888'], sampleClass:'',
@@ -304,7 +313,7 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
       },
       'Tile':{
         intro:'Tile pricing changes fast by size, finish and material, so showing the layer system helps clients understand why the finished assembly is more than just the tile itself.',
-        specs:{'Common types':'Ceramic, porcelain, stone','Tile thickness':'Approx. 1/4"–3/8"+','Water resistance':'Very high at surface','Install type':'Thinset set','Support layers':'Backer or membrane','Best value use':'Bathrooms, entries, laundry, fireplaces'},
+        specs:{'Common types':'Ceramic, porcelain, stone','Tile thickness':'Approx. 1/4"–3/8"+','Water resistance':'Tile and assembly differ','Install type':'Thinset set','Support layers':'Backer or membrane','Best value use':'Bathrooms, entries, laundry, fireplaces'},
         best:['Durable surface','Water friendly','Many looks available','Great for wet areas'],
         note:'With tile, the assembly beneath the tile is just as important as the tile itself for performance.',
         visual:['#d7d2ca','#bfb8ae','#ece8e2'], sampleClass:'tile-sample',
@@ -319,21 +328,6 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
         ]
       }
     };
-
-    const ratings={
-      'LVP / Vinyl':{Durability:[5,'Excellent'],Waterproof:[5,'Excellent'],Comfort:[3,'Moderate'],Maintenance:[5,'Very easy'],Budget:[4,'Good value']},
-      'Laminate':{Durability:[4,'Very good'],Waterproof:[3,'Varies by line'],Comfort:[3,'Moderate'],Maintenance:[4,'Easy'],Budget:[5,'Budget friendly']},
-      'Engineered Wood':{Durability:[4,'Very good'],Waterproof:[2,'Limited'],Comfort:[4,'Warm feel'],Maintenance:[3,'Moderate'],Budget:[3,'Mid to premium']},
-      'Solid Hardwood':{Durability:[4,'Long life'],Waterproof:[1,'Low'],Comfort:[4,'Warm feel'],Maintenance:[3,'Moderate'],Budget:[2,'Higher cost']},
-      'Carpet':{Durability:[3,'Depends on fiber'],Waterproof:[1,'Low'],Comfort:[5,'Softest underfoot'],Maintenance:[2,'Higher upkeep'],Budget:[4,'Often affordable']},
-      'Tile':{Durability:[5,'Excellent'],Waterproof:[5,'Excellent at surface'],Comfort:[2,'Hard underfoot'],Maintenance:[4,'Easy'],Budget:[3,'Wide range']}
-    };
-
-    const icons={
-      'Waterproof':'💧','Low maintenance':'✨','Click-lock options':'🧩','Good value':'💲','Budget friendly':'💲','Wood-look':'🪵','AC ratings':'📏','Fast install':'⚡','Real wood surface':'🌳','Stable core':'🧱','Premium look':'⭐','Multiple install methods':'🛠️','Solid wood throughout':'🌲','Refinishable':'🔁','Long lifespan':'⏳','Classic look':'🏡','Soft underfoot':'☁️','Quiet rooms':'🔇','Texture options':'🎨','Separate pad system':'➕','Water friendly':'💧','Hard wearing':'🛡️','Many formats':'⬛','Great for wet areas':'🚿'};
-
-    const useIcons={
-      'Waterproof':'💧','Easy maintenance':'✨','Good for rentals':'🏘️','Good value':'💲','Budget friendly':'💲','Good wear resistance':'🛡️','Fast install':'⚡','Real wood surface':'🌳','More stable than solid':'🧱','Premium appearance':'⭐','Several install methods':'🛠️','Solid wood throughout':'🌲','Refinishable':'🔁','Long lifespan':'⏳','Classic look':'🏡','Soft underfoot':'☁️','Quiet':'🔇','Lower upfront cost':'💲','Many texture options':'🎨','Durable surface':'🛡️','Water friendly':'💧','Many looks available':'🎨','Great for wet areas':'🚿'};
 
     const type=document.getElementById('type'), tier=document.getElementById('tier'), sqft=document.getElementById('sqft'), waste=document.getElementById('waste');
     const rows=document.getElementById('rows');
@@ -356,71 +350,51 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
     const modalTitle=document.getElementById('modalTitle');
     const modalClose=document.getElementById('modalClose');
 
-    function detailHTML(name){
-      const obj=materials[name];
-      const performance=ratings[name];
-      const specs=Object.entries(obj.specs).map(([k,v])=>`<div class="glance-card"><b>${k}</b><span>${v}</span></div>`).join('');
-      const featureBadges=(obj.features||[]).map(x=>`<span class="feature-badge"><span class="feature-dot"></span>${x}</span>`).join('');
-      const useChips=(obj.best||[]).map(x=>`<span class="use-chip"><em>${useIcons[x]||'•'}</em>${x}</span>`).join('');
-      const performanceCards=Object.entries(performance).map(([k,[score,label]])=>`<div class="performance-card"><b>${k}</b><div class="meter"><div class="meter-fill" style="width:${score*20}%"></div></div><span>${label}</span></div>`).join('');
-      const slabs=obj.layers.map(([short,title,desc,color])=>`<div class="exploded-slab" style="background:${color}"></div>`).join('');
-      const layers=obj.layers.map(([short,title,desc,color])=>`<div class="layer"><div class="layer-bar" style="background:${color}">${short}</div><div class="layer-copy"><b>${title}</b><span>${desc}</span></div></div>`).join('');
-      const tierMap={Good:'Entry',Better:'Mid-range',Best:'Premium'};
-      const tierCards=['Good','Better','Best'].map(level=>{
-        const tier=obj.tiers[level];
-        const apiBand=pricing[name][tierMap[level]];
-        const recommended=level==='Better' ? ' recommended' : '';
-        const tag=level==='Better' ? 'Most Popular' : level;
-        return `<div class="tier-card${recommended}"><span class="tier-tag">${tag}</span><h4>${level}</h4><div class="tier-price">$${apiBand[0].toFixed(2)}–$${apiBand[1].toFixed(2)} / sq ft</div><p>${tier[3]}</p><ul><li>${tier[1]}</li><li>${tier[2]}</li></ul></div>`;
+    const roomImages={'LVP / Vinyl':'lvp-kitchen','Laminate':'laminate-office','Engineered Wood':'engineered-wood-dining','Solid Hardwood':'hardwood-living-room','Carpet':'carpet-living-room','Tile':'tile-laundry'};
+    const summaries={
+      'LVP / Vinyl':['Wood-look. Everyday practical.','Compare the wear layer, core type, and installation method. Rigid-core and glue-down products have different constructions.'],
+      'Laminate':['The look of wood. A tough surface.','Compare abrasion rating, locking system, and the specific product’s water warranty.'],
+      'Engineered Wood':['Real wood. Layered underneath.','A real hardwood veneer sits over a layered core. Veneer thickness and manufacturer guidance determine refinishing options.'],
+      'Solid Hardwood':['Real wood. All the way through.','One solid wood body beneath the finish. Species, grade, width, and site conditions shape your choice.'],
+      'Carpet':['Softness you can feel.','Compare fiber, pile construction, and cushion together. Face weight alone does not tell the whole story.'],
+      'Tile':['A durable surface. A complete system.','Choose your tile, then plan the installation assembly. Mortar, substrate, and any required membrane matter.']
+    };
+    const assemblies={
+      'LVP / Vinyl':[
+        ['Surface finish','A protective coating over the wear layer.',5,'#e7c878'],['Wear layer','Clear protective vinyl. Check the actual product’s mil rating.',8,'#dedbd0'],['Printed design','The wood or stone appearance is printed beneath the wear layer.',6,'#c69258'],['Rigid core','Example SPC or WPC construction. Flexible glue-down vinyl differs.',34,'#7e8588'],['Optional attached pad','Some products include a pad. Follow the manufacturer’s underlayment instructions.',12,'#505951']],
+      'Laminate':[
+        ['Protective overlay','A transparent wear surface above the printed design.',6,'#e7c878'],['Decorative print','The visual pattern beneath the overlay.',6,'#ba8854'],['HDF core','The fiberboard body and locking profile.',36,'#94724f'],['Balancing backer','A back layer that helps balance the plank.',9,'#5f6058']],
+      'Engineered Wood':[
+        ['Surface finish','The protective finish over the real wood.',5,'#e7c878'],['Hardwood veneer','Real wood at the surface; thickness varies by product.',15,'#b98b58'],['Layered core','Example plywood core. Some products use other core constructions.',32,'#97806a'],['Back veneer','The balancing layer beneath the core.',9,'#6b5846']],
+      'Solid Hardwood':[
+        ['Surface finish','Factory-applied or site-applied protection.',6,'#e7c878'],['Solid wood body','One continuous wood plank. The wear surface and tongue-and-groove profile are parts of this body, not separate layers.',64,'#b48754']],
+      'Carpet':[
+        ['Fiber pile','The visible yarn surface. Fiber, twist, and density affect performance.',30,'#b3aaa0'],['Primary backing','The backing through which the yarn is tufted.',7,'#898781'],['Binding layer','Holds the tufted construction together.',6,'#c3b593'],['Secondary backing','Adds support to this example tufted carpet construction.',9,'#707778'],['Separate cushion','A separate installation component for stretch-in carpet; not every carpet installation uses cushion.',24,'#59635a']],
+      'Tile':[
+        ['Tile','A single tile body, with or without a glaze depending on the product.',18,'#d3d1ca'],['Setting mortar','Bonds the tile to the prepared support surface.',13,'#a5a49d'],['Specified support system','Membrane or backer where required. Additional bonding or fastening layers depend on the chosen system.',14,'#697b7d'],['Structural substrate','The suitable structural base beneath the assembly.',34,'#92765a']]
+    };
+    function assemblySVG(name){
+      const layers=assemblies[name];let y=72;
+      const groups=layers.map(([label,desc,h,color],i)=>{
+        const top=y;y+=h+58;
+        return `<g class="diagram-layer" data-figure-layer="${i}"><path d="M60 ${top} L310 ${top} L410 ${top+48} L160 ${top+48} Z" fill="${color}" stroke="#ffffff55"/><path d="M160 ${top+48} L410 ${top+48} L410 ${top+48+h} L160 ${top+48+h} Z" fill="${color}"/><path d="M160 ${top+48} L410 ${top+48} L410 ${top+48+h} L160 ${top+48+h} Z" fill="#000" opacity=".22"/><path d="M60 ${top} L160 ${top+48} L160 ${top+48+h} L60 ${top+h} Z" fill="${color}"/><path d="M60 ${top} L160 ${top+48} L160 ${top+48+h} L60 ${top+h} Z" fill="#000" opacity=".4"/><path d="M415 ${top+49+h/2} H465" stroke="#b4b4b4"/><circle cx="489" cy="${top+49+h/2}" r="17" fill="#ffd84d"/><text x="489" y="${top+54+h/2}" text-anchor="middle" fill="#171717" font-size="14" font-family="Arial" font-weight="700">${i+1}</text></g>`;
       }).join('');
-      const compareTips = [`<div class="compare-pill"><b>What changes price?</b><span>Thickness, wear layer, core construction, brand tier and finish all affect material cost.</span></div>`, `<div class="compare-pill"><b>What matters most?</b><span>Match the product to the room, moisture level, expected traffic and the feel the client wants.</span></div>`, `<div class="compare-pill"><b>How to use this page</b><span>Show the material range first, then use the specs and layers to explain why the product is priced there.</span></div>`].join('');
-      return `
-        <div class="catalog-top">
-          <div class="sample-card ${obj.sampleClass||''}">
-            <div>
-              <div class="sample-label">Sample visual</div>
-              <div class="sample-name">${name}</div>
-            </div>
-            <div class="sample-visual ${obj.sampleClass||''}">
-              <div class="plank" style="background:${obj.visual[0]}"></div>
-              <div class="plank" style="background:${obj.visual[1]}"></div>
-              <div class="plank" style="background:${obj.visual[2]}"></div>
-            </div>
-          </div>
-          <div class="modal-overview">
-            <p class="overview-intro">${obj.intro}</p>
-            <div class="feature-strip">${featureBadges}</div>
-            <div class="performance-grid">${performanceCards}</div>
-            <div class="use-row">${useChips}</div>
-          </div>
-        </div>
-        <div class="spec-card" style="margin-bottom:18px">
-          <h3 class="modal-subhead">At a glance</h3>
-          <div class="glance-grid">${specs}</div>
-        </div>
-        <div class="compare-card">
-          <h3>Good · Better · Best</h3>
-          <div class="tier-grid">${tierCards}</div>
-        </div>
-        <div class="compare-card">
-          <h3>Construction breakdown</h3>
-          <div class="layer-visual-wrap">
-            <div class="exploded-stack">
-              <h4>Exploded material stack</h4>
-              ${slabs}
-              <div class="layer-legend">This visual helps clients see how the floor is built from the visible top surface down to the support layer.</div>
-            </div>
-            <div class="layers-card" style="padding:0;border:0;background:transparent">
-              <div class="layer-stack">${layers}</div>
-              <div class="type-note">${obj.note}</div>
-            </div>
-          </div>
-        </div>
-        <details class="more">
-          <summary>What to compare in this category</summary>
-          <div class="more-body"><div class="compare-note">${compareTips}</div></div>
-        </details>`;
+      return `<svg viewBox="0 0 535 ${y+78}" role="img" aria-label="${name} construction diagram, layers numbered from top to bottom"><title>${name}: illustrative construction, not to scale</title>${groups}</svg>`;
     }
+    function detailHTML(name){
+      const obj=materials[name],story=summaries[name];
+      const stats=Object.entries(obj.specs).map(([k,v])=>`<div class="spec-fact"><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+      const tiers=['Good','Better','Best'].map((level,i)=>{const v=obj.tiers[level],r=pricing[name][['Entry','Mid-range','Premium'][i]];return `<article class="spec-tier"><span>${['Entry','Mid-range','Premium'][i]}</span><h4>${level}</h4><strong>$${r[0].toFixed(2)}–$${r[1].toFixed(2)}<small> / sq ft</small></strong><p>${v[3]}</p><ul><li>${v[1]}</li><li>${v[2]}</li></ul></article>`}).join('');
+      return `<section class="spec-cover"><img src="images/${roomImages[name]}.webp" alt="${name} room visualization" width="1536" height="1024"><div><span class="spec-eyebrow">The material guide</span><h3>${story[0]}</h3><p>${story[1]}</p></div></section>
+      <section class="construction"><div class="construction-heading"><div><span class="spec-eyebrow">Beneath the surface</span><h3>See what it’s made of.</h3></div><p>Select a layer to explore.</p></div><div class="assembly-layout"><div class="assembly-figure">${assemblySVG(name)}<p>Illustrative construction · Not to scale</p></div><div class="layer-controls">${assemblies[name].map(([label,desc],i)=>`<button type="button" class="layer-select" data-layer="${i}" aria-pressed="false"><span>${String(i+1).padStart(2,'0')}</span><div><b>${label}</b><p>${desc}</p></div></button>`).join('')}</div></div></section>
+      <section class="spec-facts"><span class="spec-eyebrow">Know before you choose</span><h3>The specs that matter.</h3><dl>${stats}</dl><p class="spec-caption">Typical category ranges, not a product specification. Confirm your selected product’s data sheet and installation requirements.</p></section>
+      <section class="spec-pricing"><span class="spec-eyebrow">Plan your budget</span><h3>Three ways to choose.</h3><div class="spec-tiers">${tiers}</div><p class="spec-caption">Material-only planning ranges. Installation, preparation, and accessories are separate.</p><a class="btn" href="#calculator" id="useMaterial">Calculate my material budget</a></section>`;
+    }
+    modalBody.addEventListener('click',e=>{
+      const button=e.target.closest('[data-layer]');
+      if(button){modalBody.querySelectorAll('[data-layer]').forEach(b=>{const on=b===button;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on));});modalBody.querySelectorAll('[data-figure-layer]').forEach(g=>g.classList.toggle('muted-layer',g.dataset.figureLayer!==button.dataset.layer));}
+      if(e.target.closest('#useMaterial')){closeMaterial();document.getElementById('type').focus();}
+    });
 
     let previousFocus;
     function openMaterial(name){
