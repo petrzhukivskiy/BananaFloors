@@ -294,6 +294,31 @@ section[id]{scroll-margin-top:85px}
 @media(max-width:900px){.mobile-menu{display:block;border:0;padding:0}.mobile-menu summary{font-size:14px;padding:10px;border:1px solid #ddd;border-radius:10px}.mobile-menu>div{position:absolute;right:16px;top:70px;width:220px;background:white;box-shadow:0 14px 40px #0002;padding:12px;border-radius:16px}.mobile-menu a{display:block;padding:12px;border-radius:8px}.mobile-menu a:hover{background:#fff3be}.nav-inner{gap:10px}.nav-links{margin-left:auto}.hero-stage{min-height:620px}}
 @media(max-width:560px){.nav-links{display:none}.mobile-menu{margin-left:auto}.hero h1{font-size:clamp(42px,12vw,60px)}.hero-stage{min-height:590px}.hero-content{padding:32px 22px}.hero-proof span,.trust-item{font-size:12px}.compact-gallery .floor-option-copy h3{font-size:22px}.compact-gallery .floor-option-copy p{font-size:16px}.estimate-form{padding:22px}.inspiration-shot,.inspiration-shot:first-child{min-width:78vw}.floor-price span{font-size:14px}}
 
+
+/* Mobile layout and gallery repair */
+.hero-content,.section-head,.estimate-intro,.estimate-form,.floor-option,.floor-option-copy,.compact-price-cta>div,.compact-two-col>div,.field{min-width:0}
+.hero h1,.section-head h2,.estimate-intro h2{overflow-wrap:break-word;line-height:1.08}
+.hero .accent,.section-head .accent{max-width:100%}
+.estimate-cities{gap:8px;align-items:stretch}.estimate-cities>a{display:flex;min-width:0;max-width:100%}.estimate-cities span{display:inline-flex;align-items:center;line-height:1.4;white-space:normal;max-width:100%}
+.floor-actions,.form-actions{flex-wrap:wrap}.btn,.floor-mini{height:auto;white-space:normal;text-align:center;padding-top:12px;padding-bottom:12px;max-width:100%}
+.trust-item{min-width:0;line-height:1.4}.trust-icon,.brand-mark{flex-shrink:0}.trust-item>span:last-child{min-width:0}
+.ask-msg{overflow-wrap:anywhere}.ask-messages{min-height:0}.mobile-menu>div{max-width:calc(100vw - 32px);max-height:calc(100dvh - 90px);overflow-y:auto;overscroll-behavior:contain}
+.inspiration-shot{display:block;border:0;padding:0;font:inherit;text-align:left;cursor:zoom-in;min-width:0}
+.inspiration-label{max-width:calc(100% - 26px);white-space:normal}
+.photo-viewer{width:min(1100px,calc(100vw - 24px));max-width:calc(100vw - 24px);height:min(850px,calc(100dvh - 24px));max-height:calc(100dvh - 24px);padding:16px;border:1px solid #444;border-radius:20px;background:#141414;color:#fff;overflow:hidden}
+.photo-viewer[open]{display:flex;flex-direction:column;gap:12px}.photo-viewer::backdrop{background:#000d}.photo-toolbar,.photo-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0}.photo-toolbar p{margin:0;font-size:16px;min-width:0}.photo-viewer button{background:#ffd84d;color:#111;border:0;border-radius:10px;padding:12px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;min-height:44px}.photo-toolbar button{flex-shrink:0}.photo-stage{display:flex;align-items:center;justify-content:center;min-height:0;flex:1}.photo-stage img{display:block;width:100%;height:100%;object-fit:contain}.photo-controls span{font-size:14px;white-space:nowrap}body.photo-open{overflow:hidden}
+@media(max-width:900px){.hero-stage{min-height:0}.hero-content{min-height:560px}.nav-inner{height:auto;min-height:64px}.estimate-shell{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){
+ .hero-content{padding:32px 22px;min-height:540px}.hero h1{font-size:clamp(34px,10vw,54px);letter-spacing:-.045em;line-height:1.1}.hero .actions{width:100%;gap:10px}.hero .actions .btn{width:100%}
+ .section-head h2,.estimate-intro h2{font-size:clamp(30px,9vw,44px);letter-spacing:-.04em;line-height:1.12}.section-head p{font-size:16px}
+ .estimate-intro{padding:24px;min-height:0}.estimate-form{padding:20px}.form-actions>*{flex:1 1 100%}.form-grid{grid-template-columns:minmax(0,1fr)}
+ .inspiration-shot,.inspiration-shot:first-child{flex:0 0 85%;min-width:0;min-height:240px}.inspiration-rail{max-width:100%;overscroll-behavior-x:contain}
+ .brand{letter-spacing:.1em;font-size:12px}.mobile-menu summary{min-height:44px;align-items:center}.nav-inner{gap:8px}
+ .trust-strip-inner{grid-template-columns:repeat(2,minmax(0,1fr))}.trust-item{padding:12px 9px;gap:7px}
+ .mobile-bar{bottom:calc(10px + env(safe-area-inset-bottom))}.ask-launch{bottom:calc(84px + env(safe-area-inset-bottom))}.ask-panel{bottom:calc(80px + env(safe-area-inset-bottom));height:min(610px,calc(100dvh - 100px - env(safe-area-inset-bottom)))}
+ .footer-inner{padding-bottom:calc(150px + env(safe-area-inset-bottom))}.photo-viewer{padding:12px}.photo-controls{gap:6px}.photo-viewer button{padding:10px;font-size:13px}
+}
+
 </style>
 
 <meta property="og:url" content="https://bananafloors.com/">
@@ -399,11 +424,11 @@ section[id]{scroll-margin-top:85px}
           <p>Explore textures, tones, and possibilities for your space.</p>
         </div>
         <div class="inspiration-rail">
-          <div class="inspiration-shot"><img src="images/hardwood-living-room.webp" alt="Warm hardwood flooring inspiration in a living room" loading="lazy" decoding="async" width="1536" height="1024"><span class="inspiration-label">Hardwood look</span></div>
-          <div class="inspiration-shot"><img src="images/lvp-kitchen.webp" alt="LVP flooring inspiration in a kitchen" loading="lazy" decoding="async" width="1536" height="1024"><span class="inspiration-label">LVP look</span></div>
-          <div class="inspiration-shot"><img src="images/tile-laundry.webp" alt="Tile flooring inspiration in a utility room" loading="lazy" decoding="async" width="1536" height="1024"><span class="inspiration-label">Tile look</span></div>
-          <div class="inspiration-shot"><img src="images/carpet-living-room.webp" alt="Carpet flooring inspiration in a living room" loading="lazy" decoding="async" width="1536" height="1024"><span class="inspiration-label">Carpet look</span></div>
-          <div class="inspiration-shot"><img src="images/engineered-wood-dining.webp" alt="Engineered wood flooring inspiration in a dining room" loading="lazy" decoding="async" width="1536" height="1024"><span class="inspiration-label">Engineered wood</span></div>
+          <button type="button" class="inspiration-shot" aria-label="Expand Warm hardwood flooring inspiration in a living room"><img src="images/hardwood-living-room.webp" alt="Warm hardwood flooring inspiration in a living room" loading="lazy" decoding="async" width="1536" height="1024"><span class="inspiration-label">Hardwood look</span></button>
+          <button type="button" class="inspiration-shot" aria-label="Expand LVP flooring inspiration in a kitchen"><img src="images/lvp-kitchen.webp" alt="LVP flooring inspiration in a kitchen" loading="lazy" decoding="async" width="1536" height="1024"><span class="inspiration-label">LVP look</span></button>
+          <button type="button" class="inspiration-shot" aria-label="Expand Tile flooring inspiration in a utility room"><img src="images/tile-laundry.webp" alt="Tile flooring inspiration in a utility room" loading="lazy" decoding="async" width="1536" height="1024"><span class="inspiration-label">Tile look</span></button>
+          <button type="button" class="inspiration-shot" aria-label="Expand Carpet flooring inspiration in a living room"><img src="images/carpet-living-room.webp" alt="Carpet flooring inspiration in a living room" loading="lazy" decoding="async" width="1536" height="1024"><span class="inspiration-label">Carpet look</span></button>
+          <button type="button" class="inspiration-shot" aria-label="Expand Engineered wood flooring inspiration in a dining room"><img src="images/engineered-wood-dining.webp" alt="Engineered wood flooring inspiration in a dining room" loading="lazy" decoding="async" width="1536" height="1024"><span class="inspiration-label">Engineered wood</span></button>
         </div>
         <p class="proof-note">Room visualizations. Product colors and finishes vary.</p>
         <div class="reviews-ready" aria-hidden="true"><!-- Verified Google reviews will be inserted here once supplied. Never populate with invented reviews. --></div>
@@ -454,6 +479,13 @@ section[id]{scroll-margin-top:85px}
 
   </main>
 
+
+  <dialog class="photo-viewer" id="photoViewer" aria-label="Flooring inspiration photo viewer">
+    <div class="photo-toolbar"><p id="photoCaption" aria-live="polite"></p><button type="button" id="photoClose" aria-label="Close photo viewer">Close ×</button></div>
+    <div class="photo-stage"><img id="expandedPhoto" alt=""></div>
+    <div class="photo-controls"><button type="button" id="photoPrevious" aria-label="Previous photo">← Previous</button><span id="photoCount"></span><button type="button" id="photoNext" aria-label="Next photo">Next →</button></div>
+  </dialog>
+
   <button class="ask-launch" id="askLaunch" type="button" aria-expanded="false" aria-controls="askPanel"><span class="ask-dot"></span>Ask Banana</button>
   <aside class="ask-panel" id="askPanel" aria-label="Ask Banana flooring assistant">
     <div class="ask-head"><div><strong>Ask Banana 🍌</strong><span>Flooring, pricing & project questions</span></div><button class="ask-close" id="askClose" type="button" aria-label="Close Ask Banana">×</button></div>
@@ -479,6 +511,44 @@ section[id]{scroll-margin-top:85px}
   <script>
     document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => a.closest('details').open = false));
     document.addEventListener('keydown', e => { if(e.key === 'Escape') { document.querySelector('.mobile-menu').open = false; if(document.getElementById('askPanel').classList.contains('open')) { toggleAsk(false); document.getElementById('askLaunch').focus(); } } });
+
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const closeMenu = () => { mobileMenu.open = false; };
+    window.addEventListener('scroll', closeMenu, {passive:true});
+    window.addEventListener('resize', closeMenu, {passive:true});
+    document.addEventListener('pointerdown', event => { if (!mobileMenu.contains(event.target)) closeMenu(); });
+    document.addEventListener('focusin', event => { if (!mobileMenu.contains(event.target)) closeMenu(); });
+
+    const photoViewer = document.getElementById('photoViewer');
+    const galleryButtons = [...document.querySelectorAll('.inspiration-shot')];
+    let photoIndex = 0;
+    let photoTrigger;
+    function showPhoto(index) {
+      photoIndex = (index + galleryButtons.length) % galleryButtons.length;
+      const source = galleryButtons[photoIndex].querySelector('img');
+      const expanded = document.getElementById('expandedPhoto');
+      expanded.src = source.getAttribute('src');
+      expanded.alt = source.alt;
+      document.getElementById('photoCaption').textContent = galleryButtons[photoIndex].querySelector('.inspiration-label').textContent;
+      document.getElementById('photoCount').textContent = `${photoIndex + 1} / ${galleryButtons.length}`;
+    }
+    galleryButtons.forEach((button,index) => button.addEventListener('click', () => {
+      closeMenu();
+      photoTrigger = button;
+      showPhoto(index);
+      photoViewer.showModal();
+      document.body.classList.add('photo-open');
+    }));
+    document.getElementById('photoClose').addEventListener('click', () => photoViewer.close());
+    document.getElementById('photoPrevious').addEventListener('click', () => showPhoto(photoIndex - 1));
+    document.getElementById('photoNext').addEventListener('click', () => showPhoto(photoIndex + 1));
+    photoViewer.addEventListener('close', () => { document.body.classList.remove('photo-open'); if(photoTrigger) photoTrigger.focus({preventScroll:true}); });
+    photoViewer.addEventListener('click', event => { if(event.target === photoViewer) photoViewer.close(); });
+    photoViewer.addEventListener('keydown', event => {
+      if(event.key === 'ArrowLeft') { event.preventDefault(); showPhoto(photoIndex - 1); }
+      if(event.key === 'ArrowRight') { event.preventDefault(); showPhoto(photoIndex + 1); }
+    });
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Add subtle reveal motion as sections enter the viewport.

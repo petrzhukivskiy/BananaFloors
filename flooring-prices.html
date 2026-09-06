@@ -144,6 +144,11 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
 @media(max-width:800px){.spec-cover{grid-template-columns:1fr}.spec-cover img{height:240px}.spec-cover>div{padding:24px}.spec-cover h3{font-size:32px}.assembly-layout{grid-template-columns:1fr}.assembly-figure svg{max-height:390px}.construction{padding:18px}.construction-heading{display:block}.spec-facts dl{grid-template-columns:1fr 1fr}.spec-tiers{grid-template-columns:1fr}.row{grid-template-columns:1.2fr 1fr 1fr 1fr;gap:8px;font-size:12px}.row div:nth-child(4){display:block}.layer-select{padding:12px}.spec-fact{padding:14px}.spec-fact dd{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.diagram-layer{transition:none}}
 
+
+.grid,.calc,.formgrid,.assembly-layout,.spec-cover,.spec-tiers{min-width:0}.grid>*,.calc>*,.formgrid>*,.assembly-layout>*,.spec-cover>*,.spec-tiers>*,.spec-fact,.layer-select>div{min-width:0}
+.hero h1,.modal-head h2,.construction h3,.spec-facts h3,.spec-pricing h3,.spec-cover h3{overflow-wrap:break-word;line-height:1.12}
+.layer-select b,.layer-select p,.spec-fact dd,.tier-price,.spec-tier strong{overflow-wrap:anywhere}.modal-head h2{min-width:0}.modal-close{flex-shrink:0}.modal{overscroll-behavior:contain;max-height:90dvh}.btn{white-space:normal;text-align:center}
+@media(max-width:700px){.modal{max-height:100dvh;height:100dvh}.modal-head h2{font-size:20px}.modal-head{gap:10px}.modal-body{padding:14px}.spec-cover h3{font-size:28px}.spec-facts dl{grid-template-columns:minmax(0,1fr)}.calc{padding:18px;grid-template-columns:minmax(0,1fr)}.formgrid{grid-template-columns:minmax(0,1fr)}.result{padding:18px}.result .big{font-size:clamp(26px,8vw,40px);overflow-wrap:anywhere}.hero h1{font-size:clamp(34px,10vw,50px)}.spec-tier strong small{display:block}.row{grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));font-size:12px;gap:6px}.row>div{overflow-wrap:anywhere}.navin{gap:12px;flex-wrap:wrap}}
 </style>
 <style>a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a16b00;outline-offset:4px}button,a{touch-action:manipulation}img{max-width:100%}footer{line-height:1.8}</style>
 </head>

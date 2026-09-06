@@ -87,3 +87,10 @@ Spec panels now include numbered interactive construction diagrams, category fac
 Oregon CCB 209244 is the exact displayed text on all pages.
 Checks: all six panel generators, layer control counts, local file references, page JavaScript syntax and JSON-LD passed. Live browser and domain have not been tested.
 Image briefs: PNW oak living room; light oak-look LVP kitchen; smoked oak engineered dining room; wood-look laminate office; pale porcelain laundry room; warm gray carpet family room. Generated using built-in image generation with natural daylight, prominent floors, charcoal/white interiors and restrained yellow accents.
+
+MOBILE REPAIR UPDATE
+- Menu closes on page scroll, outside pointer/tap, focus leaving the menu, window resize, Escape, and menu selection.
+- Flooring inspiration pictures open in a native modal photo viewer with next/previous controls, keyboard navigation, close button, and focus restoration.
+- Fixed city-label row spacing and improved wrapping of headings, buttons, specs, navigation, and pricing at phone widths.
+- Added safe-area spacing for mobile contact controls.
+Validation: interaction logic tested with DOM mocks; all 16 page references, structured data, and JavaScript syntax passed. Browser visual testing was unavailable in this session. After deployment, reload on your phone and check the homepage, menu, photo viewer, and Price Guide.
