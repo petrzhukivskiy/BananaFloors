@@ -1,3 +1,15 @@
+RELEASE r10 — VERSIONED IMAGE FILENAMES
+Every current image now has -r10 in its name, including responsive sizes and full-quality gallery images. All HTML, CSS background, social metadata and dynamic material-guide references match. This changes URLs to avoid stale cached images; it does not bypass GitHub upload failures.
+
+GITHUB UPLOAD
+Extract this ZIP. Open the ROOT of the BananaFloors repository on GitHub. Upload index.html, flooring-prices.html, thank-you.html, favicon.svg, robots.txt, sitemap.xml, and the images/, flooring/ and locations/ folders together. Do not upload the outer extracted folder or ZIP. Wait until all uploads finish, then commit. The images folder must contain 25 files with -r10 in their names. Older files in GitHub can remain; the updated pages use the new names.
+
+DROPLET
+git -C /var/www/html pull --ff-only
+ls -lh /var/www/html/images/kitchen-approved-r10.webp
+
+All local image references, dynamic image paths, and JavaScript syntax verified before packaging. Live upload is not performed here.
+
 BANANA FLOORS — WEBSITE PACKAGE
 Domain: https://bananafloors.com
 Phone: 503-421-1730
