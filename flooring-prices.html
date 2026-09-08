@@ -140,7 +140,7 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
 .category-photo{display:block;width:100%;height:190px;object-fit:cover;border-radius:16px;margin-bottom:20px}.card{overflow:hidden}.card button{width:100%}
 .spec-cover{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-radius:22px;overflow:hidden;background:#141414;color:#fff;margin:0 0 28px}.spec-cover img{width:100%;height:340px;object-fit:cover}.spec-cover>div{padding:32px;align-self:center}.spec-eyebrow{font-size:12px;font-weight:750;text-transform:uppercase;letter-spacing:.13em;color:#766011}.spec-cover .spec-eyebrow{color:#ffd84d}.spec-cover h3{font-size:38px;line-height:1.06;letter-spacing:-.04em;margin:14px 0}.spec-cover p{color:#d3d3d3;font-size:16px;line-height:1.6}
 .construction{background:#f5f5f5;padding:28px;border-radius:22px}.construction-heading{display:flex;justify-content:space-between;gap:18px;align-items:end}.construction h3,.spec-facts h3,.spec-pricing h3{font-size:30px;letter-spacing:-.035em;margin:10px 0 16px}.construction-heading>p{font-size:14px;color:#666}.assembly-layout{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;align-items:center}.assembly-figure{background:#191b1d;border-radius:18px;overflow:hidden}.assembly-figure svg{display:block;width:100%;max-height:530px}.assembly-figure>p{color:#bdbdbd;font-size:12px;text-align:center;margin:0;padding:0 10px 20px}.diagram-layer{transition:opacity .22s}.muted-layer{opacity:.2}.layer-controls{display:grid;gap:8px}.layer-select{width:100%;border:1px solid #ddd;border-radius:12px;display:grid;grid-template-columns:32px 1fr;gap:12px;text-align:left;padding:14px;background:#fff;color:#171717;cursor:pointer;font:inherit}.layer-select>span{font-size:13px;font-weight:750;color:#777;padding-top:2px}.layer-select b{font-size:16px}.layer-select p{font-size:14px;line-height:1.5;color:#666;margin:5px 0 0}.layer-select.selected{border-color:#a98b22;box-shadow:inset 4px 0 #ffd84d;background:#fffbed}.layer-select:hover{border-color:#a98b22}
-.spec-facts,.spec-pricing{margin-top:32px}.spec-facts dl{display:grid;grid-template-columns:repeat(3,1fr);margin:0;border-top:1px solid #ddd;border-left:1px solid #ddd}.spec-fact{padding:20px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.spec-fact dt{font-size:13px;color:#666;margin-bottom:10px}.spec-fact dd{font-size:18px;font-weight:650;margin:0;line-height:1.4}.spec-caption{font-size:14px;color:#666;line-height:1.5}.spec-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.spec-tier{border:1px solid #ddd;border-radius:18px;padding:22px}.spec-tier:nth-child(2){background:#fffbed;border-color:#d2b542}.spec-tier>span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#666}.spec-tier h4{font-size:25px;margin:10px 0}.spec-tier strong{font-size:22px}.spec-tier small{font-size:12px;font-weight:400}.spec-tier p,.spec-tier li{font-size:14px;line-height:1.5;color:#555}.spec-tier ul{padding-left:18px}.modal-body section{scroll-margin-top:80px}
+.spec-facts,.spec-pricing{margin-top:32px}.spec-facts dl{display:grid;grid-template-columns:repeat(3,1fr);margin:0;border-top:1px solid #ddd;border-left:1px solid #ddd}.spec-fact{padding:20px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.spec-fact dt{font-size:13px;color:#666;margin-bottom:10px}.spec-fact dd{font-size:18px;font-weight:650;margin:0;line-height:1.4}.spec-caption{font-size:14px;color:#666;line-height:1.5}.spec-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.spec-tier{border:1px solid #ddd;border-radius:18px;padding:22px}.spec-tier:has(input:checked){background:#fffbed;border:2px solid #b18a00;padding:21px}.tier-choice{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:25px;font-weight:700;margin:10px 0}.tier-choice input{width:22px;height:22px;accent-color:#9b7600}.tier-choice:focus-within{outline:3px solid #111;outline-offset:5px;border-radius:4px}.spec-tier>span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#666}.spec-tier h4{font-size:25px;margin:10px 0}.spec-tier strong{font-size:22px}.spec-tier small{font-size:12px;font-weight:400}.spec-tier p,.spec-tier li{font-size:14px;line-height:1.5;color:#555}.spec-tier ul{padding-left:18px}.modal-body section{scroll-margin-top:80px}
 @media(max-width:800px){.spec-cover{grid-template-columns:1fr}.spec-cover img{height:240px}.spec-cover>div{padding:24px}.spec-cover h3{font-size:32px}.assembly-layout{grid-template-columns:1fr}.assembly-figure svg{max-height:390px}.construction{padding:18px}.construction-heading{display:block}.spec-facts dl{grid-template-columns:1fr 1fr}.spec-tiers{grid-template-columns:1fr}.row{grid-template-columns:1.2fr 1fr 1fr 1fr;gap:8px;font-size:12px}.row div:nth-child(4){display:block}.layer-select{padding:12px}.spec-fact{padding:14px}.spec-fact dd{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.diagram-layer{transition:none}}
 
@@ -181,10 +181,10 @@ body{overflow-x:clip;}
 .ask-messages,.ask-chips,.photo-viewer,.modal{overscroll-behavior:contain;}
 @media(max-width:560px){.footer-inner{padding-bottom:calc(100px + env(safe-area-inset-bottom));}.js .reveal{transform:none;}}
 </style>
-<!-- Banana Floors complete release r19 -->
+<!-- Banana Floors complete release r20 -->
 </head>
 <body>
-  <header class="site-nav"><div class="site-nav-inner"><a class="site-brand" href="index.html?v=r19"><span class="site-brand-mark" aria-hidden="true">B</span>BANANA FLOORS</a><div class="site-nav-actions" role="navigation" aria-label="Main navigation"><a class="site-nav-button site-home" href="index.html?v=r19">← Home</a><a class="site-nav-button site-call" href="tel:+15034211730">Call (503) 421-1730</a></div></div></header>
+  <header class="site-nav"><div class="site-nav-inner"><a class="site-brand" href="index.html?v=r20"><span class="site-brand-mark" aria-hidden="true">B</span>BANANA FLOORS</a><div class="site-nav-actions" role="navigation" aria-label="Main navigation"><a class="site-nav-button site-home" href="index.html?v=r20">← Home</a><a class="site-nav-button site-call" href="tel:+15034211730">Call (503) 421-1730</a></div></div></header>
 
   <main>
     <section class="hero">
@@ -217,7 +217,7 @@ body{overflow-x:clip;}
           <h2 style="font-size:40px;letter-spacing:-.04em;margin:10px 0 24px">Estimate your material budget.</h2>
           <div class="formgrid">
             <div class="field"><label for="type">Flooring type</label><select id="type"></select></div>
-            <div class="field"><label for="tier">Quality tier</label><select id="tier"></select></div>
+            <div class="field"><label for="tier">Budget tier</label><select id="tier"></select></div>
             <div class="field"><label for="sqft">Project square footage</label><input id="sqft" type="number" min="1" value="1000"></div>
             <div class="field"><label for="waste">Waste allowance</label><select id="waste"><option value=".05">5%</option><option value=".10" selected>10%</option><option value=".15">15%</option></select></div>
           </div>
@@ -228,7 +228,7 @@ body{overflow-x:clip;}
           <div class="big" id="total">$0 – $0</div>
           <div class="per" id="per">$0–$0 / sq ft</div>
           <div class="small" id="qty" style="margin-top:10px"></div>
-          <a class="btn" id="quote" href="sms:+15034211730">Get installation quote</a>
+          <a class="btn" id="quote" href="sms:+15034211730">Continue to estimate form →</a>
         </div>
       </section>
 
@@ -256,15 +256,9 @@ body{overflow-x:clip;}
 
 <footer>© 2026 Banana Floors · Portland, Oregon · Oregon CCB 209244 · <a href="tel:+15034211730">(503) 421-1730</a></footer>
 
+  <script src="material-pricing-r20.js"></script>
   <script>
-    const pricing={
-      'LVP / Vinyl':{Entry:[2,3.5],'Mid-range':[3.5,5],Premium:[5,7]},
-      'Laminate':{Entry:[1.5,2.5],'Mid-range':[2.5,4],Premium:[4,6]},
-      'Engineered Wood':{Entry:[4,6],'Mid-range':[6,9],Premium:[9,14]},
-      'Solid Hardwood':{Entry:[6,8],'Mid-range':[8,11],Premium:[11,15]},
-      'Carpet':{Entry:[1.5,2.5],'Mid-range':[2.5,4],Premium:[4,7]},
-      'Tile':{Entry:[1,3],'Mid-range':[3,8],Premium:[8,15]}
-    };
+    const pricing=window.bananaPricing;
 
     const materials={
       'LVP / Vinyl':{
@@ -371,8 +365,9 @@ body{overflow-x:clip;}
 
     // build calculator
     Object.keys(pricing).forEach(x=>type.add(new Option(x,x)));
-    function fillTiers(){tier.innerHTML=''; Object.keys(pricing[type.value]).forEach(x=>tier.add(new Option(x,x))); tier.value='Mid-range'; calc();}
-    function calc(){const r=pricing[type.value][tier.value], q=Math.max(0,Number(sqft.value)||0)*(1+Number(waste.value)); document.getElementById('total').textContent=money(q*r[0])+' – '+money(q*r[1]); document.getElementById('per').textContent='$'+r[0].toFixed(2)+'–$'+r[1].toFixed(2)+' / sq ft'; document.getElementById('qty').textContent=Math.ceil(q).toLocaleString()+' sq ft estimated purchase quantity'; document.getElementById('quote').href='index.html?floor='+encodeURIComponent(type.value)+'&sqft='+encodeURIComponent(Math.max(0,Number(sqft.value)||0))+'#estimate';}
+    const tierLabels={Entry:'Good','Mid-range':'Better',Premium:'Best'};
+    function fillTiers(selected=tier.value){tier.innerHTML=''; Object.keys(pricing[type.value]).forEach(x=>tier.add(new Option(tierLabels[x]+' · '+x,x))); tier.value=Object.hasOwn(pricing[type.value],selected)?selected:'Mid-range'; calc();}
+    function calc(){const r=pricing[type.value][tier.value], q=Math.max(0,Number(sqft.value)||0)*(1+Number(waste.value)); document.getElementById('total').textContent=money(q*r[0])+' – '+money(q*r[1]); document.getElementById('per').textContent='$'+r[0].toFixed(2)+'–$'+r[1].toFixed(2)+' / sq ft'; document.getElementById('qty').textContent=Math.ceil(q).toLocaleString()+' sq ft estimated purchase quantity'; document.getElementById('quote').href='index.html?floor='+encodeURIComponent(type.value)+'&sqft='+encodeURIComponent(Math.max(0,Number(sqft.value)||0))+'&tier='+encodeURIComponent(tier.value)+'&waste='+encodeURIComponent(waste.value)+'&v=r20#estimate';}
     type.onchange=()=>{fillTiers();}; tier.onchange=calc; sqft.oninput=calc; waste.onchange=calc; fillTiers();
 
     // table rows
@@ -418,27 +413,29 @@ body{overflow-x:clip;}
     function detailHTML(name){
       const obj=materials[name],story=summaries[name];
       const stats=Object.entries(obj.specs).map(([k,v])=>`<div class="spec-fact"><dt>${k}</dt><dd>${v}</dd></div>`).join('');
-      const tiers=['Good','Better','Best'].map((level,i)=>{const v=obj.tiers[level],r=pricing[name][['Entry','Mid-range','Premium'][i]];return `<article class="spec-tier"><span>${['Entry','Mid-range','Premium'][i]}</span><h4>${level}</h4><strong>$${r[0].toFixed(2)}–$${r[1].toFixed(2)}<small> / sq ft</small></strong><p>${v[3]}</p><ul><li>${v[1]}</li><li>${v[2]}</li></ul></article>`}).join('');
+      const tiers=['Good','Better','Best'].map((level,i)=>{const v=obj.tiers[level],r=pricing[name][['Entry','Mid-range','Premium'][i]];return `<article class="spec-tier"><span>${['Entry','Mid-range','Premium'][i]}</span><label class="tier-choice"><input type="radio" name="materialTier" value="${['Entry','Mid-range','Premium'][i]}" ${tier.value===['Entry','Mid-range','Premium'][i]?'checked':''}>${level}</label><strong>$${r[0].toFixed(2)}–$${r[1].toFixed(2)}<small> / sq ft</small></strong><p>${v[3]}</p><ul><li>${v[1]}</li><li>${v[2]}</li></ul></article>`}).join('');
       return `<section class="spec-cover"><img src="images/${roomImages[name]}.webp" srcset="images/${roomImages[name]}-small.webp 768w, images/${roomImages[name]}.webp 1536w, images/${roomImages[name]}-large.webp 3072w" sizes="(max-width: 800px) 90vw, 600px" alt="${name} room visualization" width="1536" height="1024"><div><span class="spec-eyebrow">The material guide</span><h3>${story[0]}</h3><p>${story[1]}</p></div></section>
       <section class="construction"><div class="construction-heading"><div><span class="spec-eyebrow">Beneath the surface</span><h3>See what it’s made of.</h3></div><p>Select a layer to explore.</p></div><div class="assembly-layout"><div class="assembly-figure">${assemblySVG(name)}<p>Illustrative construction · Not to scale</p></div><div class="layer-controls">${assemblies[name].map(([label,desc],i)=>`<button type="button" class="layer-select" data-layer="${i}" aria-pressed="false"><span>${String(i+1).padStart(2,'0')}</span><div><b>${label}</b><p>${desc}</p></div></button>`).join('')}</div></div></section>
       <section class="spec-facts"><span class="spec-eyebrow">Know before you choose</span><h3>The specs that matter.</h3><dl>${stats}</dl><p class="spec-caption">Typical category ranges, not a product specification. Confirm your selected product’s data sheet and installation requirements.</p></section>
-      <section class="spec-pricing"><span class="spec-eyebrow">Plan your budget</span><h3>Three ways to choose.</h3><div class="spec-tiers">${tiers}</div><p class="spec-caption">Material-only planning ranges. Installation, preparation, and accessories are separate.</p><details class="retail-compact retail-modal"><summary>Compare retail prices</summary><div>${document.getElementById(retailIds[name]).innerHTML}</div><p>Listed online material prices; local prices, promotions, and availability may vary. Installation, preparation, accessories, delivery, and applicable taxes are separate. Price tiers are not quality ratings. Individual examples; not market averages or Banana Floors quotes.</p></details><a class="btn" href="#calculator" id="useMaterial">Calculate my material budget</a></section>`;
+      <section class="spec-pricing"><span class="spec-eyebrow">Plan your budget</span><h3>Three ways to choose.</h3><div class="spec-tiers" role="group" aria-label="Choose a budget tier">${tiers}</div><p class="spec-caption">Material-only planning ranges. Installation, preparation, and accessories are separate.</p><details class="retail-compact retail-modal"><summary>Compare retail prices</summary><div>${document.getElementById(retailIds[name]).innerHTML}</div><p>Listed online material prices; local prices, promotions, and availability may vary. Installation, preparation, accessories, delivery, and applicable taxes are separate. Price tiers are not quality ratings. Individual examples; not market averages or Banana Floors quotes.</p></details><a class="btn" href="#calculator" id="useMaterial">Calculate my material budget</a></section>`;
     }
     modalBody.addEventListener('click',e=>{
       const button=e.target.closest('[data-layer]');
       if(button){modalBody.querySelectorAll('[data-layer]').forEach(b=>{const on=b===button;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on));});modalBody.querySelectorAll('[data-figure-layer]').forEach(g=>g.classList.toggle('muted-layer',g.dataset.figureLayer!==button.dataset.layer));}
-      if(e.target.closest('#useMaterial')){closeMaterial();document.getElementById('type').focus();}
+      if(e.target.closest('#useMaterial')){e.preventDefault();calc();closeMaterial();document.getElementById('calculator').scrollIntoView({block:'start'});sqft.focus({preventScroll:true});}
     });
 
+    modalBody.addEventListener('change',e=>{if(e.target.name==='materialTier'){tier.value=e.target.value;calc();}});
     let previousFocus;
     function openMaterial(name){
       previousFocus=document.activeElement;
       modalTitle.textContent=name+' · Specs & Layers';
+      type.value=name; fillTiers();
       modalBody.innerHTML=detailHTML(name);
       modal.classList.add('open');
       modal.setAttribute('aria-hidden','false');
       document.body.classList.add('modal-open');
-      type.value=name; fillTiers(); modalClose.focus();
+      modalClose.focus();
     }
     function closeMaterial(){
       modal.classList.remove('open');
@@ -454,7 +451,7 @@ body{overflow-x:clip;}
 
     // Deep-link from homepage pricing buttons.
     const requestedType = new URLSearchParams(window.location.search).get('type');
-    if (requestedType && pricing[requestedType]) { type.value = requestedType; fillTiers(); }
+    if (requestedType && Object.hasOwn(pricing,requestedType)) { type.value = requestedType; fillTiers(); }
 
   </script>
 </body>
