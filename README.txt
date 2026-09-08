@@ -1,16 +1,16 @@
-BANANA FLOORS — COMPLETE RELEASE r15
+BANANA FLOORS — COMPLETE FRESH UPLOAD r19
 
-Contains every website page and all required images. All 25 image filenames are new and the pages reference those new names. No earlier ZIP is needed.
+All final-draft updates included. All 25 images and the favicon have new names, and every page references them. Internal page links include v=r19 to request fresh copies. Original page filenames remain unchanged to preserve existing public links.
 
-WINDOWS / GITHUB UPLOAD
-1. Download this ZIP completely. Right-click and choose Extract All.
-2. Open your BananaFloors repository on GitHub, on main, at the top level.
-3. Choose Add file > Upload files. Drag the CONTENTS of the extracted folder into the upload area: images, flooring, locations, and the root files including index.html. Do not upload this ZIP or the enclosing folder.
-4. Wait until ALL uploads finish, then commit the changes.
-5. In your droplet console run:
+1. Download fully and choose Extract All on Windows.
+2. Upload the extracted CONTENTS to the root of your BananaFloors GitHub repository: images, flooring, locations, and the root files. Do not upload the ZIP or its enclosing folder.
+3. Wait for all uploads, then commit.
+4. Run on the droplet:
 git -C /var/www/html pull --ff-only
-6. Refresh your website.
+5. Open https://bananafloors.com/?v=r19
 
-Uploading the ZIP itself does not deploy the site. Matching page files are replaced by the GitHub upload; old differently named images may remain, but this release does not reference them. You do not need to delete the site first.
+Old differently named images can remain; these pages use the new files. A fresh ZIP alone does not clear browser caches. This release includes versioned image names and internal page links to reduce stale copies.
 
-Full gallery photos retain native 1536 x 1024 detail. Larger responsive versions are resized copies.
+Submit https://bananafloors.com/sitemap.xml in Search Console after upload. Test the estimate form and verify email delivery; first use may require FormSubmit email activation.
+
+Retail examples are fixed observations checked September 8, 2026, not live pricing.
