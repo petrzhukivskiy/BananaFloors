@@ -1,4 +1,4 @@
-BANANA FLOORS — COMPLETE FRESH UPLOAD r21
+BANANA FLOORS — COMPLETE FRESH UPLOAD r22
 
 New branding: supplied Banana Floors wordmark in every header and footer; b icon for favicons, Apple home-screen icons, business logo metadata, and social sharing previews. New branding assets use r21 filenames. Upload all root files and all folders. Approved room images and pricing script retain their existing names.
 
@@ -9,10 +9,12 @@ Customers can select Good, Better, or Best for all six materials, calculate a ma
 3. Wait for all uploads, then commit.
 4. Run on the droplet:
 git -C /var/www/html pull --ff-only
-5. Open https://bananafloors.com/flooring-prices.html?v=r21
+5. Open https://bananafloors.com/flooring-prices.html?v=r22
 
-Page links use v=r21. Images retain the approved r19 filenames. Page filenames remain unchanged to preserve public links. The new material-pricing-r20.js file supplies the same prices to both calculators and must be uploaded.
+Page links use v=r22. Images retain the approved r19 filenames. Page filenames remain unchanged to preserve public links. The new material-pricing-r20.js file supplies the same prices to both calculators and must be uploaded.
 
 After upload, select a material and tier, calculate, and continue to the form. Submit one test request and verify email delivery; first use may require FormSubmit email activation. This update has not been deployed or tested for actual email delivery.
 
 Retail examples are fixed observations checked September 8, 2026, not live pricing. Good, Better, and Best are budget tiers, not guarantees about a specific product. Material ranges exclude installation, preparation, accessories, delivery, and applicable taxes.
+
+Release r22: header phone buttons on all interior pages retain yellow backgrounds and dark text on hover, matching the homepage. Branding files remain r21.
