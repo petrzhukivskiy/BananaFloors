@@ -11,9 +11,9 @@
   <meta property="og:description" content="Compare material price ranges, specs and flooring construction before requesting an installation quote.">
   <meta property="og:url" content="https://bananafloors.com/flooring-prices.html">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://bananafloors.com/images/kitchen-approved-r19.webp">
+  <meta property="og:image" content="https://bananafloors.com/images/banana-b-share-r21.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Banana Floors yellow b logo">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="favicon-r19.svg">
+  <link rel="icon" href="favicon-r21.ico" sizes="any"><link rel="icon" href="favicon-r21.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="apple-touch-icon-r21.png" sizes="180x180">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bananafloors.com/"}, {"@type": "ListItem", "position": 2, "name": "Flooring Price Guide", "item": "https://bananafloors.com/flooring-prices.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Flooring Material Price Guide", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "LVP Flooring", "url": "https://bananafloors.com/flooring/lvp-flooring-portland.html"}, {"@type": "ListItem", "position": 2, "name": "Hardwood Flooring", "url": "https://bananafloors.com/flooring/hardwood-flooring-portland.html"}, {"@type": "ListItem", "position": 3, "name": "Engineered Wood Flooring", "url": "https://bananafloors.com/flooring/engineered-wood-flooring-portland.html"}, {"@type": "ListItem", "position": 4, "name": "Laminate Flooring", "url": "https://bananafloors.com/flooring/laminate-flooring-portland.html"}, {"@type": "ListItem", "position": 5, "name": "Tile Flooring", "url": "https://bananafloors.com/flooring/tile-flooring-portland.html"}, {"@type": "ListItem", "position": 6, "name": "Carpet Installation", "url": "https://bananafloors.com/flooring/carpet-installation-portland.html"}]}</script>
   <style>
@@ -182,9 +182,16 @@ body{overflow-x:clip;}
 @media(max-width:560px){.footer-inner{padding-bottom:calc(100px + env(safe-area-inset-bottom));}.js .reveal{transform:none;}}
 </style>
 <!-- Banana Floors complete release r20 -->
-</head>
+<meta name="twitter:image" content="https://bananafloors.com/images/banana-b-share-r21.jpg"><style>
+.brand img.brand-logo,.site-brand img.brand-logo{display:block;width:220px;max-width:100%;height:auto;object-fit:contain}
+.brand,.site-brand{min-width:0;flex-shrink:0}
+.footer-logo{display:block;width:200px;max-width:100%;height:auto;margin:0 0 14px}
+footer>.footer-brand{display:block;width:200px;max-width:100%;margin:0 auto 18px}
+footer>.footer-brand .footer-logo{margin:0}
+@media(max-width:600px){.brand img.brand-logo,.site-brand img.brand-logo{width:180px}}
+</style></head>
 <body>
-  <header class="site-nav"><div class="site-nav-inner"><a class="site-brand" href="index.html?v=r20"><span class="site-brand-mark" aria-hidden="true">B</span>BANANA FLOORS</a><div class="site-nav-actions" role="navigation" aria-label="Main navigation"><a class="site-nav-button site-home" href="index.html?v=r20">← Home</a><a class="site-nav-button site-call" href="tel:+15034211730">Call (503) 421-1730</a></div></div></header>
+  <header class="site-nav"><div class="site-nav-inner"><a class="site-brand" href="index.html?v=r21"><img class="brand-logo" src="images/banana-floors-wordmark-r21.png" alt="Banana Floors" width="1954" height="246" fetchpriority="high"></a><div class="site-nav-actions" role="navigation" aria-label="Main navigation"><a class="site-nav-button site-home" href="index.html?v=r21">← Home</a><a class="site-nav-button site-call" href="tel:+15034211730">Call (503) 421-1730</a></div></div></header>
 
   <main>
     <section class="hero">
@@ -254,7 +261,7 @@ body{overflow-x:clip;}
   </div>
 </div>
 
-<footer>© 2026 Banana Floors · Portland, Oregon · Oregon CCB 209244 · <a href="tel:+15034211730">(503) 421-1730</a></footer>
+<footer><a class="footer-brand" href="index.html?v=r21"><img class="footer-logo" src="images/banana-floors-wordmark-r21.png" alt="Banana Floors home" width="1954" height="246" loading="lazy"></a>© 2026 Banana Floors · Portland, Oregon · Oregon CCB 209244 · <a href="tel:+15034211730">(503) 421-1730</a></footer>
 
   <script src="material-pricing-r20.js"></script>
   <script>
@@ -367,7 +374,7 @@ body{overflow-x:clip;}
     Object.keys(pricing).forEach(x=>type.add(new Option(x,x)));
     const tierLabels={Entry:'Good','Mid-range':'Better',Premium:'Best'};
     function fillTiers(selected=tier.value){tier.innerHTML=''; Object.keys(pricing[type.value]).forEach(x=>tier.add(new Option(tierLabels[x]+' · '+x,x))); tier.value=Object.hasOwn(pricing[type.value],selected)?selected:'Mid-range'; calc();}
-    function calc(){const r=pricing[type.value][tier.value], q=Math.max(0,Number(sqft.value)||0)*(1+Number(waste.value)); document.getElementById('total').textContent=money(q*r[0])+' – '+money(q*r[1]); document.getElementById('per').textContent='$'+r[0].toFixed(2)+'–$'+r[1].toFixed(2)+' / sq ft'; document.getElementById('qty').textContent=Math.ceil(q).toLocaleString()+' sq ft estimated purchase quantity'; document.getElementById('quote').href='index.html?floor='+encodeURIComponent(type.value)+'&sqft='+encodeURIComponent(Math.max(0,Number(sqft.value)||0))+'&tier='+encodeURIComponent(tier.value)+'&waste='+encodeURIComponent(waste.value)+'&v=r20#estimate';}
+    function calc(){const r=pricing[type.value][tier.value], q=Math.max(0,Number(sqft.value)||0)*(1+Number(waste.value)); document.getElementById('total').textContent=money(q*r[0])+' – '+money(q*r[1]); document.getElementById('per').textContent='$'+r[0].toFixed(2)+'–$'+r[1].toFixed(2)+' / sq ft'; document.getElementById('qty').textContent=Math.ceil(q).toLocaleString()+' sq ft estimated purchase quantity'; document.getElementById('quote').href='index.html?floor='+encodeURIComponent(type.value)+'&sqft='+encodeURIComponent(Math.max(0,Number(sqft.value)||0))+'&tier='+encodeURIComponent(tier.value)+'&waste='+encodeURIComponent(waste.value)+'&v=r21#estimate';}
     type.onchange=()=>{fillTiers();}; tier.onchange=calc; sqft.oninput=calc; waste.onchange=calc; fillTiers();
 
     // table rows
