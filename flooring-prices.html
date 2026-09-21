@@ -143,6 +143,7 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;colo
 .spec-facts,.spec-pricing{margin-top:32px}.spec-facts dl{display:grid;grid-template-columns:repeat(3,1fr);margin:0;border-top:1px solid #ddd;border-left:1px solid #ddd}.spec-fact{padding:20px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.spec-fact dt{font-size:13px;color:#666;margin-bottom:10px}.spec-fact dd{font-size:18px;font-weight:650;margin:0;line-height:1.4}.spec-caption{font-size:14px;color:#666;line-height:1.5}.spec-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.spec-tier{border:1px solid #ddd;border-radius:18px;padding:22px}.spec-tier:has(input:checked){background:#fffbed;border:2px solid #b18a00;padding:21px}.tier-choice{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:25px;font-weight:700;margin:10px 0}.tier-choice input{width:22px;height:22px;accent-color:#9b7600}.tier-choice:focus-within{outline:3px solid #111;outline-offset:5px;border-radius:4px}.spec-tier>span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#666}.spec-tier h4{font-size:25px;margin:10px 0}.spec-tier strong{font-size:22px}.spec-tier small{font-size:12px;font-weight:400}.spec-tier p,.spec-tier li{font-size:14px;line-height:1.5;color:#555}.spec-tier ul{padding-left:18px}.modal-body section{scroll-margin-top:80px}
 @media(max-width:800px){.spec-cover{grid-template-columns:1fr}.spec-cover img{height:240px}.spec-cover>div{padding:24px}.spec-cover h3{font-size:32px}.assembly-layout{grid-template-columns:1fr}.assembly-figure svg{max-height:390px}.construction{padding:18px}.construction-heading{display:block}.spec-facts dl{grid-template-columns:1fr 1fr}.spec-tiers{grid-template-columns:1fr}.row{grid-template-columns:1.2fr 1fr 1fr 1fr;gap:8px;font-size:12px}.row div:nth-child(4){display:block}.layer-select{padding:12px}.spec-fact{padding:14px}.spec-fact dd{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.diagram-layer{transition:none}}
+.layer-select{touch-action:manipulation}
 
 
 .grid,.calc,.formgrid,.assembly-layout,.spec-cover,.spec-tiers{min-width:0}.grid>*,.calc>*,.formgrid>*,.assembly-layout>*,.spec-cover>*,.spec-tiers>*,.spec-fact,.layer-select>div{min-width:0}
@@ -422,14 +423,28 @@ footer>.footer-brand .footer-logo{margin:0}
       const stats=Object.entries(obj.specs).map(([k,v])=>`<div class="spec-fact"><dt>${k}</dt><dd>${v}</dd></div>`).join('');
       const tiers=['Good','Better','Best'].map((level,i)=>{const v=obj.tiers[level],r=pricing[name][['Entry','Mid-range','Premium'][i]];return `<article class="spec-tier"><span>${['Entry','Mid-range','Premium'][i]}</span><label class="tier-choice"><input type="radio" name="materialTier" value="${['Entry','Mid-range','Premium'][i]}" ${tier.value===['Entry','Mid-range','Premium'][i]?'checked':''}>${level}</label><strong>$${r[0].toFixed(2)}–$${r[1].toFixed(2)}<small> / sq ft</small></strong><p>${v[3]}</p><ul><li>${v[1]}</li><li>${v[2]}</li></ul></article>`}).join('');
       return `<section class="spec-cover"><img src="images/${roomImages[name]}.webp" srcset="images/${roomImages[name]}-small.webp 768w, images/${roomImages[name]}.webp 1536w, images/${roomImages[name]}-large.webp 3072w" sizes="(max-width: 800px) 90vw, 600px" alt="${name} room visualization" width="1536" height="1024"><div><span class="spec-eyebrow">The material guide</span><h3>${story[0]}</h3><p>${story[1]}</p></div></section>
-      <section class="construction"><div class="construction-heading"><div><span class="spec-eyebrow">Beneath the surface</span><h3>See what it’s made of.</h3></div><p>Select a layer to explore.</p></div><div class="assembly-layout"><div class="assembly-figure">${assemblySVG(name)}<p>Illustrative construction · Not to scale</p></div><div class="layer-controls">${assemblies[name].map(([label,desc],i)=>`<button type="button" class="layer-select" data-layer="${i}" aria-pressed="false"><span>${String(i+1).padStart(2,'0')}</span><div><b>${label}</b><p>${desc}</p></div></button>`).join('')}</div></div></section>
+      <section class="construction"><div class="construction-heading"><div><span class="spec-eyebrow">Beneath the surface</span><h3>See what it’s made of.</h3></div><p>Select a layer to explore.<br>Double-click or double-tap to clear.</p></div><div class="assembly-layout"><div class="assembly-figure">${assemblySVG(name)}<p>Illustrative construction · Not to scale</p></div><div class="layer-controls">${assemblies[name].map(([label,desc],i)=>`<button type="button" class="layer-select" data-layer="${i}" aria-pressed="false"><span>${String(i+1).padStart(2,'0')}</span><div><b>${label}</b><p>${desc}</p></div></button>`).join('')}</div></div></section>
       <section class="spec-facts"><span class="spec-eyebrow">Know before you choose</span><h3>The specs that matter.</h3><dl>${stats}</dl><p class="spec-caption">Typical category ranges, not a product specification. Confirm your selected product’s data sheet and installation requirements.</p></section>
       <section class="spec-pricing"><span class="spec-eyebrow">Plan your budget</span><h3>Three ways to choose.</h3><div class="spec-tiers" role="group" aria-label="Choose a budget tier">${tiers}</div><p class="spec-caption">Material-only planning ranges. Installation, preparation, and accessories are separate.</p><details class="retail-compact retail-modal"><summary>Compare retail prices</summary><div>${document.getElementById(retailIds[name]).innerHTML}</div><p>Listed online material prices; local prices, promotions, and availability may vary. Installation, preparation, accessories, delivery, and applicable taxes are separate. Price tiers are not quality ratings. Individual examples; not market averages or Banana Floors quotes.</p></details><a class="btn" href="#calculator" id="useMaterial">Calculate my material budget</a></section>`;
     }
+    function highlightLayer(button){
+      modalBody.querySelectorAll('[data-layer]').forEach(b=>{
+        const on=b===button;
+        b.classList.toggle('selected',on);
+        b.setAttribute('aria-pressed',String(on));
+      });
+      modalBody.querySelectorAll('[data-figure-layer]').forEach(g=>{
+        g.classList.toggle('muted-layer',Boolean(button)&&g.dataset.figureLayer!==button.dataset.layer);
+      });
+    }
     modalBody.addEventListener('click',e=>{
       const button=e.target.closest('[data-layer]');
-      if(button){modalBody.querySelectorAll('[data-layer]').forEach(b=>{const on=b===button;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on));});modalBody.querySelectorAll('[data-figure-layer]').forEach(g=>g.classList.toggle('muted-layer',g.dataset.figureLayer!==button.dataset.layer));}
+      if(button) highlightLayer(button);
       if(e.target.closest('#useMaterial')){e.preventDefault();calc();closeMaterial();document.getElementById('calculator').scrollIntoView({block:'start'});sqft.focus({preventScroll:true});}
+    });
+    modalBody.addEventListener('dblclick',e=>{
+      const button=e.target.closest('[data-layer]');
+      if(button){e.preventDefault();highlightLayer(null);}
     });
 
     modalBody.addEventListener('change',e=>{if(e.target.name==='materialTier'){tier.value=e.target.value;calc();}});

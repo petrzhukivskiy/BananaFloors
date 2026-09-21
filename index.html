@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="banana-release" content="r21">
+  <meta name="banana-release" content="r24">
   <meta charset="utf-8">
   <script src="material-pricing-r20.js"></script>
   <script>document.documentElement.classList.add("js");</script>
@@ -260,7 +260,16 @@
 
     .inspiration-rail{display:grid;grid-template-columns:1.25fr .75fr .75fr;gap:12px;margin-top:26px}.inspiration-shot{position:relative;min-height:190px;border-radius:24px;overflow:hidden;background:var(--surface)}.inspiration-shot:first-child{min-height:290px;grid-row:span 2}.inspiration-shot img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;transition:transform .45s ease}.inspiration-shot:hover img{transform:scale(1.035)}.inspiration-label{position:absolute;left:13px;bottom:13px;padding:7px 10px;border-radius:999px;background:rgba(0,0,0,.64);backdrop-filter:blur(8px);color:#fff;font-size:11px;font-weight:800}.proof-note{font-size:12px;color:#888;margin-top:10px}
 
-    .reviews-ready{display:none}
+    .reviews-section{padding-top:40px;padding-bottom:0}
+    .reviews-panel{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:32px;padding:32px 36px;border:1px solid #e8dfbf;border-radius:28px;background:#fffaf0}
+    .reviews-copy{min-width:0}
+    .reviews-copy h2{font-size:clamp(28px,3.6vw,42px);line-height:1.08;letter-spacing:-.045em;margin:10px 0 12px}
+    .reviews-copy p{max-width:560px;margin:0;color:#65615a;font-size:16px;line-height:1.6}
+    .reviews-actions{display:flex;flex-direction:column;align-items:center;gap:10px}
+    .reviews-actions .btn{gap:12px;white-space:nowrap}
+    .reviews-actions small{color:#65615a;font-size:12px}
+    @media(max-width:700px){.reviews-section{padding-top:28px}.reviews-panel{grid-template-columns:minmax(0,1fr);gap:22px;padding:26px 24px}.reviews-actions{align-items:flex-start}}
+    @media(max-width:400px){.reviews-panel{padding:24px 20px}.reviews-actions .btn{width:100%;white-space:normal;text-align:center}}
 
     @media(max-width:900px){.trust-strip-inner{grid-template-columns:1fr}.trust-item{border-right:0;border-bottom:1px solid var(--line)}.trust-item:last-child{border-bottom:0}.inspiration-rail{grid-template-columns:1fr 1fr}.inspiration-shot:first-child{grid-column:1/-1;grid-row:auto;min-height:300px}}
     @media(max-width:560px){.trust-strip{padding:0 18px 8px;margin-top:-16px}.trust-item{padding:13px 12px;font-size:11px}.trust-icon{width:24px;height:24px}.compact-gallery{grid-template-columns:1fr}.compact-gallery .floor-option-copy p{display:block}.floor-actions{margin-top:11px}.inspiration-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}.inspiration-shot,.inspiration-shot:first-child{min-width:82vw;min-height:230px;grid-column:auto;scroll-snap-align:start}.mobile-bar{z-index:90}}
@@ -280,6 +289,7 @@
 .mobile-menu{display:none}.skip-link{position:fixed;left:16px;top:-100px;z-index:200;background:#ffd84d;padding:12px}.skip-link:focus{top:12px}
 section[id]{scroll-margin-top:85px}
 @media(max-width:1050px){.nav-links{gap:8px;font-size:13px}}
+@media(min-width:901px) and (max-width:1050px){.nav-inner{gap:16px}.nav .brand img.brand-logo{width:190px}.nav-links{gap:6px}}
 @media(max-width:900px){.mobile-menu{display:block;border:0;padding:0}.mobile-menu summary{font-size:14px;padding:10px;border:1px solid #ddd;border-radius:10px}.mobile-menu>div{position:absolute;right:16px;top:70px;width:220px;background:white;box-shadow:0 14px 40px #0002;padding:12px;border-radius:16px}.mobile-menu a{display:block;padding:12px;border-radius:8px}.mobile-menu a:hover{background:#fff3be}.nav-inner{gap:10px}.nav-links{margin-left:auto}.hero-stage{min-height:620px}}
 @media(max-width:560px){.nav-links{display:none}.mobile-menu{margin-left:auto}.hero h1{font-size:clamp(42px,12vw,60px)}.hero-stage{min-height:590px}.hero-content{padding:32px 22px}.hero-proof span,.trust-item{font-size:12px}.compact-gallery .floor-option-copy h3{font-size:22px}.compact-gallery .floor-option-copy p{font-size:16px}.estimate-form{padding:22px}.inspiration-shot,.inspiration-shot:first-child{min-width:78vw}.floor-price span{font-size:14px}}
 
@@ -326,7 +336,7 @@ body{overflow-x:clip;}
 .hero-stage{background-image:image-set(url("images/hardwood-living-room-r19.webp") 1x,url("images/hardwood-living-room-r19-large.webp") 2x)}
 @media(min-width:901px){.inspiration-rail{grid-template-columns:repeat(3,minmax(0,1fr))}.inspiration-shot:first-child{grid-row:auto;min-height:240px}.inspiration-shot{min-height:240px}}
 </style>
-<!-- Banana Floors complete release r20 -->
+<!-- Banana Floors complete release r24 -->
 <meta name="twitter:image" content="https://bananafloors.com/images/banana-b-share-r21.jpg"><style>
 .brand img.brand-logo,.site-brand img.brand-logo{display:block;width:220px;max-width:100%;height:auto;object-fit:contain}
 .brand,.site-brand{min-width:0;flex-shrink:0}
@@ -341,14 +351,15 @@ footer>.footer-brand .footer-logo{margin:0}
       <a class="brand" href="#top" aria-label="Banana Floors home"><img class="brand-logo" src="images/banana-floors-wordmark-r21.png" alt="Banana Floors" width="1954" height="246" fetchpriority="high"></a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Flooring</a>
-        <a href="flooring-prices.html?v=r22">Price Guide</a>
+        <a href="flooring-prices.html?v=r24">Price Guide</a>
         <a href="#process">Process</a>
         <a href="#inspiration">Gallery</a>
+        <a href="#reviews">Reviews</a>
         <a href="#estimate">Estimate</a>
         <a href="#faq">FAQ</a>
         <a class="nav-cta" href="tel:+15034211730">Call (503) 421-1730</a>
       </nav>
-      <details class="mobile-menu"><summary>Menu</summary><div><a href="#services">Flooring</a><a href="flooring-prices.html?v=r22">Price Guide</a><a href="#process">Our Process</a><a href="#inspiration">Gallery</a><a href="#estimate">Free Estimate</a><a href="#faq">FAQ</a></div></details>
+      <details class="mobile-menu"><summary>Menu</summary><div><a href="#services">Flooring</a><a href="flooring-prices.html?v=r24">Price Guide</a><a href="#process">Our Process</a><a href="#inspiration">Gallery</a><a href="#reviews">Reviews</a><a href="#estimate">Free Estimate</a><a href="#faq">FAQ</a></div></details>
     </div>
   </header>
 
@@ -385,16 +396,16 @@ footer>.footer-brand .footer-logo{margin:0}
           <p>Compare popular flooring types for Portland-area homes and businesses, then open the Price Guide for material-only planning ranges.</p>
         </div>
         <div class="floor-gallery compact-gallery">
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/hardwood-flooring-portland.html?v=r22" aria-label="Learn about Hardwood flooring"><img src="images/hardwood-living-room-r19.webp" alt="Hardwood flooring in living room" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/hardwood-living-room-r19-full.webp" srcset="images/hardwood-living-room-r19-small.webp 768w, images/hardwood-living-room-r19.webp 1536w, images/hardwood-living-room-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>Hardwood</h3><p>Natural, timeless and refinable.</p><div class="floor-price"><strong>$6–$15</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/hardwood-flooring-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r22&type=Solid%20Hardwood#calculator">Price it</a></div></div></article>
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/lvp-flooring-portland.html?v=r22" aria-label="Learn about LVP flooring"><img src="images/kitchen-approved-r19.webp" alt="Luxury vinyl plank LVP flooring in kitchen" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/kitchen-approved-r19-full.webp" srcset="images/kitchen-approved-r19-small.webp 768w, images/kitchen-approved-r19.webp 1536w, images/kitchen-approved-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>LVP</h3><p>Durable, practical and versatile.</p><div class="floor-price"><strong>$2–$7</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/lvp-flooring-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r22&type=LVP%20/%20Vinyl#calculator">Price it</a></div></div></article>
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/laminate-flooring-portland.html?v=r22" aria-label="Learn about Laminate flooring"><img src="images/laminate-office-r19.webp" alt="Laminate flooring in home office" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/laminate-office-r19-full.webp" srcset="images/laminate-office-r19-small.webp 768w, images/laminate-office-r19.webp 1536w, images/laminate-office-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>Laminate</h3><p>Clean wood look at a value price.</p><div class="floor-price"><strong>$1.50–$6</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/laminate-flooring-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r22&type=Laminate#calculator">Price it</a></div></div></article>
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/tile-flooring-portland.html?v=r22" aria-label="Learn about Tile flooring"><img src="images/laundry-approved-r19.webp" alt="Tile flooring in laundry and utility room" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/laundry-approved-r19-full.webp" srcset="images/laundry-approved-r19-small.webp 768w, images/laundry-approved-r19.webp 1536w, images/laundry-approved-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>Tile</h3><p>Hardworking for wet and utility areas.</p><div class="floor-price"><strong>$1–$15+</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/tile-flooring-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r22&type=Tile#calculator">Price it</a></div></div></article>
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/carpet-installation-portland.html?v=r22" aria-label="Learn about Carpet flooring"><img src="images/carpet-living-room-r19.webp" alt="Residential carpet installation in a living room" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/carpet-living-room-r19-full.webp" srcset="images/carpet-living-room-r19-small.webp 768w, images/carpet-living-room-r19.webp 1536w, images/carpet-living-room-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>Carpet</h3><p>Soft, quiet and comfortable.</p><div class="floor-price"><strong>$1.50–$7</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/carpet-installation-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r22&type=Carpet#calculator">Price it</a></div></div></article>
-          <article class="floor-option"><div class="image-wrap"><a href="flooring/engineered-wood-flooring-portland.html?v=r22" aria-label="Learn about Engineered Wood flooring"><img src="images/engineered-wood-dining-r19.webp" alt="Engineered wood flooring in dining area" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/engineered-wood-dining-r19-full.webp" srcset="images/engineered-wood-dining-r19-small.webp 768w, images/engineered-wood-dining-r19.webp 1536w, images/engineered-wood-dining-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>Engineered Wood</h3><p>Real-wood feel with layered construction.</p><div class="floor-price"><strong>$4–$14</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/engineered-wood-flooring-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r22&type=Engineered%20Wood#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/hardwood-flooring-portland.html?v=r22" aria-label="Learn about Hardwood flooring"><img src="images/hardwood-living-room-r19.webp" alt="Hardwood flooring in living room" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/hardwood-living-room-r19-full.webp" srcset="images/hardwood-living-room-r19-small.webp 768w, images/hardwood-living-room-r19.webp 1536w, images/hardwood-living-room-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>Hardwood</h3><p>Natural, timeless and refinable.</p><div class="floor-price"><strong>$6–$15</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/hardwood-flooring-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r24&type=Solid%20Hardwood#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/lvp-flooring-portland.html?v=r22" aria-label="Learn about LVP flooring"><img src="images/kitchen-approved-r19.webp" alt="Luxury vinyl plank LVP flooring in kitchen" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/kitchen-approved-r19-full.webp" srcset="images/kitchen-approved-r19-small.webp 768w, images/kitchen-approved-r19.webp 1536w, images/kitchen-approved-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>LVP</h3><p>Durable, practical and versatile.</p><div class="floor-price"><strong>$2–$7</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/lvp-flooring-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r24&type=LVP%20/%20Vinyl#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/laminate-flooring-portland.html?v=r22" aria-label="Learn about Laminate flooring"><img src="images/laminate-office-r19.webp" alt="Laminate flooring in home office" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/laminate-office-r19-full.webp" srcset="images/laminate-office-r19-small.webp 768w, images/laminate-office-r19.webp 1536w, images/laminate-office-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>Laminate</h3><p>Clean wood look at a value price.</p><div class="floor-price"><strong>$1.50–$6</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/laminate-flooring-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r24&type=Laminate#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/tile-flooring-portland.html?v=r22" aria-label="Learn about Tile flooring"><img src="images/laundry-approved-r19.webp" alt="Tile flooring in laundry and utility room" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/laundry-approved-r19-full.webp" srcset="images/laundry-approved-r19-small.webp 768w, images/laundry-approved-r19.webp 1536w, images/laundry-approved-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>Tile</h3><p>Hardworking for wet and utility areas.</p><div class="floor-price"><strong>$1–$15+</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/tile-flooring-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r24&type=Tile#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/carpet-installation-portland.html?v=r22" aria-label="Learn about Carpet flooring"><img src="images/carpet-living-room-r19.webp" alt="Residential carpet installation in a living room" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/carpet-living-room-r19-full.webp" srcset="images/carpet-living-room-r19-small.webp 768w, images/carpet-living-room-r19.webp 1536w, images/carpet-living-room-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>Carpet</h3><p>Soft, quiet and comfortable.</p><div class="floor-price"><strong>$1.50–$7</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/carpet-installation-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r24&type=Carpet#calculator">Price it</a></div></div></article>
+          <article class="floor-option"><div class="image-wrap"><a href="flooring/engineered-wood-flooring-portland.html?v=r22" aria-label="Learn about Engineered Wood flooring"><img src="images/engineered-wood-dining-r19.webp" alt="Engineered wood flooring in dining area" loading="lazy" decoding="async" width="1536" height="1024" data-full="images/engineered-wood-dining-r19-full.webp" srcset="images/engineered-wood-dining-r19-small.webp 768w, images/engineered-wood-dining-r19.webp 1536w, images/engineered-wood-dining-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"></a></div><div class="floor-option-copy"><h3>Engineered Wood</h3><p>Real-wood feel with layered construction.</p><div class="floor-price"><strong>$4–$14</strong><span>material / sq ft</span></div><div class="floor-actions"><a class="floor-mini" href="flooring/engineered-wood-flooring-portland.html?v=r22">See options</a><a class="floor-mini price" href="flooring-prices.html?v=r24&type=Engineered%20Wood#calculator">Price it</a></div></div></article>
         </div>
         <div class="compact-price-cta">
           <div><strong>Want to know material cost?</strong><span> Enter your square footage and compare low–high ranges.</span></div>
-          <a class="btn yellow" href="flooring-prices.html?v=r22">Open Price Guide</a>
+          <a class="btn yellow" href="flooring-prices.html?v=r24">Open Price Guide</a>
         </div>
         
       </div>
@@ -439,7 +450,22 @@ footer>.footer-brand .footer-logo{margin:0}
           <button type="button" class="inspiration-shot" aria-label="Expand laminate flooring inspiration"><img src="images/laminate-office-r19.webp" alt="Laminate flooring in a bright office" loading="lazy" width="1536" height="1024" data-full="images/laminate-office-r19-full.webp" srcset="images/laminate-office-r19-small.webp 768w, images/laminate-office-r19.webp 1536w, images/laminate-office-r19-large.webp 3072w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 50vw, 600px"><span class="inspiration-label">Laminate look</span></button>
         </div>
         <p class="proof-note">Room visualizations. Product colors and finishes vary.</p>
-        <div class="reviews-ready" aria-hidden="true"><!-- Verified Google reviews will be inserted here once supplied. Never populate with invented reviews. --></div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews-section" aria-labelledby="reviews-heading">
+      <div class="section-inner">
+        <div class="reviews-panel">
+          <div class="reviews-copy">
+            <div class="eyebrow">Customer reviews</div>
+            <h2 id="reviews-heading">Your experience matters.</h2>
+            <p>Visit our Google profile to read or leave a review. Have we worked on your floors? We’d love your honest feedback.</p>
+          </div>
+          <div class="reviews-actions">
+            <a class="btn yellow" href="https://www.google.com/search?q=Banana+Floors,+LLC&amp;stick=H4sIAAAAAAAA_-NgU1I1qDAzTDNKMk81TUkxsbRIMzW1MqhISzNPsjBNNTSySEwyMTNKWcQq5JSYB4QKbjn5-UXFOgo-Ps4A_nvFOj4AAAA&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Reviews on Google — opens in a new tab">Reviews on Google <span aria-hidden="true">↗</span></a>
+            <small>Opens our Google Business Profile</small>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -508,7 +534,7 @@ footer>.footer-brand .footer-logo{margin:0}
   <div style="height:8px;background:#ffd84d" aria-hidden="true"></div>
   <footer>
     <div class="footer-inner">
-      <div><a class="footer-brand" href="index.html?v=r22"><img class="footer-logo" src="images/banana-floors-wordmark-r21.png" alt="Banana Floors home" width="1954" height="246" loading="lazy"></a>Portland, Oregon<br>Oregon CCB 209244<br><a href="tel:+15034211730">(503) 421-1730</a></div>
+      <div><a class="footer-brand" href="index.html?v=r24"><img class="footer-logo" src="images/banana-floors-wordmark-r21.png" alt="Banana Floors home" width="1954" height="246" loading="lazy"></a>Portland, Oregon<br>Oregon CCB 209244<br><a href="tel:+15034211730">(503) 421-1730</a></div>
       <div>© <span id="year"></span> Banana Floors. All rights reserved.</div>
     </div>
   </footer>
