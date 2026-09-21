@@ -1,14 +1,14 @@
-BANANA FLOORS — COMPLETE WEBSITE PACKAGE r24
+BANANA FLOORS — COMPLETE WEBSITE PACKAGE r25
 
-Release r24: a compact Customer Reviews section appears between the homepage gallery and estimate form. Desktop and mobile menus include Reviews. The yellow Reviews on Google button opens the specific Banana Floors, LLC Google Business Profile using the link supplied by the owner. This version does not automatically import Google reviews or display review quotes, stars, ratings, or counts. Add genuine published reviews only after their text and attribution are supplied or verified.
+Release r25: the compact Customer Reviews section is now at the bottom of the homepage, after the FAQ and above the footer. Desktop and mobile menus place Reviews after FAQ to match the page order. The yellow Reviews on Google button opens the specific Banana Floors, LLC Google Business Profile using the link supplied by the owner. This version does not automatically import Google reviews or display review quotes, stars, ratings, or counts. Add genuine published reviews only after their text and attribution are supplied or verified.
 
-QUICK UPDATE FROM r22 OR r23: Upload index.html and flooring-prices.html from this package to the root of your GitHub repository, replacing the current files. Commit, then run:
+QUICK UPDATE FROM r24: Upload only index.html from this package to the root of your GitHub repository, replacing the current file. If you are still on r22 or r23, upload flooring-prices.html as well to include the construction-layer reset. Commit, then run:
 git -C /var/www/html pull --ff-only
-Open https://bananafloors.com/?v=r24 and refresh with Ctrl+F5 if needed. No image or logo files changed. The r23 construction-layer reset is included.
+Open https://bananafloors.com/?v=r25 and refresh with Ctrl+F5 if needed. No image or logo files changed. The r23 construction-layer reset is included.
 
 Release r23: double-click a selected construction-layer button in the Price Guide's "Beneath the surface" section to clear the highlight and restore the full diagram. Touch devices can double-tap the button. Single-click still selects one layer at a time. This applies to all six flooring materials.
 
-All website files are included for a complete upload if needed. The quick update above is sufficient when r22 or r23 is already live.
+All website files are included for a complete upload if needed. The quick update above is sufficient when r22, r23, or r24 is already live.
 
 New branding: supplied Banana Floors wordmark in every header and footer; b icon for favicons, Apple home-screen icons, business logo metadata, and social sharing previews. New branding assets use r21 filenames. Upload all root files and all folders. Approved room images and pricing script retain their existing names.
 
@@ -19,7 +19,7 @@ Customers can select Good, Better, or Best for all six materials, calculate a ma
 3. Wait for all uploads, then commit.
 4. Run on the droplet:
 git -C /var/www/html pull --ff-only
-5. Open https://bananafloors.com/?v=r24
+5. Open https://bananafloors.com/?v=r25
 
 The homepage's Price Guide links use v=r24; other existing links retain their earlier version parameters. Images retain the approved r19 filenames. Page filenames remain unchanged to preserve public links. The material-pricing-r20.js file supplies the same prices to both calculators and must be present.
 
