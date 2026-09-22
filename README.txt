@@ -1,30 +1,22 @@
-BANANA FLOORS — COMPLETE WEBSITE PACKAGE r25
+BANANA FLOORS — COMPLETE WEBSITE PACKAGE r26
 
-Release r25: the compact Customer Reviews section is now at the bottom of the homepage, after the FAQ and above the footer. Desktop and mobile menus place Reviews after FAQ to match the page order. The yellow Reviews on Google button opens the specific Banana Floors, LLC Google Business Profile using the link supplied by the owner. This version does not automatically import Google reviews or display review quotes, stars, ratings, or counts. Add genuine published reviews only after their text and attribution are supplied or verified.
+Dark mode is available from the moon/sun button in every page header.
+The site initially follows the visitor's device setting, then remembers their chosen light/dark mode in that browser. If browser storage is disabled, the toggle still works on the current page.
 
-QUICK UPDATE FROM r24: Upload only index.html from this package to the root of your GitHub repository, replacing the current file. If you are still on r22 or r23, upload flooring-prices.html as well to include the construction-layer reset. Commit, then run:
-git -C /var/www/html pull --ff-only
-Open https://bananafloors.com/?v=r25 and refresh with Ctrl+F5 if needed. No image or logo files changed. The r23 construction-layer reset is included.
+The Customer Reviews section remains after the FAQ, above the footer.
+This full package includes the material-budget selections, retail comparison links, logos, images, and the construction-layer double-click reset.
 
-Release r23: double-click a selected construction-layer button in the Price Guide's "Beneath the surface" section to clear the highlight and restore the full diagram. Touch devices can double-tap the button. Single-click still selects one layer at a time. This applies to all six flooring materials.
+UPLOAD
+1. Extract the ZIP (Extract All on Windows).
+2. Upload ALL extracted contents to the root of your BananaFloors GitHub repository. Replace existing files and preserve the flooring, locations, and images folders.
+3. Include the NEW theme-r26.js and theme-r26.css files. Every HTML page has been updated to load them; upload all HTML files too.
+4. Commit, then run on the droplet:
+   git -C /var/www/html pull --ff-only
+5. Open https://bananafloors.com/?v=r26 and refresh with Ctrl+F5 if needed.
 
-All website files are included for a complete upload if needed. The quick update above is sufficient when r22, r23, or r24 is already live.
+Existing public page addresses and canonical URLs stay the same. Navigation version parameters now use r26. Unchanged images keep their approved filenames.
 
-New branding: supplied Banana Floors wordmark in every header and footer; b icon for favicons, Apple home-screen icons, business logo metadata, and social sharing previews. New branding assets use r21 filenames. Upload all root files and all folders. Approved room images and pricing script retain their existing names.
+Local verification: theme controls and remembered selections on all 17 pages; desktop and mobile header layouts; system preference and unavailable browser storage; six construction-layer resets; material-budget transfer into the estimate form. No test estimate was submitted and email delivery was not tested.
 
-Customers can select Good, Better, or Best for all six materials, calculate a material budget, and continue to the estimate form. The material, budget tier, square footage, and waste allowance carry over. Customers can adjust their choices before sending. The request includes their choices and the calculated material range.
-
-1. Download fully and choose Extract All on Windows.
-2. Upload the extracted CONTENTS to the root of your BananaFloors GitHub repository: images, flooring, locations, and ALL root files, including material-pricing-r20.js. Do not upload the ZIP or its enclosing folder.
-3. Wait for all uploads, then commit.
-4. Run on the droplet:
-git -C /var/www/html pull --ff-only
-5. Open https://bananafloors.com/?v=r25
-
-The homepage's Price Guide links use v=r24; other existing links retain their earlier version parameters. Images retain the approved r19 filenames. Page filenames remain unchanged to preserve public links. The material-pricing-r20.js file supplies the same prices to both calculators and must be present.
-
-After upload, select a material and tier, calculate, and continue to the form. Submit one test request and verify email delivery; first use may require FormSubmit email activation. This update has not been deployed or tested for actual email delivery.
-
-Retail examples are fixed observations checked September 8, 2026, not live pricing. Good, Better, and Best are budget tiers, not guarantees about a specific product. Material ranges exclude installation, preparation, accessories, delivery, and applicable taxes.
-
-Release r22: header phone buttons on all interior pages retain yellow backgrounds and dark text on hover, matching the homepage. Branding files remain r21.
+This package has not been deployed to the live website.
+Retail example prices remain the observations checked September 8, 2026; this update does not recheck those prices. Material ranges exclude installation, preparation, accessories, delivery and applicable taxes.
