@@ -1,0 +1,24 @@
+/* Answers remain compact until the visitor opens a question. */
+.planning-faq { max-width: 960px; }
+.planning-questions { border-top: 1px solid var(--line); }
+.planning-questions details { border-bottom: 1px solid var(--line); padding: 0; }
+.planning-questions summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  padding: 18px 0; cursor: pointer; list-style: none; color: var(--ink);
+  font-size: 17px; font-weight: 650; line-height: 1.45;
+}
+.planning-questions summary::-webkit-details-marker { display: none; }
+.planning-questions summary::after { content: '+'; font-weight: 400; font-size: 22px; flex-shrink: 0; color: var(--muted); }
+.planning-questions details[open] summary::after { content: '−'; }
+.planning-questions p { margin: 0 0 20px; max-width: 800px; font-size: 16px; line-height: 1.7; }
+.planning-questions summary:hover { color: #8b6300; }
+.planning-questions summary:focus-visible { outline: 3px solid #a16b00; outline-offset: 4px; }
+.location-visual { margin: 0; min-width: 0; }
+.location-visual img { display: block; }
+.location-visual figcaption { margin-top: 8px; font-size: 12px; line-height: 1.5; color: var(--muted); }
+html[data-theme="dark"] .planning-questions summary:hover { color: #ffd84d; }
+html[data-theme="dark"] .planning-questions summary:focus-visible { outline-color: #ffd84d; }
+@media(max-width:520px) {
+  .planning-questions summary { padding: 15px 0; font-size: 16px; }
+  .planning-questions p { font-size: 15px; }
+}

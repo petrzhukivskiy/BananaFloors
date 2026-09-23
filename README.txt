@@ -1,24 +1,21 @@
-BANANA FLOORS — COMPLETE WEBSITE PACKAGE r29
+BANANA FLOORS — COMPLETE WEBSITE PACKAGE r30
 
-Release r29: a compact shared footer on all 17 pages. The logo stays on the left. The clickable phone number, Oregon CCB license and copyright are stacked in that order on the right. All three lines use the same font family, size and weight. The phone links to tel:+15034211730. Footer location text remains removed. The homepage retains enough bottom clearance for the fixed contact bar. The thick yellow divider has been removed. Reviews remain below the FAQ.
+Softer dark mode: warm charcoal background, a subtle tint, brighter panels, lighter form fields and clearer borders. Photos retain their natural colors. The saved theme preference works as before.
 
-Dark mode is available from the moon/sun button in every page header.
-The site initially follows the visitor's device setting, then remembers their chosen light/dark mode in that browser. If browser storage is disabled, the toggle still works on the current page.
+Content improvements: engineered-hardwood installation title; concise expandable installation FAQs across six material pages; distinct project-planning introductions and questions across eight service-area pages; descriptive internal service links. FAQ structured data matches the visible answers. Location-page images are now labeled as room visualizations, rather than presented as completed local projects. Real project photos and verified local examples can be added when available.
 
-The Customer Reviews section remains after the FAQ, above the footer.
-This full package includes the material-budget selections, retail comparison links, logos, images, and the construction-layer double-click reset.
+Your compact footer is preserved: logo left; clickable phone, license and copyright stacked right in matching typography. Reviews remain after the FAQ.
 
 UPLOAD
-1. Extract the ZIP (Extract All on Windows).
-2. Upload ALL extracted contents to the root of your BananaFloors GitHub repository. Replace existing files and preserve the flooring, locations, and images folders.
-3. Include footer-r29.css, theme-r26.js and theme-r26.css. Every HTML page now loads the new footer stylesheet, so upload all HTML files too.
+1. Extract the ZIP using Extract All on Windows.
+2. Upload ALL extracted contents to the root of your BananaFloors GitHub repository, preserving the images, flooring and locations folders.
+3. Include the NEW theme-r30.css, theme-r30.js and planning-r30.css files, all updated HTML files, and sitemap.xml. Keep footer-r29.css and material-pricing-r20.js.
 4. Commit, then run on the droplet:
    git -C /var/www/html pull --ff-only
-5. Open https://bananafloors.com/?v=r29 and refresh with Ctrl+F5 if needed.
+5. Open https://bananafloors.com/?v=r30 and refresh with Ctrl+F5 if needed.
 
-Existing public page addresses and canonical URLs stay the same. Navigation version parameters now use r29. Unchanged images keep their approved filenames.
+Public page addresses and canonical URLs remain unchanged. Unchanged image filenames are retained. The fourteen service/location pages with substantive text changes have sitemap content dates of September 23, 2026.
 
-Local verification: theme controls and remembered selections on all 17 pages; desktop and mobile header layouts; system preference and unavailable browser storage; six construction-layer resets; material-budget transfer into the estimate form. No test estimate was submitted and email delivery was not tested.
+This package has not been deployed. No test estimate was submitted or email delivery tested. Search rankings, impressions and clicks are not measured by this update.
 
-This package has not been deployed to the live website.
-Retail example prices remain the observations checked September 8, 2026; this update does not recheck those prices. Material ranges exclude installation, preparation, accessories, delivery and applicable taxes.
+Retail reference prices retain their September 8, 2026 check dates. Material prices have not been rechecked and do not include installation, preparation, accessories, delivery or applicable taxes.
