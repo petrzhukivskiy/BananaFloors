@@ -180,8 +180,8 @@ def page(path, title, desc, body, schema=(), robots="index,follow,max-image-prev
 <meta property="og:image" content="{SHARE}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Banana Floors: Portland flooring installation">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SHARE}">
 <script src="/theme-r30.js"></script>
-<link rel="stylesheet" href="/theme-r33.css">
-<link rel="stylesheet" href="/page-r33.css">
+<link rel="stylesheet" href="/theme-r34.css">
+<link rel="stylesheet" href="/page-r34.css">
 {"".join(ld(s) for s in schema)}
 </head>
 <body>
