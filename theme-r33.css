@@ -1,4 +1,4 @@
-/* Banana Floors shared theme r32 = theme-r30 + footer-r29 + shared site chrome (r32: collapsible footer). */
+/* Banana Floors shared theme r33 = theme-r30 + footer-r29 + shared chrome; r32 collapsible footer; r33 site-wide hover/focus states. */
 /* Shared light/dark controls. Existing light-theme colors remain the default. */
 .theme-toggle {
   display: inline-flex; align-items: center; justify-content: center; gap: 7px;
@@ -189,3 +189,45 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a1
   .site-footer .footer-inner{flex-direction:column;align-items:flex-start;gap:6px}.site-footer .footer-info{justify-items:start;text-align:left}.site-footer .footer-info>*{white-space:normal}}
 html[data-theme="dark"] .site-footer .footer-dd{background:var(--surface);border-color:var(--line)}
 html[data-theme="dark"] .site-footer .footer-dd>summary:hover{background:var(--banana-soft)}
+
+/* ---------- r33: consistent hover + keyboard focus states (site-wide) ---------- */
+:root{--hl:#fff3be;--hl-line:#c98f00;--ease:cubic-bezier(.2,.7,.2,1)}
+html[data-theme="dark"]{--hl:#56513b;--hl-line:#ffd84d}
+/* Text links inside content: underline grows/darkens and gets a soft banana tint. */
+:is(.prose,.lead,.note,.callout,.faq-list,.planning-questions,.reviews-copy,.areas-copy,.page-breadcrumb,.section-head,.retail-note) a:not(.btn),
+a.inline-link,a.inline{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);border-radius:3px;transition:text-decoration-color .2s var(--ease),background-color .2s var(--ease),text-decoration-thickness .2s var(--ease)}
+:is(.prose,.lead,.note,.callout,.faq-list,.planning-questions,.reviews-copy,.areas-copy,.page-breadcrumb,.section-head,.retail-note) a:not(.btn):is(:hover,:focus-visible),
+a.inline-link:is(:hover,:focus-visible),a.inline:is(:hover,:focus-visible){text-decoration-color:var(--hl-line);text-decoration-thickness:2px;background-color:var(--hl)}
+/* Footer + quick links: animated underline. */
+.site-footer :is(.footer-quick a,.footer-dd li a){text-decoration:none!important;background:linear-gradient(var(--hl-line),var(--hl-line)) 0 100%/0 2px no-repeat;transition:background-size .25s var(--ease),color .2s var(--ease)}
+.site-footer :is(.footer-quick a,.footer-dd li a){display:inline-block}
+.site-footer .footer-dd li a{display:inline-block;padding-left:0;padding-right:0}
+.site-footer :is(.footer-quick a,.footer-dd li a):is(:hover,:focus-visible){background-size:100% 2px;color:var(--ink,#111)}
+.site-footer .footer-info a{transition:background-color .2s,color .2s,text-decoration-color .2s}
+.site-footer .footer-info a:is(:hover,:focus-visible){background:var(--hl);color:var(--ink,#111);text-decoration-color:var(--hl-line)}
+.site-footer .footer-dd>summary{transition:background-color .2s var(--ease)}
+.site-footer .footer-dd>summary:focus-visible{background:var(--hl)}
+/* Summaries (FAQ, menus, dropdowns): subtle highlight. */
+.planning-questions summary,.mobile-menu summary{transition:color .2s var(--ease),background-color .2s var(--ease)}
+.planning-questions summary:is(:hover,:focus-visible){color:#7a5300}
+html[data-theme="dark"] .planning-questions summary:is(:hover,:focus-visible){color:#ffd84d}
+/* Buttons: gentle lift + shadow, same for keyboard focus. */
+:is(.btn,.site-call,.nav-cta,.footer-phone){transition:transform .18s var(--ease),box-shadow .18s var(--ease),background-color .18s var(--ease),color .18s var(--ease)}
+.btn:is(:hover,:focus-visible),.site-call:is(:hover,:focus-visible){transform:translateY(-2px);box-shadow:0 10px 24px rgba(17,17,17,.14)}
+.btn:not(.secondary):not(.ghost):is(:hover,:focus-visible),.site-call:is(:hover,:focus-visible){background:#ffc928;color:#111}
+.btn.secondary:is(:hover,:focus-visible){background:#2a2a2a;color:#fff}
+.cta-box .btn.secondary:is(:hover,:focus-visible){background:#fff3be;color:#111}
+/* Pills and cards: tint + lift. */
+:is(.links a,.area-links a,.more-services a,.floor-mini){transition:background-color .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease)}
+:is(.links a,.area-links a,.more-services a):is(:hover,:focus-visible){background:var(--hl);border-color:#e9cf6a;transform:translateY(-1px);box-shadow:0 6px 14px rgba(17,17,17,.06)}
+.links a[aria-current="page"]:is(:hover,:focus-visible){background:#111;color:#fff}
+/* Nav links: highlight. */
+:is(.site-links a,.nav-links a:not(.nav-cta),.mobile-menu a){transition:background-color .2s var(--ease),color .2s var(--ease)}
+:is(.site-links a,.nav-links a:not(.nav-cta),.mobile-menu a):focus-visible{background:var(--hl);color:var(--ink,#111)}
+/* Focus ring: one consistent ring everywhere. */
+:is(a,button,summary,input,select,textarea):focus-visible{outline:3px solid #a16b00;outline-offset:3px}
+html[data-theme="dark"] :is(a,button,summary,input,select,textarea):focus-visible{outline-color:#ffd84d}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
+  :is(.btn,.site-call,.links a,.area-links a,.more-services a,.floor-option,.point,.info-card,.aside-card):is(:hover,:focus-visible,:focus-within){transform:none!important}
+}

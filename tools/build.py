@@ -128,9 +128,23 @@ def breadcrumb_html(trail):
             parts.append(f'<a href="{u}">{html.escape(n)}</a>')
     return '<nav class="page-breadcrumb" aria-label="Breadcrumb">' + '<span aria-hidden="true"> / </span>'.join(parts) + "</nav>"
 
+def slugify(t):
+    return re.sub(r"[^a-z0-9]+", "-", strip_tags(t).lower()).strip("-")[:60]
+
+def aside_card(sections, cta_label="Get a free estimate"):
+    toc = "".join(f'<li><a href="#{slugify(h)}">{html.escape(strip_tags(h))}</a></li>' for h in sections)
+    return (f'<aside class="article-aside" aria-label="Estimate and page contents"><div class="aside-card">'
+            f'<p class="aside-title">Free preliminary estimate</p><p>Send your rooms, rough square footage and a few photos.</p>'
+            f'<a class="btn" href="/#estimate">{cta_label}</a><a class="aside-phone" href="tel:{TEL}">Call or text {PHONE}</a>'
+            f'<p class="aside-meta">Oregon CCB {CCB} · Banana Floors LLC</p></div>'
+            f'<nav class="toc" aria-label="On this page"><p class="aside-title">On this page</p><ol>{toc}</ol></nav></aside>')
+
+def prose_section(h2, content):
+    return f'<section class="prose" id="{slugify(h2)}"><h2>{h2}</h2>{content}</section>'
+
 def faq_html(faqs, heading, eyebrow="Questions"):
     items = "".join(f"<details><summary>{html.escape(q)}</summary><p>{a}</p></details>" for q, a in faqs)
-    return f'<section class="planning-faq faq-list"><div class="eyebrow">{eyebrow}</div><h2>{heading}</h2><div class="planning-questions">{items}</div></section>'
+    return f'<section class="planning-faq faq-list" id="{slugify(heading)}"><div class="eyebrow">{eyebrow}</div><h2>{heading}</h2><div class="planning-questions">{items}</div></section>'
 
 def page(path, title, desc, body, schema=(), robots="index,follow,max-image-preview:large", current=None, og_type="website"):
     assert len(title) <= 62, (path, len(title), title)
@@ -155,8 +169,8 @@ def page(path, title, desc, body, schema=(), robots="index,follow,max-image-prev
 <meta property="og:image" content="{SHARE}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Banana Floors: Portland flooring installation">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SHARE}">
 <script src="/theme-r30.js"></script>
-<link rel="stylesheet" href="/theme-r32.css">
-<link rel="stylesheet" href="/page-r31.css">
+<link rel="stylesheet" href="/theme-r33.css">
+<link rel="stylesheet" href="/page-r33.css">
 {"".join(ld(s) for s in schema)}
 </head>
 <body>
@@ -226,14 +240,18 @@ def build_service(s):
     body = hero + f'<section><div class="eyebrow">At a glance</div><h2>{s["glance_h2"]}</h2><div class="grid">{points}</div></section>'
     if s.get("confirm"):
         body += f'<div class="callout"><p>{s["confirm"]}</p></div>'
+    art, heads = "", []
     for h2, content in s["sections"]:
-        body += f'<section class="prose"><h2>{h2}</h2>{content}</section>'
+        art += prose_section(h2, content); heads.append(h2)
     if s.get("price_key") or s.get("show_prices"):
         keys = [s["price_key"]] if s.get("price_key") else s.get("price_keys")
-        body += f'<section><div class="eyebrow">Planning first</div><h2>{s.get("price_h2", "Material price ranges")}</h2>{price_table(keys)}</section>'
-    body += faq_html(s["faqs"], s.get("faq_h2", f'{s["nav"]} questions'))
-    body += f'<section><div class="eyebrow">Explore more</div><h2>Other flooring services</h2>{service_links(url)}</section>'
-    body += f'<section><div class="eyebrow">Service areas</div><h2>{s["nav"]} across the Portland metro</h2><p>We work in Portland and nearby communities in Oregon, plus Vancouver, Washington.</p>{city_links()}</section>'
+        ph = s.get("price_h2", "Material price ranges"); heads.append(ph)
+        art += f'<section class="table-section" id="{slugify(ph)}"><div class="eyebrow">Planning first</div><h2>{ph}</h2>{price_table(keys)}</section>'
+    fh = s.get("faq_h2", f'{s["nav"]} questions'); heads.append(fh)
+    art += faq_html(s["faqs"], fh)
+    body += f'<div class="article-layout"><div class="article-body">{art}</div>{aside_card(heads)}</div>'
+    body += (f'<div class="related-grid"><section class="related"><div class="eyebrow">Explore more</div><h2>Other flooring services</h2>{service_links(url)}</section>'
+             f'<section class="related"><div class="eyebrow">Service areas</div><h2>{s["nav"]} across the Portland metro</h2><p>We work in Portland and nearby communities in Oregon, plus Vancouver, Washington.</p>{city_links()}</section></div>')
     body += cta_box()
     schema = [{"@context": "https://schema.org", "@type": "Service", "@id": SITE + url + "#service", "url": SITE + url,
                "name": s["schema_name"], "serviceType": s["schema_name"], "provider": BUSINESS_REF,
@@ -251,14 +269,18 @@ def build_city(c):
 <div class="actions"><a class="btn" href="/#estimate">Get a free {c["name"]} estimate</a><a class="btn secondary" href="tel:{TEL}">Call or text {PHONE}</a></div></div>
 <figure>{img_tag(c["image"], c.get("img_alt"))}<figcaption>Room visualization, not a completed {c["name"]} project.</figcaption></figure></section>'''
     body = hero
+    art, heads = "", []
     for h2, content in c["sections"]:
-        body += f'<section class="prose"><h2>{h2}</h2>{content}</section>'
+        art += prose_section(h2, content); heads.append(h2)
     hoods = "".join(f"<li>{html.escape(n)}</li>" for n in c["neighborhoods"])
-    body += f'<section class="prose"><h2>{c["hoods_h2"]}</h2><p>{c["hoods_intro"]}</p><ul class="hood-list">{hoods}</ul></section>'
-    body += f'<section><div class="eyebrow">Planning first</div><h2>Compare material prices before your {c["name"]} quote</h2>{price_table()}</section>'
-    body += faq_html(c["faqs"], f'{c["name"]} flooring questions')
-    body += f'<section><div class="eyebrow">Flooring we install in {c["name"]}</div><h2>{c["name"]} flooring services</h2>{service_links()}</section>'
-    body += f'<section><div class="eyebrow">Nearby</div><h2>Other areas we serve near {c["name"]}</h2>{city_links(only=c["nearby"])}</section>'
+    art += prose_section(c["hoods_h2"], f'<p>{c["hoods_intro"]}</p><ul class="hood-list">{hoods}</ul>'); heads.append(c["hoods_h2"])
+    ph = f'Compare material prices before your {c["name"]} quote'; heads.append(ph)
+    art += f'<section class="table-section" id="{slugify(ph)}"><div class="eyebrow">Planning first</div><h2>{ph}</h2>{price_table()}</section>'
+    fh = f'{c["name"]} flooring questions'; heads.append(fh)
+    art += faq_html(c["faqs"], fh)
+    body += f'<div class="article-layout"><div class="article-body">{art}</div>{aside_card(heads, "Get a free " + c["name"] + " estimate")}</div>'
+    body += (f'<div class="related-grid"><section class="related"><div class="eyebrow">Flooring we install in {c["name"]}</div><h2>{c["name"]} flooring services</h2>{service_links()}</section>'
+             f'<section class="related"><div class="eyebrow">Nearby</div><h2>Other areas we serve near {c["name"]}</h2>{city_links(only=c["nearby"])}</section></div>')
     body += cta_box(f'Planning new floors in {c["name"]}?')
     schema = [{"@context": "https://schema.org", "@type": "Service", "@id": SITE + url + "#service", "url": SITE + url,
                "name": f'Flooring installation in {c["name"]}, {c["state"]}', "serviceType": "Flooring installation",

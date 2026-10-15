@@ -1,4 +1,4 @@
-/* Banana Floors secondary pages r31 (service, area, guide and info pages). */
+/* Banana Floors secondary pages r33 (service, area, guide and info pages). r33: reading layout, sticky estimate card, polish. */
 /* Answers remain compact until the visitor opens a question. */
 .planning-faq { max-width: 960px; }
 .planning-questions { border-top: 1px solid var(--line); }
@@ -110,3 +110,129 @@ html[data-theme="dark"] .eyebrow{color:#ffd84d}
 html[data-theme="dark"] .page-breadcrumb{color:var(--muted)}
 html[data-theme="dark"] .cta-box{background:#22251f}
 html[data-theme="dark"] .links a:hover{background:var(--banana-soft)}
+
+/* ---------- r33 polish: reading layout ---------- */
+:root{--text:#3a3a40;--radius-lg:24px;--radius-md:16px}
+html[data-theme="dark"]{--text:#e2dfd6}
+main{padding:28px 24px 88px}
+section{padding-top:64px}
+.page-breadcrumb{font-size:13px}
+.hero{padding-top:14px;gap:48px}
+.hero .lead{max-width:60ch;color:var(--text);line-height:1.6}
+.hero .actions{margin-top:24px}
+h1{margin:10px 0 16px}
+h2{margin:0 0 14px}
+.eyebrow{margin-bottom:8px}
+.eyebrow+h2{margin-top:0}
+/* Long-form text: comfortable measure, darker body text, clear hierarchy. */
+.prose{max-width:70ch}
+.prose p,.prose li{color:var(--text);font-size:17.5px;line-height:1.75}
+.prose p{margin:0 0 16px}
+.prose h3{font-size:19px;margin:28px 0 6px;color:var(--ink)}
+.prose h2+h3{margin-top:8px}
+.prose ul,.prose ol{padding-left:0;margin:4px 0 18px;list-style:none}
+.prose ul>li{position:relative;padding-left:22px;margin:7px 0}
+.prose ul>li::before{content:"";position:absolute;left:3px;top:.72em;width:7px;height:7px;border-radius:50%;background:#e8b400}
+.prose strong{color:var(--ink)}
+/* Section dividers between long-form sections. */
+.article-body>section{padding-top:44px;margin-top:44px;border-top:1px solid var(--line)}
+.article-body>section:first-child{margin-top:0;border-top:0;padding-top:0}
+/* Article layout with a sticky estimate card on wide screens. */
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;margin-top:64px}
+.article-body{min-width:0}
+.article-aside{position:sticky;top:96px;display:grid;gap:16px}
+.aside-card{border:1px solid #f0db7b;background:#fff8d9;border-radius:var(--radius-lg);padding:22px}
+.aside-card p{margin:0 0 12px;font-size:15px;line-height:1.55;color:#4d4220}
+.aside-title{font-size:12px!important;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#6b4a00!important;margin:0 0 8px!important}
+.aside-card .btn{width:100%;margin:4px 0 10px}
+.aside-phone{display:block;text-align:center;font-weight:700;font-size:15px;padding:8px;border-radius:999px;text-decoration:underline;text-underline-offset:3px;color:#111}
+.aside-phone:is(:hover,:focus-visible){background:#fff;text-decoration-color:#c98f00}
+.aside-meta{font-size:12.5px!important;margin:6px 0 0!important;text-align:center;color:#6b5a2a!important}
+.toc{padding:4px 4px 0 6px}
+.toc ol{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.toc li{margin:0}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-2px;border-left:2px solid transparent;font-size:14px;line-height:1.4;color:var(--muted);transition:color .2s,border-color .2s,background-color .2s}
+.toc a:is(:hover,:focus-visible){color:var(--ink);border-left-color:#e8b400;background:var(--hl,#fff3be)}
+[id]{scroll-margin-top:90px}
+/* Neighborhood lists: compact two-column grid. */
+.prose ul.hood-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 22px}
+.prose ul.hood-list>li{margin:0;font-size:16px}
+/* At-a-glance cards. */
+.grid{gap:14px}
+.point{border-radius:var(--radius-md);padding:18px 18px 16px;font-size:17px;line-height:1.3;transition:transform .2s,box-shadow .2s,border-color .2s}
+.point span{font-size:14.5px;line-height:1.45}
+.point:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(17,17,17,.06);border-color:#e3e3e8}
+/* Tables: framed, readable, scroll on small screens. */
+.table-wrap{border:1px solid var(--line);border-radius:var(--radius-md);overflow-x:auto;background:var(--surface,#fff)}
+.price-table{margin:0;min-width:520px}
+.price-table th,.price-table td{padding:12px 16px}
+.price-table thead th{background:var(--soft);border-bottom:1px solid var(--line)}
+.price-table tbody tr:last-child td{border-bottom:0}
+.price-table tbody tr{transition:background-color .15s}
+.price-table tbody tr:hover{background:#fffaf0}
+.price-table td a{text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px}
+.price-table td a:is(:hover,:focus-visible){text-decoration-color:#c98f00}
+.table-wrap+.note{margin-top:10px}
+.prose .table-wrap{margin:8px 0 14px}
+/* FAQ: framed list. */
+.planning-faq{max-width:none}
+.planning-questions{border:1px solid var(--line);border-radius:var(--radius-md);padding:0 20px;background:var(--surface,#fff)}
+.planning-questions details:last-child{border-bottom:0}
+.planning-questions p{color:var(--text)}
+/* Related links: two side-by-side panels. */
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:72px}
+.related-grid>section.related{padding:26px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--soft)}
+.related h2{font-size:clamp(22px,2.4vw,27px)}
+.related p{font-size:15.5px;margin:0 0 14px}
+.related .links a:not([aria-current]){background:var(--surface,#fff)}
+.links{gap:8px}
+.links a{padding:9px 13px}
+/* CTA + callouts. */
+.cta-box{margin-top:72px;padding:40px 44px}
+.cta-box p{max-width:62ch}
+.callout{border-radius:var(--radius-md)}
+.info-card{border-radius:var(--radius-md)}
+.gallery-grid{gap:18px}
+.gallery-grid img{border-radius:var(--radius-md);transition:transform .25s}
+.gallery-grid figure{overflow:hidden;border-radius:var(--radius-md)}
+.gallery-grid figure:hover img{transform:scale(1.03)}
+.placeholder{border-radius:var(--radius-md)}
+/* Header consistency: nav link hover tint, current page underline. */
+.site-links a[aria-current="page"]{box-shadow:inset 0 -2px 0 #e8b400;border-radius:8px 8px 0 0}
+@media(max-width:1020px){.article-layout{grid-template-columns:1fr;gap:0}.article-aside{display:none}}
+@media(max-width:800px){.related-grid{grid-template-columns:1fr}.hero{gap:26px}}
+@media(max-width:520px){
+  main{padding:18px 18px 56px}
+  section{padding-top:48px}
+  .article-layout{margin-top:48px}
+  .article-body>section{padding-top:34px;margin-top:34px}
+  .prose p,.prose li{font-size:16.5px;line-height:1.7}
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .point{padding:14px;font-size:15.5px}
+  .point span{font-size:13.5px}
+  .prose ul.hood-list{grid-template-columns:1fr}
+  .planning-questions{padding:0 16px}
+  .related-grid{margin-top:52px}
+  .related-grid>section.related{padding:20px}
+  .cta-box{margin-top:52px;padding:28px 22px;border-radius:24px}
+  .hero img{border-radius:22px}
+  .price-table{font-size:15px;min-width:480px}
+  .price-table th,.price-table td{padding:10px 12px}
+  .price-table th{font-size:11.5px}
+  .actions .btn{width:100%}
+}
+/* Dark theme for r33 components. */
+html[data-theme="dark"] .aside-card{background:#484638;border-color:#8a7b46}
+html[data-theme="dark"] .aside-card p,html[data-theme="dark"] .aside-meta{color:#e4ddc7!important}
+html[data-theme="dark"] .aside-title{color:#ffd84d!important}
+html[data-theme="dark"] .aside-phone{color:#fff}
+html[data-theme="dark"] .aside-phone:is(:hover,:focus-visible){background:#3a3a2e}
+html[data-theme="dark"] :is(.table-wrap,.planning-questions){background:#383c36;border-color:var(--line)}
+html[data-theme="dark"] .price-table thead th{background:#42473f}
+html[data-theme="dark"] .price-table tbody tr:hover{background:#42473f}
+html[data-theme="dark"] .related-grid>section.related{background:#383c36;border-color:var(--line)}
+html[data-theme="dark"] .related .links a:not([aria-current]){background:#42473f}
+html[data-theme="dark"] .prose ul>li::before{background:#ffd84d}
+html[data-theme="dark"] .toc a{color:var(--muted)}
+html[data-theme="dark"] .toc a:is(:hover,:focus-visible){color:#ffd84d}
+html[data-theme="dark"] .point:hover{border-color:#78806f}
