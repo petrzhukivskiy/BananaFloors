@@ -88,17 +88,18 @@ def footer():
     svc = "".join(f'<li><a href="{service_url(s)}">{html.escape(s["nav"])}</a></li>' for s in SERVICE_LIST)
     area = "".join(f'<li><a href="{city_url(c)}">{html.escape(c["name"])}, {c["state"]}</a></li>' for c in CITY_LIST)
     return f'''<footer class="site-footer">
-  <div class="footer-links">
-    <div><h2>Flooring services</h2><ul>{svc}</ul></div>
-    <div><h2>Service areas</h2><ul>{area}</ul></div>
-    <div><h2>Plan your project</h2><ul><li><a href="/flooring-prices.html">Material price guide</a></li><li><a href="/flooring-installation-cost-portland.html">Installation cost guide</a></li><li><a href="/#estimate">Free preliminary estimate</a></li><li><a href="/gallery.html">Flooring gallery</a></li></ul></div>
-    <div><h2>Banana Floors LLC</h2><ul><li><a href="/about.html">About us</a></li><li><a href="/reviews.html">Reviews</a></li><li><a href="{GBP}" target="_blank" rel="noopener">Google Business Profile ↗</a></li><li><a href="tel:{TEL}">Call or text {PHONE}</a></li><li>Oregon CCB {CCB}</li><li>Open 24 hours, 7 days a week</li><li>Serving Portland metro &amp; Vancouver, WA</li></ul></div>
+  <div class="footer-top">
+    <details class="footer-dd"><summary>Flooring services <span class="dd-count">{len(SERVICE_LIST)}</span></summary><ul>{svc}</ul></details>
+    <details class="footer-dd"><summary>Service areas <span class="dd-count">{len(CITY_LIST)}</span></summary><ul>{area}</ul></details>
+    <nav class="footer-quick" aria-label="Footer"><a href="/flooring-prices.html">Price guide</a><a href="/flooring-installation-cost-portland.html">Cost guide</a><a href="/#estimate">Free estimate</a><a href="/about.html">About</a><a href="/reviews.html">Reviews</a><a href="/gallery.html">Gallery</a></nav>
   </div>
   <div class="footer-inner">
     <a class="footer-brand" href="/">{logo("footer-logo", "Banana Floors home")}</a>
     <div class="footer-info">
-      <a class="footer-phone" href="tel:{TEL}">{PHONE}</a>
-      <span>Oregon CCB {CCB}</span>
+      <a class="footer-phone" href="tel:{TEL}">Call or text {PHONE}</a>
+      <span class="footer-meta">Oregon CCB {CCB} · Open 24 hours, 7 days a week</span>
+      <span class="footer-meta">Serving Portland metro &amp; Vancouver, WA</span>
+      <a class="footer-gbp" href="{GBP}" target="_blank" rel="noopener">Banana Floors LLC on Google ↗</a>
       <span>© <span id="year">{TODAY[:4]}</span> Banana Floors LLC</span>
     </div>
   </div>
@@ -157,7 +158,7 @@ def page(path, title, desc, body, schema=(), robots="index,follow,max-image-prev
 <meta property="og:image" content="{SHARE}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Banana Floors: Portland flooring installation">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SHARE}">
 <script src="/theme-r30.js"></script>
-<link rel="stylesheet" href="/theme-r31.css">
+<link rel="stylesheet" href="/theme-r32.css">
 <link rel="stylesheet" href="/page-r31.css">
 {"".join(ld(s) for s in schema)}
 </head>
