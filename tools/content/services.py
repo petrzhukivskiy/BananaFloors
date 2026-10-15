@@ -17,6 +17,7 @@ REMOVAL = L("/flooring/flooring-removal-portland.html", "flooring removal")
 STAIRS = L("/flooring/stair-flooring-installation-portland.html", "stair flooring")
 TRIM = L("/flooring/baseboard-trim-installation-portland.html", "baseboards and transitions")
 WATERPROOF = L("/flooring/waterproof-flooring-portland.html", "waterproof flooring")
+REFINISH = L("/flooring/hardwood-floor-refinishing-portland.html", "hardwood floor refinishing")
 
 SERVICES = [
 # ------------------------------------------------------------------ LVP
@@ -75,7 +76,7 @@ dict(slug="hardwood-flooring-portland", nav="Hardwood installation", image="hard
  points=[("$6–$15 / sq ft", "Material planning range"), ("Refinishable", "Can be sanded multiple times"), ("Nail-down", "Typical over a wood subfloor"), ("Acclimation", "Per manufacturer instructions")],
  sections=[
   ("Is solid hardwood right for your room?", P(
-    "Solid hardwood is milled from a single piece of wood, usually around 3/4 inch thick. Because the whole board is wood, it can be sanded and refinished several times over its life, which is why many original floors in older Portland homes are still in use a century later.",
+    "Solid hardwood is milled from a single piece of wood, usually around 3/4 inch thick. Because the whole board is wood, it can be sanded and refinished several times over its life, which is why many original floors in older Portland homes are still in use a century later. If you already have hardwood that looks worn, ask about " + REFINISH + " before replacing it.",
     "It is best suited to above-grade rooms with a wood subfloor: living and dining rooms, bedrooms, hallways and many kitchens. It is generally not recommended for below-grade basements or directly over concrete, and it is a poor fit for bathrooms or laundry rooms where water is likely. In those areas we usually suggest " + L("/flooring/engineered-wood-flooring-portland.html", "engineered wood") + ", LVP or tile.")),
   ("Choosing species, width and finish", H3("Species") + P(
     "Red oak and white oak are the most common choices and are widely available. Maple is harder and has a tighter, quieter grain. Hickory is very hard with dramatic color variation. Harder species resist dents better but can be more expensive and harder to sand.") +
@@ -99,7 +100,7 @@ dict(slug="hardwood-flooring-portland", nav="Hardwood installation", image="hard
   ("How long should hardwood acclimate before installation?", "Follow the manufacturer's instructions for your product. Acclimation time depends on the product, the home's conditions and the measured moisture of the wood and subfloor, so there is no single number for every job."),
   ("What affects the cost of hardwood installation?", "Removal of the old floor, subfloor repairs, the number of rooms and transitions, stairs, board width, and whether the floor is prefinished or site-finished. Send measurements and photos and we will review the scope with your material budget."),
   ("Should I choose solid or engineered hardwood?", "Solid hardwood can be refinished more times and works well above grade on wood subfloors. Engineered wood is more dimensionally stable and can often go over concrete or below grade. See our engineered wood page for a comparison."),
-  ("Do you refinish existing hardwood floors?", "This page covers new hardwood installation. If you have existing floors you are hoping to keep, send photos and tell us what you have in mind, and we will tell you whether it is a project we can take on."),
+  ("Do you refinish existing hardwood floors?", "Yes. We refinish existing hardwood floors (sanding and refinishing, or a screen and recoat) as well as installing new hardwood. See our " + REFINISH + " page."),
  ]),
 # ------------------------------------------------------------------ Engineered
 dict(slug="engineered-wood-flooring-portland", nav="Engineered wood installation", image="engineered", price_key="Engineered Wood",

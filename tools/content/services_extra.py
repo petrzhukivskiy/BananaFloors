@@ -8,6 +8,49 @@ TILE = L("/flooring/tile-flooring-portland.html", "tile")
 LAMINATE = L("/flooring/laminate-flooring-portland.html", "laminate")
 
 EXTRA = [
+# ------------------------------------------------------------------ Refinishing
+dict(slug="hardwood-floor-refinishing-portland", nav="Hardwood refinishing", image="hardwood",
+ img_alt="Refinished-look hardwood floor in a living room",
+ title="Hardwood Floor Refinishing Portland, OR | Banana Floors",
+ desc="Hardwood floor refinishing in Portland: sanding, stain and new finish, or a screen and recoat for worn finishes. Oak, fir and engineered floors. Free estimate.",
+ eyebrow="Portland Metro · Hardwood refinishing",
+ h1="Hardwood floor refinishing in Portland",
+ intro="Many Portland-area homes already have a good wood floor under a worn finish, old carpet or decades of scratches. Banana Floors refinishes hardwood floors as well as installing new ones: full sanding and refinishing to bare wood, or a screen and recoat when only the finish is tired.",
+ schema_name="Hardwood floor refinishing",
+ glance_h2="Refinishing at a glance",
+ points=[("Sand and refinish", "Back to bare wood"), ("Screen and recoat", "Renews a worn finish"), ("Stain or natural", "Change the color"), ("Oak, fir, engineered", "Wood type decides the plan")],
+ sections=[
+  ("Refinish, recoat or replace?", P(
+    "Refinishing is often the most practical way to bring back a solid hardwood floor. Solid boards are usually around 3/4 inch thick, and the wood above the tongue can be sanded several times over the life of the floor. If the boards are sound and there is enough wood left, sanding and new finish can make an old floor look close to new.",
+    "Not every floor is a refinishing candidate. Boards that have been sanded many times, deep pet stains that run into the wood, water damage that has cupped or softened boards, and very thin engineered veneers can limit what sanding can fix. In those cases a partial repair, board replacement or new " + HARDWOOD + " may make more sense. We look at the floor and tell you what we see.")),
+  ("Two kinds of refinishing", H3("Full sand and refinish") + P(
+    "The floor is sanded to bare wood in several passes with progressively finer abrasives, edges and corners are sanded separately, and the floor is vacuumed before stain (if you want a new color) and several coats of finish. A full sand removes most scratches, dents in the finish, old discolored finish and minor unevenness between boards.") +
+    H3("Screen and recoat") + P(
+    "If the finish is dull and lightly scratched but the wood itself is not worn through, the existing finish can be abraded (screened) and a fresh coat applied. It does not change the color or remove deep scratches, but it costs less, takes less time and can extend the life of a floor between full refinishes. It only works over a compatible, clean finish; floors that have been waxed or treated with some polish products may need a full sand instead.")),
+  ("Wood floors in Portland-area homes", P(
+    "Older Portland homes often have Douglas fir or oak floors. Fir is a softer wood, so it dents more easily and sands differently from oak, and it can look blotchy with some stains; many owners choose a clear finish that shows its warm color. Oak is harder and takes stain more evenly. Mid-century homes in the suburbs sometimes have oak strip flooring hidden under carpet.",
+    "If you have found wood under carpet, the condition varies: tack strips leave nail holes around the edges, pad can stain the surface, and areas that were never covered may differ in color from the rest. Removing the carpet first, or lifting a corner in a closet, helps us judge what refinishing can do (" + REMOVAL + ").")),
+  ("Stain color and finish choices", P(
+    "A full sand gives you the chance to change color. Sample stains on the sanded floor itself, because the same stain looks different on oak and fir and on boards from different eras. A natural finish with no stain is also a popular choice and makes future recoats simpler.",
+    "Finish sheen (matte, satin or semi-gloss) changes how much scratches and dust show; lower sheens hide more everyday wear. Water-based and oil-based finishes differ in color, odor and drying time. We go over the options and the product's recoat and cure guidance with you before work starts.")),
+  ("Repairs, stairs and the rest of the room", P(
+    "Refinishing is often combined with other work. Damaged or missing boards can be replaced and woven in before sanding so the patch blends after finishing. Stair treads can be refinished to match the floors (" + STAIRS + "). Baseboards and shoe molding are often removed, replaced or repainted around a refinish (" + TRIM + ").",
+    "If you are refinishing some rooms and installing new floors in others, we can plan the transitions so the old and new floors meet cleanly.")),
+  ("Planning your refinishing project", UL(
+    "Plan for the rooms to be empty of furniture and off-limits while sanding and finishing are under way",
+    "Ask about drying and cure times before moving furniture back or putting down rugs",
+    "Pets and people should stay off fresh finish for the time the finish manufacturer specifies",
+    "Sanding makes dust and finishing makes odor; plan ventilation and access for the household",
+    "Homes built before 1978 may have lead paint on nearby trim, so tell us your home's age before work around painted surfaces") + P(
+    "Send photos of the floors, the approximate square footage and what bothers you about the current finish, and we will follow up with a preliminary quote. Final scope is confirmed after we see the wood in person.")),
+ ],
+ faqs=[
+  ("Do you refinish hardwood floors?", "Yes. Banana Floors refinishes existing hardwood floors, including full sanding and refinishing and screen-and-recoat work, as well as installing new hardwood."),
+  ("How do I know if my floor can be refinished?", "Solid hardwood can usually be sanded several times. Look at a floor vent or threshold to see the board thickness, and send photos. Very thin engineered veneers and boards that have been sanded many times may not be candidates."),
+  ("What is the difference between refinishing and a screen and recoat?", "Refinishing sands the floor to bare wood and applies new stain and finish. A screen and recoat lightly abrades the existing finish and adds a new coat; it renews the surface but does not remove deep scratches or change color."),
+  ("Can I change the color of my hardwood floors?", "Yes, with a full sand. The new stain is applied to bare wood. Sample colors on your floor first, because oak and fir take stain differently."),
+  ("Can fir floors be refinished?", "Yes. Fir is softer than oak, so it is sanded with care, and many owners prefer a clear finish that shows its natural color."),
+ ]),
 # ------------------------------------------------------------------ Stairs
 dict(slug="stair-flooring-installation-portland", nav="Stair flooring", image="hardwood",
  img_alt="Hardwood-look flooring in a living room", show_prices=True, price_keys=["LVP / Vinyl", "Solid Hardwood", "Carpet"],
