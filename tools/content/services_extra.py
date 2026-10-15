@@ -1,4 +1,4 @@
-"""Supporting service pages. Each carries a 'confirm' callout because scope varies by project."""
+"""Supporting service pages (all confirmed offered by Banana Floors, Oct 2026)."""
 from .services import P, UL, H3, L, PRICES, COST, SUBFLOOR, REMOVAL, STAIRS, TRIM, WATERPROOF
 
 LVP = L("/flooring/lvp-flooring-portland.html", "LVP")
@@ -6,7 +6,6 @@ HARDWOOD = L("/flooring/hardwood-flooring-portland.html", "hardwood")
 CARPET = L("/flooring/carpet-installation-portland.html", "carpet")
 TILE = L("/flooring/tile-flooring-portland.html", "tile")
 LAMINATE = L("/flooring/laminate-flooring-portland.html", "laminate")
-CONFIRM = "Every project is different. Tell us what you need and we will confirm whether this work is part of your quote before anything is scheduled."
 
 EXTRA = [
 # ------------------------------------------------------------------ Stairs
@@ -18,7 +17,7 @@ dict(slug="stair-flooring-installation-portland", nav="Stair flooring", image="h
  eyebrow="Portland Metro · Stairs",
  h1="Stair flooring installation in Portland",
  intro="Stairs connect the floors you have chosen, and they are the most detailed part of many flooring projects. When you replace flooring upstairs or down, we help you plan how the stairs will match, whether that means new carpet, LVP with matching stair nosing, or hardwood treads.",
- schema_name="Stair flooring installation", confirm=CONFIRM,
+ schema_name="Stair flooring installation",
  glance_h2="Stair flooring options",
  points=[("Carpet", "Soft, quiet, budget-friendly"), ("LVP with stair nosing", "Matches LVP floors"), ("Hardwood treads", "Classic and refinishable"), ("Quoted per stair", "Count, shape and landings")],
  sections=[
@@ -42,7 +41,7 @@ dict(slug="stair-flooring-installation-portland", nav="Stair flooring", image="h
     "Use the " + PRICES + " for material budgets and send us your stair count and photos for a preliminary quote.")),
  ],
  faqs=[
-  ("Do you install flooring on stairs?", "Stairs are often part of a flooring project. Tell us the number of steps, the shape of the stairs and the material you are considering, and we will confirm the scope in your quote."),
+  ("Do you install flooring on stairs?", "Yes. Stair flooring is one of our services. Tell us the number of steps, the shape of the stairs and the material you are considering so your quote covers them."),
   ("Can I put LVP on my stairs?", "Often, yes, using the manufacturer's matching stair nose trim where it is available. Check that the product line you like offers stair nosing before you buy."),
   ("Why are stairs priced per step?", "Each tread and riser is measured, cut and fit individually, which takes far more time than open floor area. Pricing per step reflects that work."),
   ("Can stair carpet be replaced with hardwood?", "In many homes, yes. The condition of the treads underneath, the stair construction and the railing details decide how it is done. Photos help us review the options."),
@@ -55,7 +54,7 @@ dict(slug="subfloor-prep-floor-leveling-portland", nav="Subfloor prep & leveling
  eyebrow="Portland Metro · Floor preparation",
  h1="Subfloor preparation and floor leveling in Portland",
  intro="Most flooring problems start underneath the floor. Banana Floors reviews the subfloor as part of every replacement and identifies the preparation a new floor needs, from fixing squeaks to flattening high and low spots, before installation begins.",
- schema_name="Subfloor preparation and floor leveling", confirm=CONFIRM,
+ schema_name="Subfloor preparation and floor leveling",
  glance_h2="What floor prep covers",
  points=[("Flatness", "Grinding high spots, filling low spots"), ("Squeaks", "Re-fastening loose subfloor"), ("Moisture", "Checking wood and concrete"), ("Repairs", "Damaged panels identified early")],
  sections=[
@@ -90,7 +89,7 @@ dict(slug="flooring-removal-portland", nav="Flooring removal", image="carpet",
  eyebrow="Portland Metro · Removal & haul-away",
  h1="Old flooring removal in Portland",
  intro="Most flooring replacements start with taking the old floor out. Banana Floors handles removal as part of replacement projects, so the subfloor can be inspected and prepared properly before the new floor goes in.",
- schema_name="Flooring removal", confirm=CONFIRM,
+ schema_name="Flooring removal",
  glance_h2="What removal involves",
  points=[("Carpet & pad", "Plus tack strip and staples"), ("Floating floors", "Laminate and click-lock LVP"), ("Glued & nailed floors", "Vinyl, wood and tile"), ("Inspection", "Subfloor reviewed after removal")],
  sections=[
@@ -112,7 +111,7 @@ dict(slug="flooring-removal-portland", nav="Flooring removal", image="carpet",
     "Tell us whether you want the old flooring hauled away so it can be included in your scope. We leave the work area cleared and ready for preparation and installation. Removal is a line item in most quotes; our " + COST + " explains how it fits with material and installation.")),
  ],
  faqs=[
-  ("Is old flooring removal included in a quote?", "Removal can be included when you request it. Tell us what is on the floor now, how many rooms and whether there are stairs."),
+  ("Is old flooring removal included in a quote?", "Yes, we remove old flooring and can include it in your quote. Tell us what is on the floor now, how many rooms and whether there are stairs."),
   ("Can new flooring go over my old floor?", "Sometimes, depending on the new product and the condition of the existing floor. Carpet must always be removed. Send photos so we can review the options."),
   ("What if my old vinyl might contain asbestos?", "Do not disturb it. Some older vinyl flooring and adhesives contain asbestos. Tell us the age of your home; testing and any abatement must be handled by licensed specialists before removal."),
   ("Do you haul away the old flooring?", "Haul-away can be part of your scope. Let us know when you request your estimate."),
@@ -125,7 +124,7 @@ dict(slug="baseboard-trim-installation-portland", nav="Baseboards & transitions"
  eyebrow="Portland Metro · Finishing details",
  h1="Baseboards, trim and floor transitions in Portland",
  intro="The edges are what you notice in a finished floor: where it meets the walls, the doorways and the next room. Banana Floors plans baseboards, shoe molding and transitions as part of the flooring scope so the result looks complete.",
- schema_name="Baseboard, trim and floor transition installation", confirm=CONFIRM,
+ schema_name="Baseboard, trim and floor transition installation",
  glance_h2="Finishing details we plan for",
  points=[("Baseboards", "Reuse or replace"), ("Shoe / quarter round", "Covers expansion gaps"), ("Transitions", "Between rooms and materials"), ("Door clearance", "Undercut jambs and doors")],
  sections=[
@@ -145,7 +144,7 @@ dict(slug="baseboard-trim-installation-portland", nav="Baseboards & transitions"
     "If your home was built before 1978, painted baseboards and casings may contain lead paint. Work that disturbs it is subject to lead-safe practices. Let us know the age of your home when requesting an estimate (see " + REMOVAL + ").")),
  ],
  faqs=[
-  ("Are baseboards included in a flooring quote?", "They can be. Tell us whether you want to reuse existing baseboards, add shoe molding, or replace the baseboards so the quote matches what you expect."),
+  ("Are baseboards included in a flooring quote?", "Yes, we install baseboards and trim and can include them in your flooring quote. Tell us whether you want to reuse existing baseboards, add shoe molding, or replace them so the quote matches what you expect."),
   ("What is the difference between shoe molding and quarter round?", "Both are small trim pieces that cover the gap between the floor and baseboard. Shoe molding is slimmer and more upright; quarter round is a true quarter circle."),
   ("Why do floating floors need an expansion gap?", "Floating floors expand and contract with temperature and humidity. The gap at the walls lets the floor move without buckling; trim covers it."),
   ("Can transitions match my new floor?", "Many flooring lines sell color-matched transition pieces and stair nosing. Availability varies by product, so check before ordering."),
@@ -193,7 +192,7 @@ dict(slug="commercial-flooring-installation-portland", nav="Commercial flooring"
  eyebrow="Portland Metro · Commercial",
  h1="Commercial flooring installation in the Portland metro",
  intro="Banana Floors works on residential and commercial projects. For offices, shops, studios and other small commercial spaces, we help you choose floors rated for the traffic and plan the installation around your business.",
- schema_name="Commercial flooring installation", confirm=CONFIRM,
+ schema_name="Commercial flooring installation",
  glance_h2="What to plan for in commercial spaces",
  points=[("Commercial ratings", "Wear layers and AC ratings"), ("Glue-down options", "For large open areas"), ("Scheduling", "Around business hours"), ("Clear scope", "Verified before scheduling")],
  sections=[
@@ -211,7 +210,7 @@ dict(slug="commercial-flooring-installation-portland", nav="Commercial flooring"
     "Send the approximate square footage, a floor plan or photos, the current flooring, and your preferred material. Use the " + PRICES + " to set a material range, and see the " + COST + " for the other items most quotes include.")),
  ],
  faqs=[
-  ("Do you install commercial flooring?", "Yes. Banana Floors works on residential and commercial projects. Tell us about the space, the traffic and your schedule so we can confirm the scope."),
+  ("Do you install commercial flooring?", "Yes. Banana Floors installs flooring for residential and commercial projects. Tell us about the space, the traffic and your schedule so we can prepare your quote."),
   ("What wear layer does commercial LVP need?", "Commercial-rated LVP often has a wear layer of 20 mil or more. Check the product's commercial rating and warranty."),
   ("Can work be done outside business hours?", "Tell us your hours and constraints when you request a quote, and we will discuss scheduling options for your project."),
   ("Is glue-down or floating flooring better for commercial spaces?", "Glue-down vinyl is common for large commercial areas and rolling loads. Floating floors can work in smaller spaces. The right choice depends on the product, the slab and the use."),
@@ -224,7 +223,7 @@ dict(slug="rental-turnover-flooring-portland", nav="Rental & turnover flooring",
  eyebrow="Portland Metro · Rentals and property owners",
  h1="Rental and turnover flooring in the Portland metro",
  intro="For landlords and property managers, flooring has to look good at move-in, survive tenants and pets, and be easy to repair between leases. Banana Floors helps you choose durable, practical floors for rentals and plan the work around vacancies.",
- schema_name="Rental property flooring installation", confirm=CONFIRM,
+ schema_name="Rental property flooring installation",
  glance_h2="What matters for rental flooring",
  points=[("Durability", "Thicker wear layers and AC4 laminate"), ("Repairability", "Keep spare planks on hand"), ("Consistency", "Same product across units"), ("Timing", "Planned around vacancies")],
  sections=[
@@ -251,6 +250,6 @@ dict(slug="rental-turnover-flooring-portland", nav="Rental & turnover flooring",
   ("What is the best flooring for a rental property?", "Many owners choose LVP for kitchens, baths and living areas because it is waterproof as a plank and easy to repair, with durable carpet in bedrooms. The best fit depends on the unit and your budget."),
   ("Can you work around a tight turnover schedule?", "Tell us the vacancy and move-in dates when you request a quote. We confirm timing after reviewing the scope and material availability."),
   ("Should I use the same flooring in every unit?", "Using one product and color across units simplifies repairs, because spare planks from one job can patch another."),
-  ("Do you work with property managers?", "Property managers can request estimates the same way owners do. Include unit details, access instructions and building rules."),
+  ("Do you work with property managers?", "Yes. We handle rental turnovers for owners and property managers. Include unit details, access instructions and building rules when you request an estimate."),
  ]),
 ]
