@@ -236,3 +236,45 @@ html[data-theme="dark"] .prose ul>li::before{background:#ffd84d}
 html[data-theme="dark"] .toc a{color:var(--muted)}
 html[data-theme="dark"] .toc a:is(:hover,:focus-visible){color:#ffd84d}
 html[data-theme="dark"] .point:hover{border-color:#78806f}
+
+/* ---------- r33 premium layer ---------- */
+h1,h2,h3{text-wrap:balance}
+.prose p,.lead,.planning-questions p{text-wrap:pretty}
+h1{font-weight:800;letter-spacing:-.05em}
+h2{font-weight:780;letter-spacing:-.038em}
+.eyebrow{display:inline-flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:18px;height:3px;border-radius:3px;background:#ffd84d;flex:none}
+/* Hero: soft banana glow, framed image, icon trust chips. */
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;z-index:-1;inset:-40px -10vw auto auto;width:min(720px,70vw);height:520px;background:radial-gradient(closest-side,rgba(255,216,77,.28),rgba(255,216,77,0));pointer-events:none}
+.hero img{box-shadow:0 30px 60px -28px rgba(17,17,17,.35),0 0 0 1px rgba(17,17,17,.04)}
+.trust-row{gap:8px}
+.trust-row>*{display:inline-flex;align-items:center;gap:7px;padding:7px 12px 7px 10px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:700;background:var(--surface,#fff);color:var(--ink);box-shadow:0 1px 0 rgba(17,17,17,.03)}
+.trust-row .ico{color:#a16b00;flex:none}
+.trust-row a.trust-gbp{transition:background-color .2s,border-color .2s,transform .2s}
+.trust-row a.trust-gbp:is(:hover,:focus-visible){background:var(--hl,#fff3be);border-color:#e9cf6a;transform:translateY(-1px)}
+.aside-phone{display:flex;align-items:center;justify-content:center;gap:8px}
+.aside-phone .ico{color:#a16b00}
+/* At-a-glance cards: accent rule. */
+.point{position:relative;background:var(--surface,#fff);box-shadow:0 1px 2px rgba(17,17,17,.04)}
+.point::before{content:"";position:absolute;left:18px;top:0;width:28px;height:3px;border-radius:0 0 3px 3px;background:#ffd84d}
+/* CTA: glow + depth. */
+.cta-box{position:relative;overflow:hidden;isolation:isolate;box-shadow:0 30px 60px -30px rgba(17,17,17,.5)}
+.cta-box::after{content:"";position:absolute;z-index:-1;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,216,77,.35),rgba(255,216,77,0))}
+.cta-box h2{font-size:clamp(28px,3.4vw,40px)}
+/* Related band: subtle gradient section transition. */
+.related-grid{position:relative}
+.related-grid>section.related{background:linear-gradient(180deg,var(--soft),var(--surface,#fff))}
+/* Gentle reveal on scroll where supported (below the fold only; no LCP impact). */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    :is(.point,.related-grid>section,.planning-questions,.table-wrap,.gallery-grid figure,.cta-box,.info-card){animation:bf-rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+  }
+}
+@keyframes bf-rise{from{opacity:.35;transform:translateY(18px)}to{opacity:1;transform:none}}
+html[data-theme="dark"] .hero::before{background:radial-gradient(closest-side,rgba(255,216,77,.12),rgba(255,216,77,0))}
+html[data-theme="dark"] .trust-row>*{background:#42473f;border-color:var(--line)}
+html[data-theme="dark"] :is(.trust-row .ico,.aside-phone .ico){color:#ffd84d}
+html[data-theme="dark"] .point{background:#42473f}
+html[data-theme="dark"] .related-grid>section.related{background:linear-gradient(180deg,#383c36,#30332f)}
+@media(max-width:520px){.hero::before{inset:-30px -30vw auto auto;height:360px}.trust-row>*{font-size:12px;padding:6px 10px 6px 8px}}

@@ -78,6 +78,17 @@ def logo(cls="brand-logo", alt="Banana Floors"):
     return (f'<span class="logo-frame"><img class="{cls}" src="{LOGO}" alt="{alt}" width="440" height="55">'
             f'<img class="{cls} logo-dark-part" src="{LOGO}" alt="" aria-hidden="true" width="440" height="55"></span>')
 
+_SVG = '<svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{}</svg>'
+ICONS = {
+    "shield": _SVG.format('<path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/>'),
+    "tag": _SVG.format('<path d="M3 12V4a1 1 0 011-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/>'),
+    "star": _SVG.format('<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/>'),
+    "home": _SVG.format('<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>'),
+    "layers": _SVG.format('<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>'),
+    "phone": _SVG.format('<path d="M5 3h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4a2 2 0 01-2 2A18 18 0 013 5a2 2 0 012-2z"/>'),
+    "clock": _SVG.format('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+}
+
 def header(current=None):
     return (f'<a class="skip-link" href="#main">Skip to content</a><header class="site-nav"><div class="site-nav-inner">'
             f'<a class="site-brand" href="/" aria-label="Banana Floors home">{logo()}</a>'
@@ -135,7 +146,7 @@ def aside_card(sections, cta_label="Get a free estimate"):
     toc = "".join(f'<li><a href="#{slugify(h)}">{html.escape(strip_tags(h))}</a></li>' for h in sections)
     return (f'<aside class="article-aside" aria-label="Estimate and page contents"><div class="aside-card">'
             f'<p class="aside-title">Free preliminary estimate</p><p>Send your rooms, rough square footage and a few photos.</p>'
-            f'<a class="btn" href="/#estimate">{cta_label}</a><a class="aside-phone" href="tel:{TEL}">Call or text {PHONE}</a>'
+            f'<a class="btn" href="/#estimate">{cta_label}</a><a class="aside-phone" href="tel:{TEL}">{ICONS["phone"]}Call or text {PHONE}</a>'
             f'<p class="aside-meta">Oregon CCB {CCB} · Banana Floors LLC</p></div>'
             f'<nav class="toc" aria-label="On this page"><p class="aside-title">On this page</p><ol>{toc}</ol></nav></aside>')
 
@@ -230,10 +241,10 @@ def build_service(s):
     price = ""
     if s.get("price_key"):
         lo, hi = full_range(s["price_key"])
-        price = f'<span>Material {money(lo)}–{money(hi)}/sq ft</span>'
+        price = f'<span>{ICONS["layers"]}Material {money(lo)}–{money(hi)}/sq ft</span>'
     hero = f'''{breadcrumb_html(trail)}
 <section class="hero"><div><div class="eyebrow">{s["eyebrow"]}</div><h1>{s["h1"]}</h1><p class="lead">{s["intro"]}</p>
-<div class="trust-row"><span>Oregon CCB {CCB}</span><span>Free preliminary estimates</span>{price}</div>
+<div class="trust-row"><span>{ICONS["shield"]}Oregon CCB {CCB}</span><span>{ICONS["tag"]}Free preliminary estimates</span>{price}<a class="trust-gbp" href="{GBP}" target="_blank" rel="noopener">{ICONS["star"]}Google profile</a></div>
 <div class="actions"><a class="btn" href="/#estimate">Get a free estimate</a><a class="btn secondary" href="/flooring-prices.html">See the material price guide</a></div></div>
 <figure>{img_tag(s["image"], s.get("img_alt"))}<figcaption>Room visualization. Product colors and finishes vary.</figcaption></figure></section>'''
     points = "".join(f'<div class="point">{a}<span>{b}</span></div>' for a, b in s["points"])
@@ -265,7 +276,7 @@ def build_city(c):
     trail = [("Home", "/"), ("Service areas", "/#areas"), (f'{c["name"]}, {c["state"]}', url)]
     hero = f'''{breadcrumb_html(trail)}
 <section class="hero"><div><div class="eyebrow">{c["name"]}, {c["state"]} · Flooring installation</div><h1>{c["h1"]}</h1><p class="lead">{c["intro"]}</p>
-<div class="trust-row"><span>Oregon CCB {CCB}</span><span>Free preliminary estimates</span><span>LVP · Wood · Laminate · Tile · Carpet</span></div>
+<div class="trust-row"><span>{ICONS["shield"]}Oregon CCB {CCB}</span><span>{ICONS["tag"]}Free preliminary estimates</span><span>{ICONS["layers"]}LVP · Wood · Laminate · Tile · Carpet</span><a class="trust-gbp" href="{GBP}" target="_blank" rel="noopener">{ICONS["star"]}Google profile</a></div>
 <div class="actions"><a class="btn" href="/#estimate">Get a free {c["name"]} estimate</a><a class="btn secondary" href="tel:{TEL}">Call or text {PHONE}</a></div></div>
 <figure>{img_tag(c["image"], c.get("img_alt"))}<figcaption>Room visualization, not a completed {c["name"]} project.</figcaption></figure></section>'''
     body = hero

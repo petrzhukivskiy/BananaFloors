@@ -249,7 +249,7 @@
 
     /* 2026 conversion + trust upgrade */
     .trust-strip{max-width:var(--max);margin:-20px auto 0;padding:0 24px 18px;position:relative;z-index:4}
-    .trust-strip-inner{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.94);box-shadow:0 18px 48px rgba(0,0,0,.07);overflow:hidden}
+    .trust-strip-inner{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.94);box-shadow:0 18px 48px rgba(0,0,0,.07);overflow:hidden}
     .trust-item{padding:17px 18px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:750;border-right:1px solid var(--line)}
     .trust-item:last-child{border-right:0}.trust-icon{width:28px;height:28px;display:grid;place-items:center;border-radius:9px;background:var(--banana-soft);font-size:14px}
 
@@ -272,7 +272,7 @@
     @media(max-width:700px){.reviews-section{padding-top:28px;padding-bottom:28px}.reviews-panel{grid-template-columns:minmax(0,1fr);gap:22px;padding:26px 24px}.reviews-actions{align-items:flex-start}}
     @media(max-width:400px){.reviews-panel{padding:24px 20px}.reviews-actions .btn{width:100%;white-space:normal;text-align:center}}
 
-    @media(max-width:900px){.trust-strip-inner{grid-template-columns:1fr}.trust-item{border-right:0;border-bottom:1px solid var(--line)}.trust-item:last-child{border-bottom:0}.inspiration-rail{grid-template-columns:1fr 1fr}.inspiration-shot:first-child{grid-column:1/-1;grid-row:auto;min-height:300px}}
+    @media(max-width:900px){.trust-strip-inner{grid-template-columns:1fr 1fr}.trust-item{border-bottom:1px solid var(--line)}.trust-item:nth-child(2n){border-right:0}.trust-item:nth-last-child(-n+2){border-bottom:0}.inspiration-rail{grid-template-columns:1fr 1fr}.inspiration-shot:first-child{grid-column:1/-1;grid-row:auto;min-height:300px}}
     @media(max-width:560px){.trust-strip{padding:0 18px 8px;margin-top:-16px}.trust-item{padding:13px 12px;font-size:11px}.trust-icon{width:24px;height:24px}.compact-gallery{grid-template-columns:1fr}.compact-gallery .floor-option-copy p{display:block}.floor-actions{margin-top:11px}.inspiration-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}.inspiration-shot,.inspiration-shot:first-child{min-width:82vw;min-height:230px;grid-column:auto;scroll-snap-align:start}.mobile-bar{z-index:90}}
 
   
@@ -399,9 +399,10 @@ html[data-theme="dark"] :is(.area-links a,.more-services a){background:#42473f;b
 
     <div class="trust-strip" aria-label="Banana Floors highlights">
       <div class="trust-strip-inner">
-        <div class="trust-item"><span class="trust-icon">$</span><span>Free preliminary estimates</span></div>
-        <div class="trust-item"><span class="trust-icon">✓</span><span>Oregon CCB #209244</span></div>
-        <div class="trust-item"><span class="trust-icon">⌂</span><span>Residential & commercial</span></div>
+        <div class="trust-item"><span class="trust-icon"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4a1 1 0 011-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span>Free preliminary estimates</span></div>
+        <div class="trust-item"><span class="trust-icon"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span>Oregon CCB #209244</span></div>
+        <div class="trust-item"><span class="trust-icon"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span><span>Residential &amp; commercial</span></div>
+        <a class="trust-item" href="https://maps.app.goo.gl/qtWVZ1QcHdKnH6fg6" target="_blank" rel="noopener"><span class="trust-icon"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg></span><span>Google profile ↗</span></a>
       </div>
     </div>
 
