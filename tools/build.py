@@ -92,7 +92,7 @@ def footer():
     <div><h2>Flooring services</h2><ul>{svc}</ul></div>
     <div><h2>Service areas</h2><ul>{area}</ul></div>
     <div><h2>Plan your project</h2><ul><li><a href="/flooring-prices.html">Material price guide</a></li><li><a href="/flooring-installation-cost-portland.html">Installation cost guide</a></li><li><a href="/#estimate">Free preliminary estimate</a></li><li><a href="/gallery.html">Flooring gallery</a></li></ul></div>
-    <div><h2>Banana Floors LLC</h2><ul><li><a href="/about.html">About us</a></li><li><a href="/reviews.html">Reviews</a></li><li><a href="{GBP}" target="_blank" rel="noopener">Google Business Profile ↗</a></li><li><a href="tel:{TEL}">Call or text {PHONE}</a></li><li>Oregon CCB {CCB}</li></ul></div>
+    <div><h2>Banana Floors LLC</h2><ul><li><a href="/about.html">About us</a></li><li><a href="/reviews.html">Reviews</a></li><li><a href="{GBP}" target="_blank" rel="noopener">Google Business Profile ↗</a></li><li><a href="tel:{TEL}">Call or text {PHONE}</a></li><li>Oregon CCB {CCB}</li><li>Open 24 hours, 7 days a week</li><li>Serving Portland metro &amp; Vancouver, WA</li></ul></div>
   </div>
   <div class="footer-inner">
     <a class="footer-brand" href="/">{logo("footer-logo", "Banana Floors home")}</a>
