@@ -358,6 +358,12 @@ footer>.footer-brand .footer-logo{margin:0}
 .faq details p a,.areas-copy a.inline{text-decoration:underline;text-underline-offset:3px}
 html[data-theme="dark"] :is(.area-links a,.more-services a){background:#42473f;border-color:var(--line);color:var(--ink)}
 @media(max-width:900px){.areas-grid{grid-template-columns:1fr}}
+
+/* r33 polish: align section content with the hero card, branded eyebrows */
+.section-inner{max-width:calc(var(--max) - 48px)}
+.section-inner .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#8a5a00;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+.section-inner .eyebrow::before{content:"";width:18px;height:3px;border-radius:3px;background:#ffd84d;flex:none}
+html[data-theme="dark"] .section-inner .eyebrow{color:#ffd84d}
 </style>
 <link rel="stylesheet" href="/theme-r33.css">
 </head>
