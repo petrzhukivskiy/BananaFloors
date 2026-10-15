@@ -1,4 +1,4 @@
-/* Banana Floors shared theme r33 = theme-r30 + footer-r29 + shared chrome; r32 collapsible footer; r33 site-wide hover/focus states. */
+/* Banana Floors shared theme r34 = theme-r30 + footer-r29 + shared chrome; r32 collapsible footer; r33 site-wide hover/focus states. */
 /* Shared light/dark controls. Existing light-theme colors remain the default. */
 .theme-toggle {
   display: inline-flex; align-items: center; justify-content: center; gap: 7px;

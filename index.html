@@ -365,7 +365,83 @@ html[data-theme="dark"] :is(.area-links a,.more-services a){background:#42473f;b
 .section-inner .eyebrow::before{content:"";width:18px;height:3px;border-radius:3px;background:#ffd84d;flex:none}
 html[data-theme="dark"] .section-inner .eyebrow{color:#ffd84d}
 </style>
-<link rel="stylesheet" href="/theme-r33.css">
+<link rel="stylesheet" href="/theme-r34.css">
+<style>
+/* r34 hero redesign: full-bleed split hero with quick material check + material switcher */
+.bf-hero{position:relative;isolation:isolate;overflow:hidden;background:#0f0f0f;color:#fff;border-radius:0 0 44px 44px;margin-bottom:8px}
+.bf-hero-glow{position:absolute;z-index:-1;inset:auto;right:-12%;top:-30%;width:70vw;max-width:980px;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,216,77,.22),rgba(255,216,77,0));pointer-events:none}
+.bf-hero::before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.035),transparent 40%),repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 120px);pointer-events:none}
+.bf-hero-inner{max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) 24px 56px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(32px,5vw,72px);align-items:center}
+.bf-kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.04em;color:rgba(255,255,255,.72)}
+.bf-dot{width:9px;height:9px;border-radius:50%;background:#ffd84d;box-shadow:0 0 0 5px rgba(255,216,77,.16)}
+.bf-hero h1{margin:18px 0 22px;font-size:clamp(44px,5.7vw,80px);line-height:.98;letter-spacing:-.058em;font-weight:820;text-wrap:balance;color:#fff}
+.bf-mark{color:#111;background:#ffd84d;padding:0 .14em;margin-left:-.04em;border-radius:.12em;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:1.08;display:inline}
+.bf-lede{max-width:31em;margin:0;font-size:clamp(17px,1.5vw,19.5px);line-height:1.6;color:rgba(255,255,255,.78)}
+.bf-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.bf-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;padding:0 24px;border-radius:999px;font-size:16px;font-weight:750;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,color .18s ease,border-color .18s ease}
+.bf-btn .ico{width:18px;height:18px}
+.bf-btn-yellow{background:#ffd84d;color:#111;box-shadow:0 10px 30px -10px rgba(255,216,77,.6)}
+.bf-btn-yellow:is(:hover,:focus-visible){background:#ffc928;transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(255,216,77,.75)}
+.bf-btn-line{color:#fff;border-color:rgba(255,255,255,.34);background:rgba(255,255,255,.04)}
+.bf-btn-line:is(:hover,:focus-visible){background:#fff;color:#111;border-color:#fff;transform:translateY(-2px)}
+.bf-btn-dark{background:#111;color:#fff;min-height:48px;font-size:15px;padding:0 20px}
+.bf-btn-dark:is(:hover,:focus-visible){background:#2b2b2b;transform:translateY(-1px)}
+.bf-proof{list-style:none;margin:30px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14px;font-weight:650;color:rgba(255,255,255,.86)}
+.bf-proof li{display:inline-flex;align-items:center;gap:8px}
+.bf-proof .ico{width:18px;height:18px;color:#ffd84d}
+.bf-hero-visual{position:relative;min-width:0}
+.bf-frame{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:4/4.6;background:#2b2620;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.06)}
+.bf-hero-visual::before{content:"";position:absolute;z-index:-1;right:-18px;top:-18px;width:62%;height:58%;border-radius:36px;background:#ffd84d}
+.bf-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 60%;display:block}
+.bf-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 28%,rgba(0,0,0,0) 70%,rgba(0,0,0,.35));pointer-events:none}
+.bf-tag{position:absolute;z-index:2;bottom:16px;right:16px;padding:6px 10px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.03em;color:#fff;background:rgba(0,0,0,.45);backdrop-filter:blur(8px)}
+.bf-switch{position:absolute;z-index:2;left:14px;right:14px;top:14px;display:flex;gap:6px;padding:6px;border-radius:999px;background:rgba(17,17,17,.55);backdrop-filter:blur(14px);overflow-x:auto;scrollbar-width:none}
+.bf-switch::-webkit-scrollbar{display:none}
+@media(max-width:520px){.bf-switch{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}}
+.mat-chip{flex:1 0 auto;min-height:36px;padding:0 10px;border:0;border-radius:999px;background:transparent;color:#fff;font:700 12.5px/1 inherit;font-family:inherit;cursor:pointer;transition:background-color .18s,color .18s}
+.mat-chip:is(:hover,:focus-visible){background:rgba(255,255,255,.16)}
+.mat-chip[aria-pressed="true"]{background:#ffd84d;color:#111}
+.bf-quote{position:absolute;z-index:3;left:-64px;bottom:-44px;width:min(310px,78%);padding:18px 18px 14px;border-radius:22px;background:#fff;color:#111;box-shadow:0 30px 60px -20px rgba(0,0,0,.55)}
+.bf-quote-title{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#6b4a00}
+.bf-quote-row{display:grid;grid-template-columns:1.4fr 1fr;gap:8px}
+.bf-quote label{display:grid;gap:4px;font-size:12px;font-weight:700;color:#55555c}
+.bf-quote select,.bf-quote input{width:100%;min-height:42px;padding:0 10px;border:1px solid #dcdce1;border-radius:12px;background:#fafafa;font:600 15px/1 inherit;font-family:inherit;color:#111}
+.bf-quote-out{margin:12px 0 10px;display:grid;gap:2px}
+.bf-quote-out strong{font-size:24px;letter-spacing:-.03em;line-height:1.1}
+.bf-quote-out span{font-size:12.5px;color:#55555c}
+.bf-quote-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.bf-quote-link{font-size:14px;font-weight:700;color:#111;text-decoration:underline;text-decoration-color:rgba(17,17,17,.3);text-underline-offset:3px}
+.bf-quote-link:is(:hover,:focus-visible){text-decoration-color:#c98f00;background:#fff3be}
+.bf-quote-fine{margin:10px 0 0;font-size:11.5px;line-height:1.4;color:#606066}
+.bf-trust{border-top:1px solid rgba(255,255,255,.1);margin-top:40px}
+.bf-trust-inner{max-width:1180px;margin:0 auto;padding:18px 24px 22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;font-size:13.5px;font-weight:650;color:rgba(255,255,255,.8)}
+.bf-trust-inner>*{display:inline-flex;align-items:center;gap:8px;color:inherit;text-decoration:none;padding:4px 2px;border-radius:8px;transition:color .18s,background-color .18s}
+.bf-trust-inner .ico{width:17px;height:17px;color:#ffd84d}
+.bf-trust-inner a:is(:hover,:focus-visible){color:#fff;background:rgba(255,255,255,.08)}
+.bf-gbp{padding:7px 12px!important;border:1px solid rgba(255,216,77,.5);border-radius:999px!important;color:#fff!important}
+.bf-gbp:is(:hover,:focus-visible){background:#ffd84d!important;color:#111!important}
+.bf-gbp:is(:hover,:focus-visible) .ico{color:#111}
+.bf-hero :focus-visible{outline:3px solid #ffd84d;outline-offset:3px}
+.bf-quote :focus-visible{outline-color:#a16b00}
+@media(max-width:1100px){.bf-quote{left:-28px}}
+.bf-trust-inner{justify-content:flex-start;gap:10px 28px}.bf-trust-inner .bf-gbp{margin-left:auto}
+@media(max-width:900px){
+  .bf-hero{border-radius:0 0 32px 32px}
+  .bf-hero-inner{grid-template-columns:1fr;padding:34px 18px 24px;gap:30px}
+  .bf-hero h1{font-size:clamp(40px,11.5vw,64px);line-height:.98}
+  .bf-actions{gap:10px}.bf-actions .bf-btn{flex:1 1 100%}
+  .bf-proof{gap:8px 16px;font-size:13px;margin-top:22px}
+  .bf-frame{aspect-ratio:4/3;border-radius:24px}
+  .bf-hero-visual::before{right:-8px;top:-10px;border-radius:26px}
+  .bf-quote{position:relative;left:auto;bottom:auto;width:auto;margin:-26px 12px 0;border-radius:20px}
+  .bf-trust{margin-top:22px}
+  .bf-trust-inner{display:grid;grid-template-columns:1fr 1fr;padding:16px 18px 22px;font-size:12.5px;gap:10px 12px}
+  .bf-trust-inner .bf-gbp{grid-column:1/-1;justify-content:center}
+  .bf-quote{margin:-34px 10px 0}
+}
+@media(max-width:380px){.mat-chip{padding:0 10px;font-size:12px}.bf-quote-out strong{font-size:21px}}
+@media(prefers-reduced-motion:reduce){.bf-btn,.mat-chip,.bf-trust-inner>*{transition:none}.bf-btn:hover{transform:none}}
+</style>
 </head>
 <body>
   <header class="nav">
@@ -388,29 +464,49 @@ html[data-theme="dark"] .section-inner .eyebrow{color:#ffd84d}
 
   <a class="skip-link" href="#main">Skip to content</a>
   <main id="main">
-    <section class="hero">
-      <div class="hero-stage"><img class="hero-img" src="/images/hero-hardwood-living-room-r31-1200.webp" srcset="/images/hero-hardwood-living-room-r31-828.webp 828w, /images/hero-hardwood-living-room-r31-1200.webp 1200w, /images/hero-hardwood-living-room-r31-1600.webp 1600w, /images/hero-hardwood-living-room-r31-2400.webp 2400w" sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 1180px) calc(100vw - 48px), 1132px" width="1600" height="1067" alt="Living room with wide-plank hardwood flooring (room visualization)" fetchpriority="high" decoding="async">
-        <div class="hero-content">
-          <div class="eyebrow">Portland Metro · Flooring Installation & Replacement</div>
-          <h1>Portland flooring installation, <span class="accent">made simple.</span></h1>
-          <p>LVP, hardwood, engineered wood, laminate, tile and carpet installed in Portland-area homes and businesses. Find your style, check material prices, and let’s plan your project.</p>
-          <div class="actions">
-            <a class="btn yellow" href="#estimate">Get a Free Estimate</a>
-            <a class="btn ghost" href="tel:+15034211730">Call (503) 421-1730</a>
+    <section class="bf-hero" aria-labelledby="hero-title">
+      <div class="bf-hero-glow" aria-hidden="true"></div>
+      <div class="bf-hero-inner">
+        <div class="bf-hero-copy">
+          <div class="bf-kicker"><span class="bf-dot" aria-hidden="true"></span>Portland Metro · Flooring Installation &amp; Replacement</div>
+          <h1 id="hero-title">Portland flooring installation, <span class="bf-mark">made simple.</span></h1>
+          <p class="bf-lede">LVP, hardwood, engineered wood, laminate, tile and carpet installed in Portland-area homes and businesses. Find your style, check material prices, and let’s plan your project.</p>
+          <div class="bf-actions">
+            <a class="bf-btn bf-btn-yellow" href="#estimate">Get a Free Estimate <span aria-hidden="true">→</span></a>
+            <a class="bf-btn bf-btn-line" href="tel:+15034211730"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4a2 2 0 01-2 2A18 18 0 013 5a2 2 0 012-2z"/></svg>Call (503) 421-1730</a>
           </div>
-          <div class="hero-proof" aria-label="Banana Floors advantages"><span>Licensed · Oregon CCB #209244</span><a href="/flooring-prices.html">Material Price Guide</a><a href="#areas">Portland Metro &amp; Vancouver, WA</a></div>
+          <ul class="bf-proof" aria-label="Banana Floors advantages">
+            <li><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Licensed · Oregon CCB #209244</span></li>
+            <li><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4a1 1 0 011-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg><span>Free preliminary estimates</span></li>
+            <li><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg><span>Residential &amp; commercial</span></li>
+          </ul>
+        </div>
+        <div class="bf-hero-visual">
+          <div class="bf-frame">
+            <img class="bf-photo" id="heroPhoto" src="/images/hero-hardwood-living-room-r31-1200.webp" srcset="/images/hero-hardwood-living-room-r31-828.webp 828w, /images/hero-hardwood-living-room-r31-1200.webp 1200w, /images/hero-hardwood-living-room-r31-1600.webp 1600w, /images/hero-hardwood-living-room-r31-2400.webp 2400w" sizes="(max-width: 900px) calc(100vw - 36px), 600px" width="1600" height="1067" alt="Living room with wide-plank hardwood flooring (room visualization)" fetchpriority="high" decoding="async">
+            <div class="bf-switch" role="group" aria-label="Preview a flooring material"><button type="button" class="mat-chip" aria-pressed="true" data-img="hero" data-alt="Living room with wide-plank hardwood flooring (room visualization)">Hardwood</button><button type="button" class="mat-chip" aria-pressed="false" data-img="kitchen-approved" data-alt="Kitchen with luxury vinyl plank flooring (room visualization)">LVP</button><button type="button" class="mat-chip" aria-pressed="false" data-img="engineered-wood-dining" data-alt="Dining room with engineered wood flooring (room visualization)">Engineered</button><button type="button" class="mat-chip" aria-pressed="false" data-img="laminate-office" data-alt="Home office with laminate flooring (room visualization)">Laminate</button><button type="button" class="mat-chip" aria-pressed="false" data-img="laundry-approved" data-alt="Laundry room with tile flooring (room visualization)">Tile</button><button type="button" class="mat-chip" aria-pressed="false" data-img="carpet-living-room" data-alt="Living room with carpet (room visualization)">Carpet</button></div>
+            <span class="bf-tag" aria-hidden="true">Room visualization</span>
+          </div>
+          <form class="bf-quote" action="/#estimate" method="get" aria-labelledby="qq-title">
+            <p class="bf-quote-title" id="qq-title">Quick material check</p>
+            <div class="bf-quote-row">
+              <label><span>Floor</span><select name="floor" id="qqFloor"><option value="LVP / Vinyl" selected>LVP / vinyl plank</option><option value="Laminate">Laminate</option><option value="Engineered Wood">Engineered wood</option><option value="Solid Hardwood">Solid hardwood</option><option value="Tile">Tile</option><option value="Carpet">Carpet</option></select></label>
+              <label><span>Sq ft</span><input name="sqft" id="qqSqft" type="number" inputmode="numeric" min="1" step="1" value="500"></label>
+            </div>
+            <p class="bf-quote-out" aria-live="polite"><strong id="qqOut">$1,925 – $2,750</strong><span id="qqNote">Mid-range material, incl. 10% waste</span></p>
+            <div class="bf-quote-actions"><button class="bf-btn bf-btn-dark" type="submit">Get my free estimate</button><a class="bf-quote-link" id="qqGuide" href="/flooring-prices.html?type=LVP%20%2F%20Vinyl">Open price guide →</a></div>
+            <p class="bf-quote-fine">Material only, from our Price Guide. Installation is quoted after we review your project.</p>
+          </form>
+        </div>
+      </div>
+      <div class="bf-trust" aria-label="Banana Floors highlights">
+        <div class="bf-trust-inner">
+          <a href="/flooring-prices.html"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Material Price Guide</a>
+          <a href="#areas"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Portland Metro &amp; Vancouver, WA</a>
+          <a class="bf-gbp" href="https://maps.app.goo.gl/qtWVZ1QcHdKnH6fg6" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg>Banana Floors LLC on Google ↗</a>
         </div>
       </div>
     </section>
-
-    <div class="trust-strip" aria-label="Banana Floors highlights">
-      <div class="trust-strip-inner">
-        <div class="trust-item"><span class="trust-icon"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4a1 1 0 011-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span>Free preliminary estimates</span></div>
-        <div class="trust-item"><span class="trust-icon"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span>Oregon CCB #209244</span></div>
-        <div class="trust-item"><span class="trust-icon"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span><span>Residential &amp; commercial</span></div>
-        <a class="trust-item" href="https://maps.app.goo.gl/qtWVZ1QcHdKnH6fg6" target="_blank" rel="noopener"><span class="trust-icon"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg></span><span>Google profile ↗</span></a>
-      </div>
-    </div>
 
     <section id="services" class="gray">
       <div class="section-inner">
@@ -713,6 +809,17 @@ html[data-theme="dark"] .section-inner .eyebrow{color:#ffd84d}
     updateMaterialPreview();
 
   </script>
+<script>
+(()=>{const P=window.bananaPricing; const f=document.getElementById('qqFloor'), q=document.getElementById('qqSqft'), out=document.getElementById('qqOut'), g=document.getElementById('qqGuide');
+ const usd=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
+ function upd(){ if(!P||!P[f.value]) return; const r=P[f.value]['Mid-range'], sf=Math.max(0,Number(q.value)||0)*1.1; out.textContent=sf>0?usd(sf*r[0])+' – '+usd(sf*r[1]):'Enter square feet'; g.href='/flooring-prices.html?type='+encodeURIComponent(f.value); }
+ f&&f.addEventListener('change',upd); q&&q.addEventListener('input',upd); upd();
+ const img=document.getElementById('heroPhoto'); const base=img&&{src:img.getAttribute('src'),srcset:img.getAttribute('srcset'),alt:img.alt};
+ document.querySelectorAll('.mat-chip').forEach(b=>b.addEventListener('click',()=>{ document.querySelectorAll('.mat-chip').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+   const k=b.dataset.img; if(k==='hero'){img.srcset=base.srcset;img.src=base.src;img.alt=base.alt;return;}
+   img.srcset='/images/'+k+'-r19-small.webp 768w, /images/'+k+'-r19.webp 1536w, /images/'+k+'-r19-large.webp 3072w'; img.src='/images/'+k+'-r19.webp'; img.alt=b.dataset.alt; }));
+})();
+</script>
 </body>
 </html>
 

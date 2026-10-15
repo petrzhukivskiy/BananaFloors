@@ -6,8 +6,8 @@ LAYOUT
   locations/*.html .................... city pages           (GENERATED)
   about.html, reviews.html, gallery.html, flooring-installation-cost-portland.html,
   thank-you.html, 404.html, sitemap.xml  (GENERATED)
-  theme-r33.css ....................... shared header/footer/theme styles
-  page-r33.css ........................ styles for generated pages
+  theme-r34.css ....................... shared header/footer/theme styles
+  page-r34.css ........................ styles for generated pages
   theme-r30.js ........................ light/dark toggle
   material-pricing-r20.js ............. price-guide data (also feeds the cost guide)
   images/ ............................. live images (versioned names, e.g. -r31)
