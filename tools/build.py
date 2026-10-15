@@ -96,11 +96,8 @@ def footer():
   <div class="footer-inner">
     <a class="footer-brand" href="/">{logo("footer-logo", "Banana Floors home")}</a>
     <div class="footer-info">
-      <a class="footer-phone" href="tel:{TEL}">Call or text {PHONE}</a>
-      <span class="footer-meta">Oregon CCB {CCB} · Open 24 hours, 7 days a week</span>
-      <span class="footer-meta">Serving Portland metro &amp; Vancouver, WA</span>
-      <a class="footer-gbp" href="{GBP}" target="_blank" rel="noopener">Banana Floors LLC on Google ↗</a>
-      <span>© <span id="year">{TODAY[:4]}</span> Banana Floors LLC</span>
+      <span><a class="footer-phone" href="tel:{TEL}">Call or text {PHONE}</a> · Oregon CCB {CCB}</span>
+      <span><a class="footer-gbp" href="{GBP}" target="_blank" rel="noopener">Google profile ↗</a> · © <span id="year">{TODAY[:4]}</span> Banana Floors LLC</span>
     </div>
   </div>
 </footer>'''
