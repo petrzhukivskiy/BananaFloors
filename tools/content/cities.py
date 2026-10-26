@@ -22,7 +22,7 @@ CITIES = [
 # ------------------------------------------------------------------ Portland
 dict(slug="flooring-installation-portland-or", name="Portland", state="OR", image="hardwood",
  nearby=["flooring-installation-beaverton-or", "flooring-installation-gresham-or", "flooring-installation-lake-oswego-or", "flooring-installation-happy-valley-or", "flooring-installation-tigard-or", "flooring-installation-clackamas-or"],
- title="Flooring Installation Portland, OR | Banana Floors",
+ title="Portland Floors: Bungalows, Basements, Condos | Banana Floors",
  desc="Portland flooring installation: LVP, hardwood, laminate, tile and carpet for bungalows, basements and condos. Oregon CCB 209244. Free estimate.",
  h1="Flooring installation in Portland, Oregon",
  intro="Portland is our home base. Banana Floors installs LVP, hardwood, engineered wood, laminate, tile and carpet in Portland houses, condos and small commercial spaces, and plans the removal and preparation each home needs before the new floor goes in.",
