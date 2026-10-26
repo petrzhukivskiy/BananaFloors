@@ -21,7 +21,7 @@ COST = L("/flooring-installation-cost-portland.html", "installation cost guide")
 CITIES = [
 # ------------------------------------------------------------------ Portland
 dict(slug="flooring-installation-portland-or", name="Portland", state="OR", image="hardwood",
- nearby=["flooring-installation-beaverton-or", "flooring-installation-gresham-or", "flooring-installation-lake-oswego-or", "flooring-installation-vancouver-wa", "flooring-installation-tigard-or", "flooring-installation-clackamas-or"],
+ nearby=["flooring-installation-beaverton-or", "flooring-installation-gresham-or", "flooring-installation-lake-oswego-or", "flooring-installation-happy-valley-or", "flooring-installation-tigard-or", "flooring-installation-clackamas-or"],
  title="Flooring Installation Portland, OR | Banana Floors",
  desc="Portland flooring installation: LVP, hardwood, laminate, tile and carpet for bungalows, basements and condos. Oregon CCB 209244. Free estimate.",
  h1="Flooring installation in Portland, Oregon",
@@ -56,7 +56,7 @@ dict(slug="flooring-installation-portland-or", name="Portland", state="OR", imag
  ]),
 # ------------------------------------------------------------------ Gresham
 dict(slug="flooring-installation-gresham-or", name="Gresham", state="OR", image="lvp",
- nearby=["flooring-installation-portland-or", "flooring-installation-happy-valley-or", "flooring-installation-clackamas-or", "flooring-installation-vancouver-wa"],
+ nearby=["flooring-installation-portland-or", "flooring-installation-happy-valley-or", "flooring-installation-clackamas-or", "flooring-installation-oregon-city-or"],
  title="Flooring Installation Gresham, OR | Banana Floors",
  desc="Flooring installers serving Gresham: LVP, hardwood, laminate, tile and carpet, with removal and subfloor prep. Call (503) 421-1730 for a free estimate.",
  h1="Flooring installation in Gresham, OR",
@@ -287,43 +287,6 @@ dict(slug="flooring-installation-lake-oswego-or", name="Lake Oswego", state="OR"
   ("Is solid hardwood OK in a daylight basement?", "Solid hardwood is generally not recommended below grade or directly on concrete. Engineered wood, LVP or tile are better choices there."),
   ("Do you install flooring in Mountain Park and Westlake?", "Yes. Both are part of our Lake Oswego service area."),
  ]),
-# ------------------------------------------------------------------ Vancouver
-dict(slug="flooring-installation-vancouver-wa", name="Vancouver", state="WA", image="laminate",
- nearby=["flooring-installation-portland-or", "flooring-installation-gresham-or"],
- title="Flooring Installation Vancouver, WA | Banana Floors",
- desc="Flooring installers serving Vancouver, WA: LVP, hardwood, laminate, tile and carpet. Compare prices and get a free estimate: (503) 421-1730.",
- h1="Flooring installation in Vancouver, WA",
- intro="Vancouver sits just across the Columbia River from Portland, and Banana Floors serves Vancouver homes as part of our Portland-metro service area. We install LVP, wood, laminate, tile and carpet and coordinate the estimate and material order so your project runs smoothly.",
- sections=[
-  ("Vancouver homes, old and new", P(
-    "Close to downtown, neighborhoods such as Hough, Arnada, Shumway and Carter Park include early-1900s homes and bungalows, some with original fir floors and the same quirks as older Portland houses: uneven floors, old trim and layered materials. Original fir that is still sound can often be sanded and refinished (" + REFINISH + "). Uptown Village and the downtown waterfront add newer condos and apartments.",
-    "East Vancouver, around Cascade Park, Fisher's Landing and Mill Plain, grew rapidly in the 1980s through the 2000s, with two-story homes, family rooms and carpeted stairs. North of the city, unincorporated communities like Hazel Dell, Salmon Creek and Felida have a similar mix of mid-century ranches and newer subdivisions.")),
-  ("Coordinate the estimate and material order", P(
-    "Because Vancouver is across the state line, a little coordination helps:") + UL(
-    "<strong>Material budget:</strong> the Price Guide ranges exclude taxes. Oregon has no sales tax and Washington does, so factor that into your budget depending on where material is bought and delivered",
-    "<strong>Delivery and staging:</strong> confirm where material will be delivered and stored so it can acclimate as the manufacturer requires",
-    "<strong>Timing:</strong> share your preferred dates; we confirm the schedule after reviewing the scope and material availability",
-    "<strong>Photos first:</strong> room photos and measurements help us prepare a preliminary quote before visiting") + P(
-    "Final scope, measurements and site conditions are verified in person before installation is scheduled.")),
-  ("Columbia River weather and your floors", P(
-    "Vancouver shares the Portland area's wet fall-to-spring season, and east Vancouver near the Columbia River Gorge gets the cold, dry east winds that blow through in winter. Those swings in humidity affect wood floors, so products with good dimensional stability, like " + EW + " and rigid-core " + LVP + ", are popular. Homes over crawlspaces benefit from a subfloor moisture check before wood is installed, and basements and slab rooms are good candidates for " + WATER + ".")),
-  ("Flooring choices for Vancouver homes", UL(
-    "<strong>LVP</strong> for kitchens, baths, entries, rentals and basements",
-    "<strong>Engineered or solid hardwood</strong> for main living areas (" + HW + ")",
-    "<strong>Laminate</strong> for bedrooms, offices and budget-conscious projects (" + LAM + ")",
-    "<strong>Tile</strong> for bathrooms, laundry rooms and mudrooms (" + TILE + ")",
-    "<strong>Carpet</strong> for bedrooms, family rooms and stairs (" + CARPET + ")") + P(
-    "Two-story homes often need " + STAIRS + " to match a new main floor. See our " + COST + " for everything a quote typically covers.")),
- ],
- hoods_h2="Vancouver-area neighborhoods we serve",
- hoods_intro="Our Vancouver service area includes neighborhoods such as:",
- neighborhoods=["Downtown, Uptown Village and Esther Short", "Hough, Arnada and Shumway", "Carter Park and Lincoln", "Cascade Park and Fisher's Landing", "Mill Plain and Fircrest", "Hazel Dell (nearby)", "Salmon Creek and Felida (nearby)"],
- faqs=[
-  ("Do you install flooring in Vancouver, WA?", "Yes. Vancouver is part of our service area. Call or text (503) 421-1730 or send your project details for a free preliminary estimate."),
-  ("Does the Price Guide include Washington sales tax?", "No. The Price Guide shows material-only planning ranges and excludes taxes, delivery and installation. Factor in tax based on where material is purchased and delivered."),
-  ("What flooring holds up best to Vancouver's winters?", "Dimensionally stable floors such as engineered wood and rigid-core LVP handle humidity swings well. A subfloor moisture check before installation is important for wood."),
-  ("Can you install flooring in older homes near downtown Vancouver?", "Yes. Older homes need extra planning for uneven subfloors, original trim and older materials. Tell us the age of the home when requesting an estimate."),
- ]),
 ]
 
 # Additional city-specific planning sections (appended to each page's sections).
@@ -336,7 +299,7 @@ _EXTRA = {
    "When you request an estimate for a rental, include the vacancy dates, the number of units and rooms, access instructions and whether other trades are scheduled. Turnover timing is usually the tightest part of the project, so the earlier we see the scope, the easier it is to plan.")),
  "Happy Valley": ("Kitchens, mudrooms and busy entries", P(
    "In many Happy Valley homes the garage opens into a mudroom or laundry area, and the kitchen is just a few steps away. Those rooms see wet shoes, sports gear and pets every day, so they benefit from water-tolerant floors such as rigid-core LVP or porcelain tile.",
-   "If you are updating the kitchen at the same time, decide early whether the floor will run under the cabinets and island or stop at them. Many floating floors should not be pinned under heavy cabinets, and appliance heights matter around dishwashers and refrigerators. We match the order of work to the product's installation requirements so warranties stay intact.")),
+   "If you are updating the kitchen at the same time, decide early whether the floor will run under the cabinets and island or stop at them. Many floating floors should not be pinned under heavy cabinets, and appliance heights matter around dishwashers and refrigerators. We match the order of work to the product's installation requirements so the manufacturer's warranty stays intact.")),
  "Clackamas": ("Moving furniture and keeping your home usable", P(
    "Many Clackamas projects are in occupied homes and apartments where there is not much space to move furniture. Before installation, it helps to decide which rooms will be done first, where furniture and boxes can go, and which items need help moving. Appliances such as refrigerators, ranges and washers may need to be disconnected and reset.",
    "In condos and apartments, plan for parking, elevator access and where old flooring and packaging will be removed. Share those details when you request a quote, and we will reflect them in the scope and schedule.")),
@@ -350,11 +313,8 @@ _EXTRA = {
    "Two-story homes from the 1980s and 1990s are common in Tigard, usually with carpeted stairs between a main floor and bedrooms upstairs. When the main floor gets a new hard surface, the stairs often stand out. Options include new stair carpet, LVP with matching stair nosing, or wood treads with painted risers.",
    "Stairs are quoted per step, and changing materials can change the height of the top and bottom steps, so they belong in the plan from the start. Count the steps, note any landings or open sides, and include photos from the top and bottom of the stairs with your estimate request.")),
  "Lake Oswego": ("Carpet, tile and the rest of the house", P(
-   "Wood gets most of the attention, but Lake Oswego homes need other floors too. Bedrooms and media rooms are often carpeted for comfort and quiet, with pad matched to the carpet's warranty requirements. Bathrooms, laundry rooms and mudrooms do best with porcelain or ceramic tile over the right underlayment or membrane.",
+   "Wood gets most of the attention, but Lake Oswego homes need other floors too. Bedrooms and media rooms are often carpeted for comfort and quiet, with pad matched to the carpet manufacturer's warranty requirements. Bathrooms, laundry rooms and mudrooms do best with porcelain or ceramic tile over the right underlayment or membrane.",
    "Where several materials meet, such as a tiled entry next to a wood hallway and a carpeted stair, the heights and transitions need to be planned together. We include those edges in the scope so the finished floors read as one project rather than separate rooms.")),
- "Vancouver": ("Two-story homes, stairs and open main floors", P(
-   "Many east Vancouver homes have two stories with a carpeted stair, a family room and an open kitchen on the main floor. Replacing the main-floor carpet and vinyl with one continuous hard floor is a common upgrade, often paired with new stair carpet or LVP with matching stair nosing.",
-   "Long, open runs may need a transition in a doorway, and kitchen islands and cabinets affect how a floating floor is installed. We map the layout, the stair details and the transitions before installation, so the finished floor looks intentional throughout the house.")),
 }
 for _c in CITIES:
     _c["sections"].insert(len(_c["sections"]) - 1, _EXTRA[_c["name"]])

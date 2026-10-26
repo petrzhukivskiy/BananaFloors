@@ -105,10 +105,15 @@ def footer():
     <nav class="footer-quick" aria-label="Footer"><a href="/flooring-prices.html">Price guide</a><a href="/flooring-installation-cost-portland.html">Cost guide</a><a href="/#estimate">Free estimate</a><a href="/about.html">About</a><a href="/reviews.html">Reviews</a><a href="/gallery.html">Gallery</a></nav>
   </div>
   <div class="footer-inner">
-    <a class="footer-brand" href="/">{logo("footer-logo", "Banana Floors home")}</a>
+    <div class="footer-brand-block">
+      <a class="footer-brand" href="/">{logo("footer-logo", "Banana Floors home")}</a>
+      <p class="footer-identity"><span class="footer-chip">Banana Floors · Apex Builders, Inc</span><br>Flooring contractor for the Portland, OR metro area.<br>From the team behind Apex Builders, Inc.<br>Oregon CCB {CCB}</p>
+      <p class="footer-trust">Banana Floors is a DBA of Apex Builders, Inc.<br>Part of the Apex Builders, Inc family<br>Insured, bonded &amp; licensed · Oregon CCB {CCB}</p>
+    </div>
     <div class="footer-info">
-      <span><a class="footer-phone" href="tel:{TEL}">Call or text {PHONE}</a> · Oregon CCB {CCB}</span>
-      <span><a class="footer-gbp" href="{GBP}" target="_blank" rel="noopener">Google profile ↗</a> · © <span id="year">{TODAY[:4]}</span> Banana Floors</span>
+      <span><a class="footer-phone" href="tel:{TEL}">Call or text {PHONE}</a></span>
+      <span><a class="footer-gbp" href="{GBP}" target="_blank" rel="noopener">Google profile ↗</a></span>
+      <span>© <span id="year">{TODAY[:4]}</span> Banana Floors · Oregon CCB {CCB}</span>
     </div>
   </div>
 </footer>'''
@@ -180,7 +185,7 @@ def page(path, title, desc, body, schema=(), robots="index,follow,max-image-prev
 <meta property="og:image" content="{SHARE}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Banana Floors: Portland flooring installation">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SHARE}">
 <script src="/theme-r30.js"></script>
-<link rel="stylesheet" href="/theme-r34.css">
+<link rel="stylesheet" href="/theme-r35.css">
 <link rel="stylesheet" href="/page-r34.css">
 {"".join(ld(s) for s in schema)}
 </head>
@@ -262,7 +267,7 @@ def build_service(s):
     art += faq_html(s["faqs"], fh)
     body += f'<div class="article-layout"><div class="article-body">{art}</div>{aside_card(heads)}</div>'
     body += (f'<div class="related-grid"><section class="related"><div class="eyebrow">Explore more</div><h2>Other flooring services</h2>{service_links(url)}</section>'
-             f'<section class="related"><div class="eyebrow">Service areas</div><h2>{s["nav"]} across the Portland metro</h2><p>We work in Portland and nearby communities in Oregon, plus Vancouver, Washington.</p>{city_links()}</section></div>')
+             f'<section class="related"><div class="eyebrow">Service areas</div><h2>{s["nav"]} across the Portland metro</h2><p>We work in Portland and nearby communities in Oregon.</p>{city_links()}</section></div>')
     body += cta_box()
     schema = [{"@context": "https://schema.org", "@type": "Service", "@id": SITE + url + "#service", "url": SITE + url,
                "name": s["schema_name"], "serviceType": s["schema_name"], "provider": BUSINESS_REF,

@@ -39,9 +39,9 @@ dict(slug="lvp-flooring-portland", nav="LVP installation", image="lvp", price_ke
     H3("Core and total thickness") + P(
     "Rigid-core products (often labeled SPC or WPC) are stiffer and bridge small subfloor imperfections better than flexible vinyl, but no LVP hides a wavy floor. Total thickness of 4–8 mm is common; thicker is not automatically better if the core is soft.") +
     H3("Attached pad and underlayment") + P(
-    "Many planks come with an attached pad. Some manufacturers allow or require a separate underlayment or vapor barrier over concrete; others void the warranty if you add one. We check the exact product's installation guide before the floor goes down.") +
+    "Many planks come with an attached pad. Some manufacturers allow or require a separate underlayment or vapor barrier over concrete; others void the manufacturer's warranty if you add one. We check the exact product's installation guide before the floor goes down.") +
     H3("Waterproof claims") + P(
-    "Most rigid-core LVP is marketed as waterproof, but the seams and perimeter are not sealed like a shower pan. Standing water from a leaking dishwasher or toilet can still reach the subfloor. Read the warranty wording and see our " + WATERPROOF + " guide if water is your main concern.")),
+    "Most rigid-core LVP is marketed as waterproof, but the seams and perimeter are not sealed like a shower pan. Standing water from a leaking dishwasher or toilet can still reach the subfloor. Read the manufacturer's warranty and see our " + WATERPROOF + " guide if water is your main concern.")),
   ("How we install LVP", H3("Click-lock floating floors") + P(
     "Most residential LVP is a floating click-lock floor. Planks lock to each other rather than to the subfloor, with an expansion gap at walls that is hidden by baseboard or shoe molding. Floating floors are sensitive to flatness, so we check the subfloor with a straightedge and plan any " + SUBFLOOR + " before installation.") +
     H3("Glue-down LVP") + P(
@@ -157,7 +157,7 @@ dict(slug="laminate-flooring-portland", nav="Laminate installation", image="lami
     H3("Thickness and core") + P(
     "Thicker boards (10–12 mm) tend to feel more solid and sound less hollow, but a dense core and proper underlayment matter as much as thickness.") +
     H3("Water resistance") + P(
-    "Look at what the warranty actually covers: surface spills for a set number of hours, or standing water. Those are different promises.") +
+    "Look at what the manufacturer's warranty actually covers: surface spills for a set number of hours, or standing water. Those are different promises.") +
     H3("Underlayment") + P(
     "Some laminate has an attached pad; other products need a separate foam or acoustic underlayment, plus a vapor barrier over concrete. Condo buildings may require a specific sound rating.")),
   ("How laminate is installed", P(
@@ -171,7 +171,7 @@ dict(slug="laminate-flooring-portland", nav="Laminate installation", image="lami
     "Send us measurements and photos for a preliminary quote. Final scope is verified on site before scheduling. Our " + COST + " explains the parts of a quote that are not material.")),
  ],
  faqs=[
-  ("Is laminate waterproof?", "Standard laminate is not waterproof because the core is fiberboard. Some newer laminate lines are marketed as water-resistant or waterproof; check what the warranty covers before using laminate in kitchens, bathrooms or entries."),
+  ("Is laminate waterproof?", "Standard laminate is not waterproof because the core is fiberboard. Some newer laminate lines are marketed as water-resistant or waterproof; check what the manufacturer's warranty covers before using laminate in kitchens, bathrooms or entries."),
   ("What AC rating do I need for my home?", "AC3 is generally suitable for residential rooms. AC4 is a good choice for busy households, pets and rentals. Commercial spaces may need AC4 or AC5."),
   ("Laminate or LVP: which should I choose?", "Laminate often has a sharper wood-look surface and good scratch resistance at a lower price. LVP handles water better and is quieter underfoot. In wet areas we usually suggest LVP or tile."),
   ("Can laminate be installed over existing flooring?", "Sometimes, over a flat, solid hard floor. Carpet and pad must be removed. Send photos so we can review the existing surface and any height changes at doorways."),
@@ -233,7 +233,7 @@ dict(slug="carpet-installation-portland", nav="Carpet installation", image="carp
     H3("Wool") + P("A natural, premium fiber with a rich feel. It costs more and needs appropriate cleaning methods.")),
   ("Construction, face weight and pad", P(
     "Cut-pile carpet (plush, textured, frieze) feels soft; loop carpet (Berber-style) is durable but can snag with pets. Face weight, measured in ounces per square yard, tells you how much fiber is on the surface; density and twist matter too, so compare samples side by side rather than relying on one number.",
-    "Pad is easy to overlook and makes a big difference to comfort and wear. Many carpet manufacturers specify a minimum pad density and a maximum thickness for warranty coverage. We match the pad to the carpet's requirements.")),
+    "Pad is easy to overlook and makes a big difference to comfort and wear. Many carpet manufacturers specify a minimum pad density and a maximum thickness for the manufacturer's warranty. We match the pad to the carpet's requirements.")),
   ("How carpet is installed", P(
     "Wall-to-wall carpet is typically stretched over pad and held on tack strip around the room. Power stretching pulls the carpet tight so it is less likely to ripple later. Seams are planned so they fall in low-traffic areas and run in the direction of light where possible.",
     "Before new carpet goes in, old carpet, pad and damaged tack strip are removed (" + REMOVAL + "), squeaks are addressed, and the subfloor is cleaned. Where carpet meets hard flooring, a transition strip finishes the edge (" + TRIM + ").")),
@@ -243,7 +243,7 @@ dict(slug="carpet-installation-portland", nav="Carpet installation", image="carp
  ],
  faqs=[
   ("What is the best carpet fiber for pets and kids?", "Nylon is a durable, resilient choice for busy homes. Stain-resistant polyester and triexta carpets are also popular. Avoid loop carpet if pets tend to scratch or snag."),
-  ("Do I need new pad with new carpet?", "In most cases, yes. Old pad is often compressed or soiled, and many carpet warranties require pad that meets specific density and thickness standards."),
+  ("Do I need new pad with new carpet?", "In most cases, yes. Old pad is often compressed or soiled, and many manufacturers require pad that meets specific density and thickness standards for the carpet warranty."),
   ("Is old carpet removal included?", "Removal of old carpet, pad and tack strip can be included in your quote. Tell us how many rooms and whether there are stairs so it is part of the scope."),
   ("How long does carpet installation take?", "Timing depends on the number of rooms, stairs, furniture moving and removal. We confirm the schedule after reviewing the scope."),
   ("What affects the cost of carpet installation?", "The carpet and pad you choose, removal of the old floor, stairs, seams, furniture moving and the room layout. Send measurements and photos for a preliminary quote."),
@@ -252,7 +252,7 @@ dict(slug="carpet-installation-portland", nav="Carpet installation", image="carp
 
 _MORE = {
  "carpet-installation-portland": ("Carpet care and getting the most from your new carpet", P(
-   "New carpet lasts longer with a few habits: vacuum high-traffic areas regularly, use mats at exterior doors (especially during Portland's wet months), blot spills rather than rubbing them, and follow the manufacturer's recommendations for professional cleaning, which some warranties require.",
+   "New carpet lasts longer with a few habits: vacuum high-traffic areas regularly, use mats at exterior doors (especially during Portland's wet months), blot spills rather than rubbing them, and follow the manufacturer's recommendations for professional cleaning, which some manufacturers' warranties require.",
    "Furniture can leave dents in new carpet; moving pieces slightly from time to time and using furniture cups helps. Some shedding of loose fibers is normal in the first weeks with cut-pile carpet. If you have pets, ask about carpets with pet-related stain and moisture protection, and consider a hard floor such as LVP in the rooms where accidents are most likely.")),
  "engineered-wood-flooring-portland": ("Engineered wood versus solid hardwood and LVP", P(
    "Compared with " + L("/flooring/hardwood-flooring-portland.html", "solid hardwood") + ", engineered wood is usually the better choice over concrete, below grade, and in wide planks where seasonal movement is a concern. Solid hardwood wins on long-term refinishing potential. Compared with " + L("/flooring/lvp-flooring-portland.html", "LVP") + ", engineered wood offers the feel, sound and natural variation of real wood but is less tolerant of water and costs more per square foot.",
