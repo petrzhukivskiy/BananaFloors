@@ -80,7 +80,7 @@ def build(c):
     trail = [("Home", "/"), ("About", url)]
     body = bc(trail) + f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">About Banana Floors</div>
 <h1>About Banana Floors, a Portland flooring contractor</h1>
-<p class="lead">Banana Floors LLC is a Portland-area flooring installation company. We install hardwood, engineered wood, LVP, laminate, tile and carpet in homes and businesses across the Portland metro and Vancouver, Washington, with removal and floor preparation when needed.</p>
+<p class="lead">Banana Floors is a Portland-area flooring installation company. We install hardwood, engineered wood, LVP, laminate, tile and carpet in homes and businesses across the Portland metro and Vancouver, Washington, with removal and floor preparation when needed.</p>
 <div class="trust-row"><span>Oregon CCB {CCB}</span><span>Residential &amp; commercial</span><span>Free preliminary estimates</span></div></div></section>
 <!-- TODO(Pete): add an owner photo (e.g. /images/owner-pete.webp) and a 2–4 sentence story: how you started, years installing floors, what you care about on a job. -->
 <section class="prose"><h2>How we work</h2>
@@ -91,14 +91,14 @@ def build(c):
     "<strong>Verified before scheduling:</strong> measurements and site conditions are confirmed in person")}</section>
 <section class="prose"><h2>Our process</h2>
 <ol><li><strong>Choose and price:</strong> browse floors and check material ranges.</li><li><strong>Send details:</strong> square footage, photos and project location.</li><li><strong>Get a preliminary quote:</strong> we review your scope.</li><li><strong>Verify and confirm:</strong> measurements and site conditions.</li><li><strong>Schedule and install:</strong> we lock in the date and get it done.</li></ol></section>
-<section class="prose"><h2>Licensing</h2><p>Banana Floors LLC holds Oregon Construction Contractors Board license <strong>CCB #{CCB}</strong>. You can look up any Oregon contractor's license on the <a href="https://search.ccb.state.or.us/search/" target="_blank" rel="noopener">Oregon CCB license search ↗</a>.</p>
+<section class="prose"><h2>Licensing</h2><p>Banana Floors holds Oregon Construction Contractors Board license <strong>CCB #{CCB}</strong>. You can look up any Oregon contractor's license on the <a href="https://search.ccb.state.or.us/search/" target="_blank" rel="noopener">Oregon CCB license search ↗</a>.</p>
 <!-- TODO(Pete): if accurate, add bonded/insured status, Washington L&I contractor registration number (for Vancouver work), and any workmanship warranty terms. --></section>
 <section><div class="eyebrow">What we install</div><h2>Flooring services</h2>{c["service_links"]()}</section>
 <section><div class="eyebrow">Where we work</div><h2>Service areas</h2>{c["city_links"]()}</section>
 {c["cta_box"]("Talk to us about your floors.")}'''
     schema = [{"@context": "https://schema.org", "@type": "AboutPage", "url": SITE + url, "name": "About Banana Floors", "about": {"@id": SITE + "/#business"}}, bld(trail)]
     out.append(page(url, "About Banana Floors | Portland Flooring Contractor",
-                    "Banana Floors LLC is a Portland-area flooring installation company (Oregon CCB 209244) serving the metro and Vancouver, WA. How we work.", body, schema, current="/about.html"))
+                    "Banana Floors is a Portland-area flooring installation company (Oregon CCB 209244) serving the metro and Vancouver, WA. How we work.", body, schema, current="/about.html"))
 
     # ---------------------------------------------------------- reviews (noindex until real reviews are added)
     url = "/reviews.html"
@@ -111,7 +111,7 @@ def build(c):
      Only add Review/AggregateRating schema for reviews that are shown on this page. When reviews are added, change robots to index,follow and add this page to the sitemap via tools/build.py. -->
 <section class="prose"><h2>Had us install your floors?</h2><p>Reviews help Portland-area homeowners choose a contractor, and they help us improve. If you have a minute, please share your experience on <a href="{GBP}" target="_blank" rel="noopener">Google</a>.</p></section>
 {c["cta_box"]()}'''
-    page(url, "Reviews | Banana Floors LLC", "Read and leave reviews for Banana Floors LLC, a Portland-area flooring installation company, on our Google Business Profile.", body,
+    page(url, "Reviews | Banana Floors", "Read and leave reviews for Banana Floors, a Portland-area flooring installation company, on our Google Business Profile.", body,
          [bld(trail)], robots="noindex,follow", current="/reviews.html")
 
     # ---------------------------------------------------------- gallery (noindex until real project photos are added)
