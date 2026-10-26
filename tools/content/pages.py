@@ -139,7 +139,7 @@ def build(c):
     trail = [("Home", "/"), ("About", url)]
     body = bc(trail) + f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">About Banana Floors</div>
 <h1>About Banana Floors, a Portland flooring contractor</h1>
-<p class="lead">Banana Floors is a Portland-area flooring installation company. We install hardwood, engineered wood, LVP, laminate, tile and carpet in homes and businesses across the Portland, OR metro, with removal and floor preparation when needed.</p>
+<p class="lead">Banana Floors is a Portland-area flooring installation company. We install hardwood, engineered wood, LVP, laminate, tile and carpet in homes and businesses across the Portland, OR metro, including Vancouver, WA, with removal and floor preparation when needed.</p>
 <div class="trust-row"><span>Insured, bonded &amp; licensed · Oregon CCB {CCB}</span><span>Residential &amp; commercial</span><span>Free preliminary estimates</span></div></div></section>
 <section class="prose"><h2>How we work</h2>
 <p>Banana Floors is built around making flooring projects easier to plan. Most people shopping for new floors want two answers early: what the material will cost, and what the installation will involve. That is why the site includes a material <a href="/flooring-prices.html">Price Guide</a> and a <a href="/flooring-installation-cost-portland.html">cost guide</a>, and why every quote separates material from installation, removal and preparation.</p>
@@ -156,7 +156,7 @@ def build(c):
 {c["cta_box"]("Talk to us about your floors.")}'''
     schema = [{"@context": "https://schema.org", "@type": "AboutPage", "url": SITE + url, "name": "About Banana Floors", "about": {"@id": SITE + "/#business"}}, bld(trail)]
     out.append(page(url, "About Banana Floors | Portland Flooring Contractor",
-                    "Banana Floors is a Portland-area flooring installation company (Oregon CCB 209244) serving the Portland, OR metro. How we work.", body, schema, current="/about.html"))
+                    "Banana Floors is a Portland-area flooring installation company (Oregon CCB 209244) serving the Portland–Vancouver metro. How we work.", body, schema, current="/about.html"))
 
     # ---------------------------------------------------------- reviews (indexable: real Google reviews only)
     url = "/reviews.html"
@@ -263,7 +263,7 @@ def build(c):
 <h3>Match a look to a floor we install</h3>
 <p>{L("/flooring/hardwood-flooring-portland.html", "Solid hardwood")} is the living-room look: wide planks, visible grain and a finish meant to stay. In older Portland bungalows an original fir or oak floor is sometimes worth {L("/flooring/hardwood-floor-refinishing-portland.html", "refinishing")} instead of covering. {L("/flooring/engineered-wood-flooring-portland.html", "Engineered wood")}, shown in the dining scene, has a real wood surface on a layered core, so it stays more stable when indoor humidity swings between a wet winter and a dry heated summer.</p>
 <p>{L("/flooring/lvp-flooring-portland.html", "Luxury vinyl plank")} is the kitchen visualization, a wood look that handles spills and a basement slab. We install click-lock and glue-down LVP and talk through wear layer and thickness before you buy. {L("/flooring/laminate-flooring-portland.html", "Laminate")}, in the office scene, is the crisp printed-wood surface at a lower material cost, floated over a flat subfloor. {L("/flooring/tile-flooring-portland.html", "Tile")} is the laundry-room look and the usual choice for baths, mudrooms and other wet rooms. {L("/flooring/carpet-installation-portland.html", "Carpet")} is the soft living-room look still used in bedrooms and on stairs, with pad and transitions planned where it meets a hard floor.</p>
-<p>When a style is close, check material ranges in the {L("/flooring-prices.html", "Price Guide")} and what else goes into a quote in the {L("/flooring-installation-cost-portland.html", "installation cost guide")}. We install these floors in Portland and the nearby Oregon cities on this site: Gresham, Happy Valley, Clackamas, Oregon City, Beaverton, Tigard and Lake Oswego.</p></section>
+<p>When a style is close, check material ranges in the {L("/flooring-prices.html", "Price Guide")} and what else goes into a quote in the {L("/flooring-installation-cost-portland.html", "installation cost guide")}. We install these floors in Portland and the nearby cities on this site: Gresham, Happy Valley, Clackamas, Oregon City, Beaverton, Tigard, Lake Oswego and Vancouver, WA.</p></section>
 <section><div class="eyebrow">Explore</div><h2>Learn about each floor</h2>{c["service_links"]()}</section>
 {c["cta_box"]()}'''
     out.append(page(url, "Flooring Style Gallery | Banana Floors",

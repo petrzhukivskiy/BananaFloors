@@ -21,7 +21,7 @@ COST = L("/flooring-installation-cost-portland.html", "installation cost guide")
 CITIES = [
 # ------------------------------------------------------------------ Portland
 dict(slug="flooring-installation-portland-or", name="Portland", state="OR", image="hardwood",
- nearby=["flooring-installation-beaverton-or", "flooring-installation-gresham-or", "flooring-installation-lake-oswego-or", "flooring-installation-happy-valley-or", "flooring-installation-tigard-or", "flooring-installation-clackamas-or"],
+ nearby=["flooring-installation-vancouver-wa", "flooring-installation-beaverton-or", "flooring-installation-gresham-or", "flooring-installation-lake-oswego-or", "flooring-installation-happy-valley-or", "flooring-installation-tigard-or", "flooring-installation-clackamas-or"],
  title="Portland Floors: Bungalows, Basements, Condos | Banana Floors",
  desc="Portland flooring installation: LVP, hardwood, laminate, tile and carpet for bungalows, basements and condos. Oregon CCB 209244. Free estimate.",
  h1="Flooring installation in Portland, Oregon",
@@ -287,6 +287,41 @@ dict(slug="flooring-installation-lake-oswego-or", name="Lake Oswego", state="OR"
   ("Is solid hardwood OK in a daylight basement?", "Solid hardwood is generally not recommended below grade or directly on concrete. Engineered wood, LVP or tile are better choices there."),
   ("Do you install flooring in Mountain Park and Westlake?", "Yes. Both are part of our Lake Oswego service area."),
  ]),
+# ------------------------------------------------------------------ Vancouver, WA
+dict(slug="flooring-installation-vancouver-wa", name="Vancouver", state="WA", image="lvp",
+ nearby=["flooring-installation-portland-or", "flooring-installation-gresham-or", "flooring-installation-beaverton-or", "flooring-installation-happy-valley-or"],
+ title="Flooring Installation Vancouver, WA | Banana Floors",
+ desc="Vancouver, WA flooring installation for LVP, hardwood, laminate, tile and carpet. Banana Floors is based in Portland, OR. Oregon CCB 209244.",
+ h1="Flooring installation in Vancouver, WA",
+ intro="Vancouver, Washington sits just north of Portland across the Columbia River and is part of the same metro. Banana Floors is based in the Portland, Oregon area and installs LVP, hardwood, engineered wood, laminate, tile and carpet in Vancouver homes, with removal and preparation planned before the new floor goes in.",
+ sections=[
+  ("Vancouver homes and what is under the floor", P(
+    "Vancouver was incorporated in 1857, and the housing stock still shows that span of time. Neighborhoods such as Hough, Arnada, Shumway, Carter Park and Lincoln have many early-1900s houses, some with original fir or oak, plaster walls and floors that have settled. Downtown and the Esther Short area mix those older blocks with newer infill, townhomes and waterfront buildings on concrete.",
+    "Farther out, central and west Vancouver include postwar ranches and 1970s–1990s two-story homes, often with carpet over plywood and sheet vinyl or older laminate in the kitchen. East-side neighborhoods such as Fisher's Landing, Cascade Park and Image, and the Orchards area to the northeast, grew later. Many of those houses still have builder-grade carpet on the stairs and bedrooms and a hard floor that is ready for its first replacement.")),
+  ("Wet winters, gorge winds and the subfloor", P(
+    "Vancouver shares Portland's wet fall-to-spring season, and it sits close enough to the Columbia River Gorge that winter east winds can turn the indoor air cold and dry for days at a time. Wood floors respond to both: small seasonal gaps when the heat is running are normal, while cupping usually means moisture from a crawlspace or a slab should be fixed first.",
+    "A lot of Vancouver houses are built over crawlspaces, and newer homes, townhomes and waterfront buildings are often on concrete. We check moisture in wood subfloors and look at slab conditions before recommending a product. Rigid-core " + LVP + " and " + TILE + " are common on slabs and in entries; " + EW + " handles humidity swings better than solid boards when a real wood surface is the goal. See " + WATER + " for wet rooms and lower levels.")),
+  ("Based in Portland, working in Vancouver", P(
+    "Banana Floors is a Portland, Oregon flooring contractor. The license we publish is Oregon CCB 209244: insured, bonded and licensed under that Oregon number. We do not list a Washington contractor license. Vancouver is part of the service area because it is the city directly across the river, a short trip on the Interstate 5 or Interstate 205 bridge, and the same crews plan Portland and Vancouver floors.",
+    "A Vancouver quote follows the same steps as a Portland one. Send room sizes, photos and the age of the home, and we review " + REMOVAL + ", " + PREP + " and " + TRIM + " before anyone is scheduled. Measurements and site conditions are confirmed in person. Our " + COST + " shows how those pieces sit next to the material price.")),
+  ("Floors that suit Vancouver houses", UL(
+    "<strong>LVP</strong> for kitchens, entries, rentals and slab-on-grade rooms",
+    "<strong>Engineered wood</strong> for open living areas that need a real wood surface and better seasonal stability",
+    "<strong>Solid hardwood</strong> above grade, on a dry wood subfloor, including where original fir or oak is worth continuing",
+    "<strong>Laminate</strong> for bedrooms and offices on a tighter budget (" + LAM + ")",
+    "<strong>Carpet</strong> for bedrooms and stairs (" + CARPET + ")",
+    "<strong>Tile</strong> for bathrooms, laundry rooms and mudrooms") + P(
+    "If an original wood floor is still sound, " + REFINISH + " is worth considering before a full replacement. Two-story homes should include " + STAIRS + " in the plan when the main floor changes. Landlords can read " + RENTAL + " for product and scheduling notes.")),
+ ],
+ hoods_h2="Vancouver neighborhoods we serve",
+ hoods_intro="We install flooring in Vancouver, WA, including neighborhoods such as:",
+ neighborhoods=["Downtown Vancouver and Esther Short", "Uptown Village", "Hough, Arnada and Shumway", "Carter Park and Lincoln", "Fisher's Landing", "Cascade Park and Image", "Fruit Valley, Minnehaha and Bagley Downs", "Orchards (nearby)", "Hazel Dell and Salmon Creek (nearby)", "Felida (nearby)"],
+ faqs=[
+  ("Do you install flooring in Vancouver, WA?", "Yes. Vancouver is part of our Portland–Vancouver service area. Banana Floors is based in the Portland, Oregon area. Call or text (503) 421-1730 for a free preliminary estimate."),
+  ("Which contractor license covers the work?", "Banana Floors is insured, bonded and licensed under Oregon CCB 209244. We are based in Portland, Oregon, and we serve Vancouver, WA. We do not list a Washington contractor license number."),
+  ("What flooring handles Vancouver's wet winters and dry east winds?", "Rigid-core LVP and engineered wood handle those seasonal swings well. Solid hardwood is a strong choice above grade on a dry wood subfloor. We check subfloor or slab moisture before installation."),
+  ("Do you work in Fisher's Landing, Cascade Park and Orchards?", "Yes. Fisher's Landing and Cascade Park are in Vancouver. Orchards, just northeast of the city, is in the same service area."),
+ ]),
 ]
 
 # Additional city-specific planning sections (appended to each page's sections).
@@ -312,6 +347,9 @@ _EXTRA = {
  "Tigard": ("Two-story homes and stair updates", P(
    "Two-story homes from the 1980s and 1990s are common in Tigard, usually with carpeted stairs between a main floor and bedrooms upstairs. When the main floor gets a new hard surface, the stairs often stand out. Options include new stair carpet, LVP with matching stair nosing, or wood treads with painted risers.",
    "Stairs are quoted per step, and changing materials can change the height of the top and bottom steps, so they belong in the plan from the start. Count the steps, note any landings or open sides, and include photos from the top and bottom of the stairs with your estimate request.")),
+ "Vancouver": ("Older blocks and newer east-side houses", P(
+   "A flooring plan in Vancouver usually starts with which side of the city the house is on. In Hough, Arnada, Shumway and the other older neighborhoods, doorways may be out of square, original trim may be worth saving, and a new floor often has to meet fir or oak that is staying in the next room. Floor height at those thresholds matters more than the plank color.",
+   "In Fisher's Landing, Cascade Park, Image and other newer east-side houses, the usual job is replacing builder carpet and entry-level hard floors across an open main level, plus a carpeted stair. Floating floors have run-length limits, and kitchen islands change where the floor can go. Tell us the year the house was built and what is on the floor now so removal, preparation and transitions are in the quote from the start.")),
  "Lake Oswego": ("Carpet, tile and the rest of the house", P(
    "Wood gets most of the attention, but Lake Oswego homes need other floors too. Bedrooms and media rooms are often carpeted for comfort and quiet, with pad matched to the carpet manufacturer's warranty requirements. Bathrooms, laundry rooms and mudrooms do best with porcelain or ceramic tile over the right underlayment or membrane.",
    "Where several materials meet, such as a tiled entry next to a wood hallway and a carpeted stair, the heights and transitions need to be planned together. We include those edges in the scope so the finished floors read as one project rather than separate rooms.")),
