@@ -121,9 +121,13 @@ def build(c):
 <section><div class="eyebrow">Compare materials</div><h2>Flooring installation guides</h2>{c["service_links"]()}</section>
 {faq_html(faqs, "Flooring cost questions")}
 {c["cta_box"]("Ready for a real number?")}'''
+    # datePublished: cost guide first shipped 2026-10-15 (generator 8ed9e69, page ccfe673).
+    # dateModified: last prose edit 2026-10-25 (warranty wording, 35b3743). Adding these
+    # fields does not change the article body, so dateModified stays on that edit.
     schema = [{"@context": "https://schema.org", "@type": "Article", "headline": "Flooring installation cost in Portland: what goes into a quote",
                "url": SITE + url, "mainEntityOfPage": SITE + url, "image": SITE + "/images/banana-floors-share-r31.jpg",
-               "author": {"@type": "Organization", "name": "Banana Floors", "url": SITE + "/"},
+               "datePublished": "2026-10-15", "dateModified": "2026-10-25",
+               "author": {"@id": SITE + "/#business"},
                "publisher": {"@id": SITE + "/#business"}, "about": "Flooring installation cost"},
               faq_ld(faqs), bld(trail)]
     out.append(page(url, "Flooring Installation Cost Portland, OR | Banana Floors",
@@ -137,7 +141,6 @@ def build(c):
 <h1>About Banana Floors, a Portland flooring contractor</h1>
 <p class="lead">Banana Floors is a Portland-area flooring installation company. We install hardwood, engineered wood, LVP, laminate, tile and carpet in homes and businesses across the Portland, OR metro, with removal and floor preparation when needed.</p>
 <div class="trust-row"><span>Insured, bonded &amp; licensed · Oregon CCB {CCB}</span><span>Residential &amp; commercial</span><span>Free preliminary estimates</span></div></div></section>
-<!-- TODO(Pete): add an owner photo (e.g. /images/owner-pete.webp) and a 2–4 sentence story: how you started, years installing floors, what you care about on a job. -->
 <section class="prose"><h2>How we work</h2>
 <p>Banana Floors is built around making flooring projects easier to plan. Most people shopping for new floors want two answers early: what the material will cost, and what the installation will involve. That is why the site includes a material <a href="/flooring-prices.html">Price Guide</a> and a <a href="/flooring-installation-cost-portland.html">cost guide</a>, and why every quote separates material from installation, removal and preparation.</p>
 {UL("<strong>Simple estimates:</strong> clear scope and realistic expectations",
@@ -175,6 +178,8 @@ def build(c):
             )
         return "".join(cards)
 
+    # datePublished is omitted. The page only stores relative Google labels
+    # ("a month ago", "3 weeks ago"), which are not calendar dates. Do not invent them.
     review_nodes = [{
         "@type": "Review",
         "author": {"@type": "Person", "name": r["name"]},
@@ -187,12 +192,16 @@ def build(c):
         "@type": "HomeAndConstructionBusiness",
         "@id": SITE + "/#business",
         "name": "Banana Floors",
+        "legalName": c["LEGAL_NAME"],
+        "parentOrganization": {"@type": "Organization", "name": c["LEGAL_NAME"]},
         "url": SITE + "/",
         "telephone": "+1-503-421-1730",
-        "sameAs": GBP,
+        "image": c["BUSINESS_IMAGE"],
+        "address": c["BUSINESS_ADDRESS"],
+        "sameAs": [GBP],
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": 5,
+            "ratingValue": 5.0,
             "reviewCount": 8,
             "bestRating": 5,
         },
@@ -217,21 +226,49 @@ def build(c):
                     "Read real Google reviews of Banana Floors, a Portland-area flooring installer. Rated 5.0 from 8 reviews.",
                     body, [business_ld, bld(trail)], current="/reviews.html", extra_css=("/reviews-r35.css",)))
 
-    # ---------------------------------------------------------- gallery (indexable; existing room visualizations, not claimed as completed jobs)
+    # ---------------------------------------------------------- gallery (indexable; style visualizations, not completed jobs)
     url = "/gallery.html"
     trail = [("Home", "/"), ("Gallery", url)]
-    figs = ""
-    for key, cap in [("hardwood", "Hardwood look"), ("lvp", "LVP look"), ("laminate", "Laminate look"), ("tile", "Tile look"), ("carpet", "Carpet look"), ("engineered", "Engineered wood look")]:
-        figs += f'<figure>{c["img_tag"](key, eager=False, sizes="(max-width: 520px) calc(100vw - 36px), (max-width: 800px) 50vw, 360px")}<figcaption>{cap} · room visualization</figcaption></figure>'
-    body = bc(trail) + f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">Flooring gallery</div>
-<h1>Flooring inspiration and project gallery</h1>
-<p class="lead">These images are room visualizations to help you compare flooring styles. Product colors and finishes vary. Photos of completed Banana Floors projects will be added here.</p></div></section>
-<!-- Real completed-job photos can replace these room visualizations later. Keep captions honest: these are style references, not customer projects. -->
+    shots = [
+        ("hardwood", "Hardwood look", "/flooring/hardwood-flooring-portland.html",
+         "Style visualization of hardwood flooring in a living room. Not a photograph of a completed Banana Floors job."),
+        ("lvp", "LVP look", "/flooring/lvp-flooring-portland.html",
+         "Style visualization of luxury vinyl plank in a kitchen. Not a photograph of a completed Banana Floors job."),
+        ("laminate", "Laminate look", "/flooring/laminate-flooring-portland.html",
+         "Style visualization of laminate flooring in a home office. Not a photograph of a completed Banana Floors job."),
+        ("tile", "Tile look", "/flooring/tile-flooring-portland.html",
+         "Style visualization of tile flooring in a laundry room. Not a photograph of a completed Banana Floors job."),
+        ("carpet", "Carpet look", "/flooring/carpet-installation-portland.html",
+         "Style visualization of carpet in a living room. Not a photograph of a completed Banana Floors job."),
+        ("engineered", "Engineered wood look", "/flooring/engineered-wood-flooring-portland.html",
+         "Style visualization of engineered wood in a dining room. Not a photograph of a completed Banana Floors job."),
+    ]
+    figs, images_ld = "", []
+    for key, cap, href, desc in shots:
+        figs += (f'<figure>{c["img_tag"](key, eager=False, sizes="(max-width: 520px) calc(100vw - 36px), (max-width: 800px) 50vw, 360px")}'
+                 f'<figcaption><a href="{href}">{html.escape(cap)}</a> · style visualization</figcaption></figure>')
+        base = c["IMAGES"][key][0]
+        images_ld.append({"@type": "ImageObject", "contentUrl": SITE + f"/images/{base}-r19.webp",
+                          "caption": cap, "description": desc})
+    gallery_ld = {"@context": "https://schema.org", "@type": "ImageGallery", "@id": SITE + url + "#gallery",
+                  "name": "Flooring style gallery",
+                  "description": "Style visualizations of hardwood, LVP, laminate, tile, carpet and engineered wood. These are not photographs of completed Banana Floors jobs.",
+                  "url": SITE + url, "about": {"@id": SITE + "/#business"}, "image": images_ld}
+    body = bc(trail) + f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">Style gallery</div>
+<h1>Flooring style gallery</h1>
+<p class="lead">These images are style visualizations for comparing flooring looks. They are not photographs of finished Banana Floors jobs. Product colors and finishes vary.</p></div></section>
 <section><h2>Flooring styles</h2><div class="gallery-grid">{figs}</div></section>
+<section class="prose"><h2>Style visualizations, not job photos</h2>
+<p>Every image on this page is a style visualization. It is a typical room put together so you can compare color, grain, plank width and how a floor sits in a space. These are not photographs of finished Banana Floors jobs. Colors and finishes vary by brand, dye lot and the light in the room. Use the pictures to narrow a direction, then open the installation page for how that floor is actually put in.</p>
+<h3>Match a look to a floor we install</h3>
+<p>{L("/flooring/hardwood-flooring-portland.html", "Solid hardwood")} is the living-room look: wide planks, visible grain and a finish meant to stay. In older Portland bungalows an original fir or oak floor is sometimes worth {L("/flooring/hardwood-floor-refinishing-portland.html", "refinishing")} instead of covering. {L("/flooring/engineered-wood-flooring-portland.html", "Engineered wood")}, shown in the dining scene, has a real wood surface on a layered core, so it stays more stable when indoor humidity swings between a wet winter and a dry heated summer.</p>
+<p>{L("/flooring/lvp-flooring-portland.html", "Luxury vinyl plank")} is the kitchen visualization, a wood look that handles spills and a basement slab. We install click-lock and glue-down LVP and talk through wear layer and thickness before you buy. {L("/flooring/laminate-flooring-portland.html", "Laminate")}, in the office scene, is the crisp printed-wood surface at a lower material cost, floated over a flat subfloor. {L("/flooring/tile-flooring-portland.html", "Tile")} is the laundry-room look and the usual choice for baths, mudrooms and other wet rooms. {L("/flooring/carpet-installation-portland.html", "Carpet")} is the soft living-room look still used in bedrooms and on stairs, with pad and transitions planned where it meets a hard floor.</p>
+<p>When a style is close, check material ranges in the {L("/flooring-prices.html", "Price Guide")} and what else goes into a quote in the {L("/flooring-installation-cost-portland.html", "installation cost guide")}. We install these floors in Portland and the nearby Oregon cities on this site: Gresham, Happy Valley, Clackamas, Oregon City, Beaverton, Tigard and Lake Oswego.</p></section>
 <section><div class="eyebrow">Explore</div><h2>Learn about each floor</h2>{c["service_links"]()}</section>
 {c["cta_box"]()}'''
-    out.append(page(url, "Flooring Gallery | Banana Floors", "Flooring inspiration from Banana Floors: hardwood, LVP, laminate, tile, carpet and engineered wood room visualizations.", body,
-         [bld(trail)]))
+    out.append(page(url, "Flooring Style Gallery | Banana Floors",
+                    "Style visualizations of hardwood, LVP, laminate, tile, carpet and engineered wood. Not job photos. Compare a look, then open the installation page.",
+                    body, [gallery_ld, bld(trail)], current="/gallery.html"))
 
     # ---------------------------------------------------------- thank-you (form _next target)
     body = f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">Thank you for reaching out</div>

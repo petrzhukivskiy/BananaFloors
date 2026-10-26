@@ -2,13 +2,13 @@
 """Banana Floors static page builder (r31).
 
 Generates the service, service-area, guide and info pages from the content
-modules in tools/content/. The homepage (index.html), price guide
-(flooring-prices.html) and thank-you page stay hand-edited.
+modules in tools/content/. The homepage (index.html) and price guide
+(flooring-prices.html) stay hand-edited. thank-you.html is generated.
 
 Run from the repo root:  python3 tools/build.py
 Then commit the regenerated .html files and sitemap.xml.
 """
-import html, json, os, re, sys, datetime
+import html, json, os, re, subprocess, sys, datetime
 sys.path.insert(0, os.path.dirname(__file__))
 from content import services, cities, pages  # noqa: E402
 
@@ -17,8 +17,15 @@ SITE = "https://bananafloors.com"
 PHONE = "(503) 421-1730"
 TEL = "+15034211730"
 CCB = "209244"
-GBP = "https://maps.app.goo.gl/qtWVZ1QcHdKnH6fg6"
+# Full Google Maps URL for the Banana Floors profile. Resolved 2026-10-26 from
+# https://maps.app.goo.gl/qtWVZ1QcHdKnH6fg6, which 302s to ftid
+# 0x61f2b7e5dd498f55:0xff7b85e128ab462d. The CID is the unsigned second half.
+# The cid URL does not repeat the old "LLC" name still stuck on that short link.
+GBP = "https://www.google.com/maps?cid=18409455103903483437"
+LEGAL_NAME = "Apex Builders, Inc"
 TODAY = datetime.date.today().isoformat()
+BUSINESS_ADDRESS = {"@type": "PostalAddress", "addressLocality": "Portland", "addressRegion": "OR", "addressCountry": "US"}
+BUSINESS_IMAGE = SITE + "/images/banana-floors-share-r31.jpg"
 SHARE = SITE + "/images/banana-floors-share-r31.jpg"
 LOGO = "/images/banana-floors-wordmark-r31.webp"
 
@@ -62,7 +69,8 @@ def city_url(c): return f"/locations/{c['slug']}.html"
 
 def nav_links(current=None):
     items = [("/#services", "Services"), ("/#areas", "Areas"), ("/flooring-prices.html", "Price Guide"),
-             ("/flooring-installation-cost-portland.html", "Cost Guide"), ("/about.html", "About"), ("/reviews.html", "Reviews")]
+             ("/flooring-installation-cost-portland.html", "Cost Guide"), ("/about.html", "About"),
+             ("/reviews.html", "Reviews"), ("/gallery.html", "Gallery")]
     out = []
     for href, label in items:
         cur = ' aria-current="page"' if href == current else ""
@@ -118,8 +126,13 @@ def footer():
   </div>
 </footer>'''
 
+# Compact copy of https://bananafloors.com/#business for provider blocks.
+# Service pages do not embed the homepage graph, so the provider keeps the same
+# @id plus legalName and parentOrganization instead of a bare @id reference.
 BUSINESS_REF = {"@type": "HomeAndConstructionBusiness", "@id": SITE + "/#business", "name": "Banana Floors",
-                "legalName": "Banana Floors", "url": SITE + "/", "telephone": "+1-503-421-1730"}
+                "legalName": LEGAL_NAME,
+                "parentOrganization": {"@type": "Organization", "name": LEGAL_NAME},
+                "url": SITE + "/", "telephone": "+1-503-421-1730"}
 
 def ld(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
@@ -162,6 +175,33 @@ def faq_html(faqs, heading, eyebrow="Questions"):
     items = "".join(f"<details><summary>{html.escape(q)}</summary><p>{a}</p></details>" for q, a in faqs)
     return f'<section class="planning-faq faq-list" id="{slugify(heading)}"><div class="eyebrow">{eyebrow}</div><h2>{heading}</h2><div class="planning-questions">{items}</div></section>'
 
+def git_commit_date(rel):
+    """Last commit date (YYYY-MM-DD) that touched rel, or None."""
+    try:
+        out = subprocess.check_output(
+            ["git", "log", "-1", "--format=%cs", "--", rel],
+            cwd=ROOT, text=True, stderr=subprocess.DEVNULL).strip()
+        return out or None
+    except (subprocess.CalledProcessError, FileNotFoundError, OSError):
+        return None
+
+def working_tree_dirty(rel):
+    try:
+        out = subprocess.check_output(
+            ["git", "status", "--porcelain", "--", rel],
+            cwd=ROOT, text=True, stderr=subprocess.DEVNULL)
+        return bool(out.strip())
+    except (subprocess.CalledProcessError, FileNotFoundError, OSError):
+        return False
+
+def git_lastmod(rel):
+    """Real lastmod: today when the file has uncommitted edits, else its last commit date."""
+    if working_tree_dirty(rel):
+        return TODAY
+    return git_commit_date(rel) or TODAY
+
+PAGE_LASTMOD = {}
+
 def page(path, title, desc, body, schema=(), robots="index,follow,max-image-preview:large", current=None, og_type="website", extra_css=()):
     assert len(title) <= 62, (path, len(title), title)
     assert len(desc) <= 160, (path, len(desc), desc)
@@ -198,10 +238,19 @@ def page(path, title, desc, body, schema=(), robots="index,follow,max-image-prev
 </body>
 </html>
 '''
-    out = os.path.join(ROOT, path.lstrip("/"))
+    rel = path.lstrip("/")
+    out = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    with open(out, "w", encoding="utf-8") as f:
-        f.write(head)
+    previous = ""
+    if os.path.isfile(out):
+        with open(out, encoding="utf-8") as f:
+            previous = f.read()
+    if previous == head:
+        PAGE_LASTMOD[path] = git_lastmod(rel)
+    else:
+        PAGE_LASTMOD[path] = TODAY
+        with open(out, "w", encoding="utf-8") as f:
+            f.write(head)
     return path
 
 def cta_box(heading="Get a free preliminary quote.", text=None):
@@ -306,15 +355,30 @@ def build_city(c):
     return page(url, c["title"], c["desc"], body, schema)
 
 def build_sitemap(paths):
-    urls = "".join(f"  <url>\n    <loc>{SITE}{'/' if p == '/' else p}</loc>\n    <lastmod>{TODAY}</lastmod>\n  </url>\n" for p in paths)
+    """lastmod is the day the URL's file last changed, not the day the sitemap was rebuilt.
+
+    Generated pages record that in PAGE_LASTMOD (today when this run rewrote the file,
+    otherwise the file's last git commit). Hand-edited URLs use the same git rule.
+    """
+    urls = []
+    for p in paths:
+        if p in PAGE_LASTMOD:
+            lm = PAGE_LASTMOD[p]
+        else:
+            rel = "index.html" if p == "/" else p.lstrip("/")
+            lm = git_lastmod(rel)
+        loc = SITE + ("/" if p == "/" else p)
+        urls.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{lm}</lastmod>\n  </url>\n")
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
-        f.write("<?xml version='1.0' encoding='utf-8'?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" + urls + "</urlset>\n")
+        f.write("<?xml version='1.0' encoding='utf-8'?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" + "".join(urls) + "</urlset>\n")
 
 if __name__ == "__main__":
     ctx = dict(page=page, breadcrumb_html=breadcrumb_html, breadcrumb_ld=breadcrumb_ld, faq_html=faq_html, faq_ld=faq_ld,
                cta_box=cta_box, price_table=price_table, service_links=service_links, city_links=city_links, img_tag=img_tag,
                PRICING=PRICING, money=money, SERVICE_LIST=SERVICE_LIST, CITY_LIST=CITY_LIST, service_url=service_url,
-               city_url=city_url, BUSINESS_REF=BUSINESS_REF, SITE=SITE, PHONE=PHONE, TEL=TEL, CCB=CCB, GBP=GBP, link_row=link_row)
+               city_url=city_url, BUSINESS_REF=BUSINESS_REF, SITE=SITE, PHONE=PHONE, TEL=TEL, CCB=CCB, GBP=GBP,
+               LEGAL_NAME=LEGAL_NAME, BUSINESS_ADDRESS=BUSINESS_ADDRESS, BUSINESS_IMAGE=BUSINESS_IMAGE,
+               IMAGES=IMAGES, link_row=link_row)
     indexable = ["/", "/flooring-prices.html"]
     for s in SERVICE_LIST:
         indexable.append(build_service(s))

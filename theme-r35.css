@@ -18,7 +18,7 @@
   filter: brightness(0) invert(1); clip-path: inset(0 0 0 57.5%); pointer-events: none; }
 .nav-inner { gap: 16px; }
 .nav-links { margin-left: auto; white-space: nowrap; }
-@media (min-width: 901px) and (max-width: 1150px) {
+@media (min-width: 901px) and (max-width: 1400px) {
   .nav .brand img.brand-logo { width: 170px; }
   .nav-inner { gap: 10px; padding-left: 18px; padding-right: 18px; }
   .nav-links { gap: 3px; font-size: 12px; }
