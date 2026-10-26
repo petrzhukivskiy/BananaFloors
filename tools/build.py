@@ -114,7 +114,7 @@ def footer():
 </footer>'''
 
 BUSINESS_REF = {"@type": "HomeAndConstructionBusiness", "@id": SITE + "/#business", "name": "Banana Floors",
-                "legalName": "Banana Floors LLC", "url": SITE + "/", "telephone": "+1-503-421-1730"}
+                "legalName": "Banana Floors", "url": SITE + "/", "telephone": "+1-503-421-1730"}
 
 def ld(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
@@ -147,7 +147,7 @@ def aside_card(sections, cta_label="Get a free estimate"):
     return (f'<aside class="article-aside" aria-label="Estimate and page contents"><div class="aside-card">'
             f'<p class="aside-title">Free preliminary estimate</p><p>Send your rooms, rough square footage and a few photos.</p>'
             f'<a class="btn" href="/#estimate">{cta_label}</a><a class="aside-phone" href="tel:{TEL}">{ICONS["phone"]}Call or text {PHONE}</a>'
-            f'<p class="aside-meta">Oregon CCB {CCB} · Banana Floors LLC</p></div>'
+            f'<p class="aside-meta">Oregon CCB {CCB} · Banana Floors</p></div>'
             f'<nav class="toc" aria-label="On this page"><p class="aside-title">On this page</p><ol>{toc}</ol></nav></aside>')
 
 def prose_section(h2, content):
