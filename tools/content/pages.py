@@ -100,21 +100,21 @@ def build(c):
     out.append(page(url, "About Banana Floors | Portland Flooring Contractor",
                     "Banana Floors LLC is a Portland-area flooring installation company (Oregon CCB 209244) serving the metro and Vancouver, WA. How we work.", body, schema, current="/about.html"))
 
-    # ---------------------------------------------------------- reviews (noindex until real reviews are added)
+    # ---------------------------------------------------------- reviews (indexable; quotes live on Google until real text is shown here)
     url = "/reviews.html"
     trail = [("Home", "/"), ("Reviews", url)]
     body = bc(trail) + f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">Customer reviews</div>
 <h1>Banana Floors reviews</h1>
 <p class="lead">Our customer reviews live on our Google Business Profile. Read what customers say, or leave a review if we have worked on your floors. We appreciate honest feedback.</p>
 <div class="actions"><a class="btn" href="{GBP}" target="_blank" rel="noopener">Read and leave reviews on Google ↗</a><a class="btn secondary" href="/#estimate">Request a free estimate</a></div></div></section>
-<!-- TODO(Pete): paste real Google reviews here (customer first name or initials, city, date, star rating and review text, with permission).
-     Only add Review/AggregateRating schema for reviews that are shown on this page. When reviews are added, change robots to index,follow and add this page to the sitemap via tools/build.py. -->
+<!-- Real Google review text can be added later (customer first name or initials, city, date, star rating and review text, with permission).
+     Add Review or AggregateRating schema only for reviews that are actually shown on this page. -->
 <section class="prose"><h2>Had us install your floors?</h2><p>Reviews help Portland-area homeowners choose a contractor, and they help us improve. If you have a minute, please share your experience on <a href="{GBP}" target="_blank" rel="noopener">Google</a>.</p></section>
 {c["cta_box"]()}'''
-    page(url, "Reviews | Banana Floors LLC", "Read and leave reviews for Banana Floors LLC, a Portland-area flooring installation company, on our Google Business Profile.", body,
-         [bld(trail)], robots="noindex,follow", current="/reviews.html")
+    out.append(page(url, "Reviews | Banana Floors LLC", "Read and leave reviews for Banana Floors LLC, a Portland-area flooring installation company, on our Google Business Profile.", body,
+         [bld(trail)], current="/reviews.html"))
 
-    # ---------------------------------------------------------- gallery (noindex until real project photos are added)
+    # ---------------------------------------------------------- gallery (indexable; existing room visualizations, not claimed as completed jobs)
     url = "/gallery.html"
     trail = [("Home", "/"), ("Gallery", url)]
     figs = ""
@@ -123,13 +123,12 @@ def build(c):
     body = bc(trail) + f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">Flooring gallery</div>
 <h1>Flooring inspiration and project gallery</h1>
 <p class="lead">These images are room visualizations to help you compare flooring styles. Product colors and finishes vary. Photos of completed Banana Floors projects will be added here.</p></div></section>
-<!-- TODO(Pete): add real project photos (before/after if possible). Suggested filename pattern: /images/projects/lvp-kitchen-gresham-after.webp
-     Caption pattern: "LVP installation in a Gresham kitchen (about 300 sq ft)". When real photos are added, change robots to index,follow and add to the sitemap. -->
+<!-- Real completed-job photos can replace these room visualizations later. Keep captions honest: these are style references, not customer projects. -->
 <section><h2>Flooring styles</h2><div class="gallery-grid">{figs}</div></section>
 <section><div class="eyebrow">Explore</div><h2>Learn about each floor</h2>{c["service_links"]()}</section>
 {c["cta_box"]()}'''
-    page(url, "Flooring Gallery | Banana Floors", "Flooring inspiration from Banana Floors: hardwood, LVP, laminate, tile, carpet and engineered wood room visualizations.", body,
-         [bld(trail)], robots="noindex,follow")
+    out.append(page(url, "Flooring Gallery | Banana Floors", "Flooring inspiration from Banana Floors: hardwood, LVP, laminate, tile, carpet and engineered wood room visualizations.", body,
+         [bld(trail)]))
 
     # ---------------------------------------------------------- thank-you (form _next target)
     body = f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">Thank you for reaching out</div>
