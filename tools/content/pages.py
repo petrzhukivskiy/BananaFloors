@@ -111,7 +111,7 @@ def build(c):
      Add Review or AggregateRating schema only for reviews that are actually shown on this page. -->
 <section class="prose"><h2>Had us install your floors?</h2><p>Reviews help Portland-area homeowners choose a contractor, and they help us improve. If you have a minute, please share your experience on <a href="{GBP}" target="_blank" rel="noopener">Google</a>.</p></section>
 {c["cta_box"]()}'''
-    out.append(page(url, "Reviews | Banana Floors LLC", "Read and leave reviews for Banana Floors LLC, a Portland-area flooring installation company, on our Google Business Profile.", body,
+    out.append(page(url, "Reviews | Banana Floors", "Read and leave reviews for Banana Floors, a Portland-area flooring installation company, on our Google Business Profile.", body,
          [bld(trail)], current="/reviews.html"))
 
     # ---------------------------------------------------------- gallery (indexable; existing room visualizations, not claimed as completed jobs)
