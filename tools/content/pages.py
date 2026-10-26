@@ -2,6 +2,61 @@
 import html
 from .services import P, UL, H3, L
 
+# Verbatim Google Business Profile reviews. Do not edit wording, even where a
+# reviewer wrote "Banana Floors, LLC". The profile aggregate is 5.0 from 8
+# reviews. The list view did not show per-review stars; every review is part of
+# that aggregate, so each card and Review node uses ratingValue 5.
+# Relative dates are shown as collected. No absolute dates are invented.
+GOOGLE_REVIEWS = [
+    {
+        "name": "Slavic Stasyuk",
+        "when": "a month ago",
+        "featured": True,
+        "text": "\n\n".join((
+            "Peter and his team at Banana Floors did an exceptional job on the hardwood floors in our new home. Our designer recommended them, and after seeing the finished product, we completely understand why.",
+            "We installed wide-plank Monarch oak throughout the house, including a herringbone pattern in the entry that required a high level of precision and attention to detail. We are extremely particular when it comes to craftsmanship and finishes, and Peter and his team absolutely delivered. The layout, cuts, transitions, and overall installation were beautifully done.",
+            "We've worked with a lot of contractors throughout our home build, and Banana Floors has genuinely been one of the best teams we've worked with. They were professional, skilled, dependable, and clearly take pride in the quality of their work.",
+            "The hardwood is one of the standout features of our home, and we couldn't be happier with how everything turned out. We would highly recommend Peter and his team to anyone looking for a truly high-quality hardwood flooring installer.",
+        )),
+    },
+    {
+        "name": "Yana Tsurkan",
+        "when": "3 weeks ago",
+        "text": "First off amazing customer service and second professionals! They answered all my questions and concerns right off the bat and didn't pressure me when I needed to think about it and commit.  They were quick clean!!! So happy we went with Banana Floors!!! Would recommend to family and friends!",
+    },
+    {
+        "name": "PDX_R3",
+        "when": "3 weeks ago",
+        "text": "Banana Floors did a fantastic job on our home's flooring, from the subfloor to engineered hardwood and baseboards. Peter and his crew are skilled and pay close attention to detail. Highly recommend!",
+    },
+    {
+        "name": "Alex B",
+        "when": "a month ago",
+        "text": "Absolutely impressed with Banana Floors, LLC! The flooring turned out amazing and completely transformed the space. The quality of the work is excellent, everything looks clean and professionally done, and I couldn't be happier with the final result. I'm so excited with how it turned out. Highly recommend Banana Floors, LLC to anyone looking for great flooring work!",
+    },
+    {
+        "name": "Richard Rusnak",
+        "when": "a month ago",
+        "text": "We hired Banana as part of a large remodel and had them installed hardwood flooring. They did excellent work and reasonably priced. Will use them again in the future.",
+    },
+    {
+        "name": "Eugene Mikityuk",
+        "when": "a month ago",
+        "text": "My go to provider. Always knows what to do, and I can trust him with the costs.  5/5",
+    },
+    {
+        "name": "Tony Mikityuk",
+        "when": "a month ago",
+        "text": "Reliable crew - quality work - good value pricing",
+    },
+    {
+        "name": "Craw Drago",
+        "when": "a month ago",
+        "text": "Good price and great quality. What else could you ask for?",
+    },
+]
+assert len(GOOGLE_REVIEWS) == 8
+
 
 def build(c):
     page, bc, bld, faq_html, faq_ld = c["page"], c["breadcrumb_html"], c["breadcrumb_ld"], c["faq_html"], c["faq_ld"]
@@ -100,19 +155,67 @@ def build(c):
     out.append(page(url, "About Banana Floors | Portland Flooring Contractor",
                     "Banana Floors is a Portland-area flooring installation company (Oregon CCB 209244) serving the metro and Vancouver, WA. How we work.", body, schema, current="/about.html"))
 
-    # ---------------------------------------------------------- reviews (indexable; quotes live on Google until real text is shown here)
+    # ---------------------------------------------------------- reviews (indexable: real Google reviews only)
     url = "/reviews.html"
     trail = [("Home", "/"), ("Reviews", url)]
-    body = bc(trail) + f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">Customer reviews</div>
+
+    def review_cards():
+        cards = []
+        for r in GOOGLE_REVIEWS:
+            paras = "".join(f"<p>{html.escape(part)}</p>" for part in r["text"].split("\n\n"))
+            featured = " is-featured" if r.get("featured") else ""
+            when = f'<span class="review-when">{html.escape(r["when"])}</span>' if r.get("when") else ""
+            cards.append(
+                f'<article class="review-card{featured}">'
+                f'<div class="review-stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>'
+                f"<blockquote>{paras}</blockquote>"
+                f'<footer class="review-by"><cite>{html.escape(r["name"])}</cite>'
+                f'<a href="{GBP}" target="_blank" rel="noopener">Google</a>{when}</footer>'
+                f"</article>"
+            )
+        return "".join(cards)
+
+    review_nodes = [{
+        "@type": "Review",
+        "author": {"@type": "Person", "name": r["name"]},
+        "reviewBody": r["text"],
+        "reviewRating": {"@type": "Rating", "ratingValue": 5, "bestRating": 5},
+        "publisher": {"@type": "Organization", "name": "Google"},
+    } for r in GOOGLE_REVIEWS]
+    business_ld = {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "@id": SITE + "/#business",
+        "name": "Banana Floors",
+        "url": SITE + "/",
+        "telephone": "+1-503-421-1730",
+        "sameAs": GBP,
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5,
+            "reviewCount": 8,
+            "bestRating": 5,
+        },
+        "review": review_nodes,
+    }
+    body = bc(trail) + f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">Reviews on Google</div>
 <h1>Banana Floors reviews</h1>
-<p class="lead">Our customer reviews live on our Google Business Profile. Read what customers say, or leave a review if we have worked on your floors. We appreciate honest feedback.</p>
-<div class="actions"><a class="btn" href="{GBP}" target="_blank" rel="noopener">Read and leave reviews on Google ↗</a><a class="btn secondary" href="/#estimate">Request a free estimate</a></div></div></section>
-<!-- Real Google review text can be added later (customer first name or initials, city, date, star rating and review text, with permission).
-     Add Review or AggregateRating schema only for reviews that are actually shown on this page. -->
+<p class="lead">These comments are from our Google Business Profile, where Banana Floors is rated 5.0 from 8 reviews. Read them here, then open Google for the full profile or to leave your own.</p>
+<div class="review-summary">
+  <div class="review-summary-copy">
+    <p class="review-score"><span class="review-num">5.0</span><span class="review-stars" role="img" aria-label="Rated 5.0 out of 5 on Google"><span aria-hidden="true">★★★★★</span></span></p>
+    <p class="review-count">5.0 from 8 reviews</p>
+  </div>
+  <a class="btn" href="{GBP}" target="_blank" rel="noopener">Read all reviews on Google ↗</a>
+</div>
+<div class="actions"><a class="btn secondary" href="/#estimate">Request a free estimate</a></div></div></section>
+<section class="review-list" aria-labelledby="review-list-heading"><h2 id="review-list-heading">What customers say</h2>
+<div class="review-grid">{review_cards()}</div></section>
 <section class="prose"><h2>Had us install your floors?</h2><p>Reviews help Portland-area homeowners choose a contractor, and they help us improve. If you have a minute, please share your experience on <a href="{GBP}" target="_blank" rel="noopener">Google</a>.</p></section>
 {c["cta_box"]()}'''
-    out.append(page(url, "Reviews | Banana Floors", "Read and leave reviews for Banana Floors, a Portland-area flooring installation company, on our Google Business Profile.", body,
-         [bld(trail)], current="/reviews.html"))
+    out.append(page(url, "Reviews | Banana Floors",
+                    "Read real Google reviews of Banana Floors, a Portland-area flooring installer. Rated 5.0 from 8 reviews.",
+                    body, [business_ld, bld(trail)], current="/reviews.html", extra_css=("/reviews-r35.css",)))
 
     # ---------------------------------------------------------- gallery (indexable; existing room visualizations, not claimed as completed jobs)
     url = "/gallery.html"

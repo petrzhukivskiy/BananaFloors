@@ -157,7 +157,7 @@ def faq_html(faqs, heading, eyebrow="Questions"):
     items = "".join(f"<details><summary>{html.escape(q)}</summary><p>{a}</p></details>" for q, a in faqs)
     return f'<section class="planning-faq faq-list" id="{slugify(heading)}"><div class="eyebrow">{eyebrow}</div><h2>{heading}</h2><div class="planning-questions">{items}</div></section>'
 
-def page(path, title, desc, body, schema=(), robots="index,follow,max-image-preview:large", current=None, og_type="website"):
+def page(path, title, desc, body, schema=(), robots="index,follow,max-image-preview:large", current=None, og_type="website", extra_css=()):
     assert len(title) <= 62, (path, len(title), title)
     assert len(desc) <= 160, (path, len(desc), desc)
     canon = SITE + ("/" if path == "/index.html" else path)
@@ -182,7 +182,7 @@ def page(path, title, desc, body, schema=(), robots="index,follow,max-image-prev
 <script src="/theme-r30.js"></script>
 <link rel="stylesheet" href="/theme-r34.css">
 <link rel="stylesheet" href="/page-r34.css">
-{"".join(ld(s) for s in schema)}
+{"".join(f'<link rel="stylesheet" href="{href}">\n' for href in extra_css)}{"".join(ld(s) for s in schema)}
 </head>
 <body>
 {header(current)}
