@@ -119,7 +119,7 @@ dict(slug="subfloor-prep-floor-leveling-portland", nav="Subfloor prep & leveling
     "Some preparation can be estimated from photos and measurements; some can only be confirmed once the existing floor is up. We describe the visible conditions in your preliminary quote and discuss any additional preparation with you before proceeding. Our " + COST + " explains how prep fits alongside material and installation.")),
  ],
  faqs=[
-  ("Why does my new floor need subfloor prep?", "Most floor coverings require a flat, solid, dry subfloor for warranty coverage and long-term performance. Preparation addresses squeaks, uneven areas and damage before they are covered."),
+  ("Why does my new floor need subfloor prep?", "Most floor coverings require a flat, solid, dry subfloor for the manufacturer's warranty and long-term performance. Preparation addresses squeaks, uneven areas and damage before they are covered. Banana Floors installation and workmanship are covered by a 1-year warranty; flooring materials are covered by the manufacturer's warranty, commonly about 10–25 years, and the length varies by product."),
   ("Can you tell how much leveling is needed from photos?", "Photos help start the conversation, but flatness is measured on site, and some issues only show once the old floor is removed. Any added preparation is discussed with you before work continues."),
   ("What is self-leveling underlayment?", "A pourable cement-based product that flattens larger low areas. It needs primer, the correct thickness and cure time before flooring is installed."),
   ("Do concrete basement floors need moisture testing?", "Concrete moisture should be checked before installing most flooring on a slab, especially wood products and glue-down floors. The flooring manufacturer specifies the acceptable range."),
@@ -149,7 +149,7 @@ dict(slug="flooring-removal-portland", nav="Flooring removal", image="carpet",
     "Nailed wood and mortar-set tile are the most labor-intensive to remove and can produce dust and debris that need containment.")),
   ("Older homes: asbestos and lead", P(
     "Many Portland-area homes were built long before current materials rules. Some older sheet vinyl, vinyl tiles and their adhesives can contain asbestos, and painted trim in homes built before 1978 may contain lead paint. These materials should not be torn out until they have been evaluated.",
-    "Oregon has asbestos survey requirements for many renovation projects in older homes, and Washington has its own rules. If your home is older and has old resilient flooring or painted trim that will be disturbed, tell us the year it was built so the right steps are taken first. Testing and abatement, when needed, are done by licensed specialists.")),
+    "Oregon has asbestos survey requirements for many renovation projects in older homes. If your home is older and has old resilient flooring or painted trim that will be disturbed, tell us the year it was built so the right steps are taken first. Testing and abatement, when needed, are done by licensed specialists.")),
   ("Disposal and cleanup", P(
     "Tell us whether you want the old flooring hauled away so it can be included in your scope. We leave the work area cleared and ready for preparation and installation. Removal is a line item in most quotes; our " + COST + " explains how it fits with material and installation.")),
  ],
@@ -203,11 +203,11 @@ dict(slug="waterproof-flooring-portland", nav="Waterproof flooring", image="tile
  intro="Rainy seasons, muddy entries, basements and busy kitchens all ask a lot of a floor. Here is how the water-tolerant floors we install compare, and what waterproof really means on the box.",
  schema_name="Waterproof flooring installation",
  glance_h2="Water-tolerant flooring options",
- points=[("Rigid-core LVP", "Waterproof planks, floating install"), ("Porcelain tile", "The most water-tolerant surface"), ("Water-resistant laminate", "Check the warranty terms"), ("Prep and seams", "Where water actually gets in")],
+ points=[("Rigid-core LVP", "Waterproof planks, floating install"), ("Porcelain tile", "The most water-tolerant surface"), ("Water-resistant laminate", "Check the manufacturer's warranty"), ("Prep and seams", "Where water actually gets in")],
  sections=[
   ("Waterproof versus water-resistant", P(
     "<strong>Waterproof</strong> on a flooring box usually means the plank or tile itself will not swell or break down when wet. It does not mean the installed floor is a sealed barrier: water can still travel through seams and around the edges to the subfloor. <strong>Water-resistant</strong> typically means the product tolerates surface spills for a limited time if they are wiped up.",
-    "Read the warranty for what is covered (topical spills, standing water for a certain number of hours, or neither) and how the product must be installed to keep that coverage.")),
+    "Read the manufacturer's warranty for what is covered (topical spills, standing water for a certain number of hours, or neither) and how the product must be installed to keep that coverage. Coverage varies by product.")),
   ("Best choices by room", H3("Kitchens") + P(LVP + " is popular because it is waterproof, comfortable and affordable; " + TILE + " is the most durable option. Plan the floor with cabinets and dishwasher heights in mind.") +
     H3("Bathrooms") + P("Porcelain or ceramic tile with the right underlayment is the standard. LVP is common in powder rooms and some full baths; avoid exposed seams where water pools.") +
     H3("Basements") + P("Rigid-core LVP and tile handle concrete well. Concrete moisture should be checked and the manufacturer's vapor-barrier requirements followed.") +
@@ -224,7 +224,7 @@ dict(slug="waterproof-flooring-portland", nav="Waterproof flooring", image="tile
  faqs=[
   ("What is the most waterproof flooring?", "Porcelain tile installed over the right underlayment is the most water-tolerant floor. Rigid-core LVP is the most common waterproof plank option."),
   ("Is waterproof LVP really waterproof?", "The planks are, but seams and edges are not sealed like a shower pan. Standing water can reach the subfloor, so leaks should still be cleaned up quickly."),
-  ("Can I put laminate in a kitchen?", "Some newer laminate lines are rated water-resistant or waterproof. Check the warranty terms; standard laminate with a fiberboard core can swell if water sits on it."),
+  ("Can I put laminate in a kitchen?", "Some newer laminate lines are rated water-resistant or waterproof. Check the manufacturer's warranty; standard laminate with a fiberboard core can swell if water sits on it."),
   ("What flooring is best for a Portland basement?", "Rigid-core LVP and tile are common choices over concrete. Check slab moisture first and follow the product's vapor barrier requirements."),
  ]),
 # ------------------------------------------------------------------ Commercial
@@ -254,7 +254,7 @@ dict(slug="commercial-flooring-installation-portland", nav="Commercial flooring"
  ],
  faqs=[
   ("Do you install commercial flooring?", "Yes. Banana Floors installs flooring for residential and commercial projects. Tell us about the space, the traffic and your schedule so we can prepare your quote."),
-  ("What wear layer does commercial LVP need?", "Commercial-rated LVP often has a wear layer of 20 mil or more. Check the product's commercial rating and warranty."),
+  ("What wear layer does commercial LVP need?", "Commercial-rated LVP often has a wear layer of 20 mil or more. Check the product's commercial rating and the manufacturer's warranty."),
   ("Can work be done outside business hours?", "Tell us your hours and constraints when you request a quote, and we will discuss scheduling options for your project."),
   ("Is glue-down or floating flooring better for commercial spaces?", "Glue-down vinyl is common for large commercial areas and rolling loads. Floating floors can work in smaller spaces. The right choice depends on the product, the slab and the use."),
  ]),

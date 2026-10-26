@@ -114,7 +114,7 @@ def build(c):
 {H3("Layout and rooms")}<p>Many small rooms, closets, hallways and doorways mean more cuts and transitions than one open room of the same size. Diagonal and herringbone layouts add labor and waste.</p>
 {H3("Stairs")}<p>Stairs are priced per step because each tread and riser is fit individually.</p>
 {H3("Furniture, appliances and access")}<p>Moving furniture, disconnecting appliances, stairs to the work area and parking all affect time on site.</p>
-{H3("Product requirements")}<p>Some products require specific underlayments, vapor barriers or adhesives for warranty coverage. We follow the manufacturer's installation instructions.</p></section>
+{H3("Product requirements")}<p>Some products require specific underlayments, vapor barriers or adhesives to keep the manufacturer's warranty. We follow the manufacturer's installation instructions. Banana Floors installation and workmanship are covered by a 1-year warranty. Flooring materials are covered by the manufacturer's warranty, commonly about 10–25 years, and the length varies by product.</p></section>
 <section class="prose"><h2>How to get an accurate quote</h2>
 {UL("Measure each room (length × width) and note closets and hallways", "Take photos of each room, doorways, the current floor and any stairs", "Tell us the age of your home and what is under the current floor, if you know", "Choose a material and tier in the Price Guide, or tell us you are undecided", "Send it all through the estimate form or by text to " + PHONE)}
 <p>We send a preliminary quote, then verify measurements and site conditions in person before scheduling.</p></section>
@@ -135,8 +135,8 @@ def build(c):
     trail = [("Home", "/"), ("About", url)]
     body = bc(trail) + f'''<section class="hero" style="grid-template-columns:1fr"><div><div class="eyebrow">About Banana Floors</div>
 <h1>About Banana Floors, a Portland flooring contractor</h1>
-<p class="lead">Banana Floors is a Portland-area flooring installation company. We install hardwood, engineered wood, LVP, laminate, tile and carpet in homes and businesses across the Portland metro and Vancouver, Washington, with removal and floor preparation when needed.</p>
-<div class="trust-row"><span>Oregon CCB {CCB}</span><span>Residential &amp; commercial</span><span>Free preliminary estimates</span></div></div></section>
+<p class="lead">Banana Floors is a Portland-area flooring installation company. We install hardwood, engineered wood, LVP, laminate, tile and carpet in homes and businesses across the Portland, OR metro, with removal and floor preparation when needed.</p>
+<div class="trust-row"><span>Insured, bonded &amp; licensed · Oregon CCB {CCB}</span><span>Residential &amp; commercial</span><span>Free preliminary estimates</span></div></div></section>
 <!-- TODO(Pete): add an owner photo (e.g. /images/owner-pete.webp) and a 2–4 sentence story: how you started, years installing floors, what you care about on a job. -->
 <section class="prose"><h2>How we work</h2>
 <p>Banana Floors is built around making flooring projects easier to plan. Most people shopping for new floors want two answers early: what the material will cost, and what the installation will involve. That is why the site includes a material <a href="/flooring-prices.html">Price Guide</a> and a <a href="/flooring-installation-cost-portland.html">cost guide</a>, and why every quote separates material from installation, removal and preparation.</p>
@@ -146,14 +146,14 @@ def build(c):
     "<strong>Verified before scheduling:</strong> measurements and site conditions are confirmed in person")}</section>
 <section class="prose"><h2>Our process</h2>
 <ol><li><strong>Choose and price:</strong> browse floors and check material ranges.</li><li><strong>Send details:</strong> square footage, photos and project location.</li><li><strong>Get a preliminary quote:</strong> we review your scope.</li><li><strong>Verify and confirm:</strong> measurements and site conditions.</li><li><strong>Schedule and install:</strong> we lock in the date and get it done.</li></ol></section>
-<section class="prose"><h2>Licensing</h2><p>Banana Floors holds Oregon Construction Contractors Board license <strong>CCB #{CCB}</strong>. You can look up any Oregon contractor's license on the <a href="https://search.ccb.state.or.us/search/" target="_blank" rel="noopener">Oregon CCB license search ↗</a>.</p>
-<!-- TODO(Pete): if accurate, add bonded/insured status, Washington L&I contractor registration number (for Vancouver work), and any workmanship warranty terms. --></section>
+<section class="prose"><h2>Licensing</h2><p>Banana Floors is a DBA of Apex Builders, Inc and part of the Apex Builders, Inc family. Banana Floors is insured, bonded and licensed under Oregon CCB {CCB}. You can look up any Oregon contractor's license on the <a href="https://search.ccb.state.or.us/search/" target="_blank" rel="noopener">Oregon CCB license search ↗</a>.</p>
+<h3>Warranty</h3><p>Banana Floors installation and workmanship are covered by a 1-year warranty. Flooring materials are covered by the manufacturer's warranty, commonly about 10–25 years, and the length varies by product.</p></section>
 <section><div class="eyebrow">What we install</div><h2>Flooring services</h2>{c["service_links"]()}</section>
 <section><div class="eyebrow">Where we work</div><h2>Service areas</h2>{c["city_links"]()}</section>
 {c["cta_box"]("Talk to us about your floors.")}'''
     schema = [{"@context": "https://schema.org", "@type": "AboutPage", "url": SITE + url, "name": "About Banana Floors", "about": {"@id": SITE + "/#business"}}, bld(trail)]
     out.append(page(url, "About Banana Floors | Portland Flooring Contractor",
-                    "Banana Floors is a Portland-area flooring installation company (Oregon CCB 209244) serving the metro and Vancouver, WA. How we work.", body, schema, current="/about.html"))
+                    "Banana Floors is a Portland-area flooring installation company (Oregon CCB 209244) serving the Portland, OR metro. How we work.", body, schema, current="/about.html"))
 
     # ---------------------------------------------------------- reviews (indexable: real Google reviews only)
     url = "/reviews.html"
