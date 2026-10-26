@@ -316,7 +316,7 @@ def build_service(s):
     art += faq_html(s["faqs"], fh)
     body += f'<div class="article-layout"><div class="article-body">{art}</div>{aside_card(heads)}</div>'
     body += (f'<div class="related-grid"><section class="related"><div class="eyebrow">Explore more</div><h2>Other flooring services</h2>{service_links(url)}</section>'
-             f'<section class="related"><div class="eyebrow">Service areas</div><h2>{s["nav"]} across the Portland metro</h2><p>We work in Portland and nearby communities in Oregon.</p>{city_links()}</section></div>')
+             f'<section class="related"><div class="eyebrow">Service areas</div><h2>{s["nav"]} across the Portland metro</h2><p>Portland is home base. We also work in nearby Oregon communities and in Vancouver, WA.</p>{city_links()}</section></div>')
     body += cta_box()
     schema = [{"@context": "https://schema.org", "@type": "Service", "@id": SITE + url + "#service", "url": SITE + url,
                "name": s["schema_name"], "serviceType": s["schema_name"], "provider": BUSINESS_REF,
